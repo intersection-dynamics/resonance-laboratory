@@ -160,14 +160,14 @@ selectively preserve different symmetry sectors. A full sweep over the (\alpha,\
 
 ### Evidence from Detection Landscapes
 
-![Detection landscape over (α, β) parameter space, showing statistics gap, local (bosonic) fidelity, and superposition (fermionic) fidelity.](images/detection_landscape.png)
+![Detection landscape over (α, β) parameter space, showing statistics gap, local (bosonic) fidelity, and superposition (fermionic) fidelity.](figures/detection_landscape.png)
 
 * CNOT-like detectors preserve antisymmetric superpositions.
 * ZZ-like detectors destroy them.
 
 ### Spin–Statistics Alignment
 
-![Spin–statistics relationship: final fidelities for singlet/triplet and related states.](images/spin_statistics.png)
+![Spin–statistics relationship: final fidelities for singlet/triplet and related states.](figures/spin_statistics.png)
 
 * Triplet states (s=1) remain near full fidelity under ZZ-like detection.
 * Singlet states (s=0) retain fidelity preferentially under CNOT-like detection.
