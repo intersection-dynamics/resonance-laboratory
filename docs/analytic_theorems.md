@@ -146,6 +146,44 @@ There exists a universal threshold (\lambda^* \approx 0.27) such that:
 
 ---
 
+## **2.3 Detection-Channel Landscape (Numerical Classification)**
+
+Generalized detection unitaries parameterized by two real parameters,
+[
+U(\alpha,\beta) = \exp[-i (\alpha X + \beta ZZ) \otimes |1\rangle\langle1|],
+]
+selectively preserve different symmetry sectors. A full sweep over the (\alpha,\beta) triangle reveals:
+
+* **CNOT-like detectors (\alpha \to 1, \beta \to 0)** preserve *fermionic* coherence (antisymmetric combinations).
+* **ZZ-like detectors (\beta \to 1, \alpha \to 0)** preserve *bosonic/local* coherence (symmetric combinations).
+* The diagonal band (\beta \approx 1 - \alpha) shows negligible statistics discrimination.
+
+### Evidence from Detection Landscapes
+
+*(Figure A: Statistics Gap over (\alpha,\beta) space)*
+
+* Strong fermionic gap only near the CNOT corner.
+* Gap collapses smoothly toward the ZZ corner.
+
+*(Figure B: Local (Bosonic) Fidelity)*
+
+* ZZ-like detectors preserve local symmetric structure.
+* CNOT-like detectors destroy it.
+
+*(Figure C: Superposition (Fermionic) Fidelity)*
+
+* CNOT-like detectors preserve antisymmetric superpositions.
+* ZZ-like detectors destroy them.
+
+### Spin–Statistics Alignment
+
+*(Figure D: Spin vs Final Fidelity)*
+
+* Triplet states (s=1) remain near full fidelity under ZZ-like detection.
+* Singlet states (s=0) retain fidelity preferentially under CNOT-like detection.
+
+This provides a numerical classification of detector-induced symmetry selection, complementing the analytic two-qubit proposition and supporting the N-body conjecture.
+
 # **3. Causal Structure — Light Cones**
 
 Local Hamiltonians generate finite-speed propagation.
