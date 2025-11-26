@@ -5,7 +5,7 @@
 November 2025 – December 2025  
 
 arXiv:2502.xxxxx (forthcoming)  
-Code & data: https://github.com/resonance-laboratory/hilbert-substrate  
+Code & data: https://github.com/resonance-laboratory
 
 ---
 
