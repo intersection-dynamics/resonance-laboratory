@@ -160,24 +160,14 @@ selectively preserve different symmetry sectors. A full sweep over the (\alpha,\
 
 ### Evidence from Detection Landscapes
 
-*(Figure A: Statistics Gap over (\alpha,\beta) space)*
-
-* Strong fermionic gap only near the CNOT corner.
-* Gap collapses smoothly toward the ZZ corner.
-
-*(Figure B: Local (Bosonic) Fidelity)*
-
-* ZZ-like detectors preserve local symmetric structure.
-* CNOT-like detectors destroy it.
-
-*(Figure C: Superposition (Fermionic) Fidelity)*
+![Detection landscape over (α, β) parameter space, showing statistics gap, local (bosonic) fidelity, and superposition (fermionic) fidelity.](images/detection_landscape.png)
 
 * CNOT-like detectors preserve antisymmetric superpositions.
 * ZZ-like detectors destroy them.
 
 ### Spin–Statistics Alignment
 
-*(Figure D: Spin vs Final Fidelity)*
+![Spin–statistics relationship: final fidelities for singlet/triplet and related states.](images/spin_statistics.png)
 
 * Triplet states (s=1) remain near full fidelity under ZZ-like detection.
 * Singlet states (s=0) retain fidelity preferentially under CNOT-like detection.
@@ -200,7 +190,7 @@ K_{k0}(t) = i^k J_k(2Jt), \qquad P_k(t)=|K_{k0}(t)|^2.
 ### Consequences
 
 * **Ballistic propagation** with velocity (v_{\max} = 2J).
-* **Exponential suppression** outside (|k| \lesssim v_{\max} t.)
+* **Exponential suppression** outside (|k| \lesssim v_{\max} t\).
 * **No strict cutoff**, consistent with Bessel-function tails.
 
 *(Figure 3: Bessel-based propagator light cone)*
