@@ -1,0 +1,89 @@
+{
+  "spacetime": {
+    "arrival_times": [
+      null,
+      0.162,
+      0.485,
+      0.97,
+      1.374,
+      1.859,
+      2.343,
+      2.747
+    ],
+    "velocity": 2.26
+  },
+  "gauge": {
+    "no_flux": {
+      "symmetric": 1.0,
+      "antisymmetric": -1.0
+    },
+    "with_flux": {
+      "symmetric": -1.0,
+      "antisymmetric": 1.0
+    }
+  },
+  "qed": {
+    "initial": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "final": [
+      0.427,
+      0.598,
+      0.268
+    ],
+    "absorbed": 0.573,
+    "scattered": 0.866
+  },
+  "qcd": {
+    "single_R": {
+      "energy": 6.97,
+      "casimir": 1.333
+    },
+    "triple_RRR": {
+      "energy": 58.23,
+      "casimir": 12.0
+    },
+    "baryon_RGB": {
+      "energy": 2.23,
+      "casimir": 0.0
+    }
+  },
+  "weak": {
+    "left_coupling": 0.7,
+    "right_coupling": 0.0
+  },
+  "mass": {
+    "m=0.0": {
+      "energy": -3.494,
+      "ipr": 0.084
+    },
+    "m=0.5": {
+      "energy": -1.346,
+      "ipr": 0.214
+    },
+    "m=2.0": {
+      "energy": -0.757,
+      "ipr": 0.625
+    }
+  },
+  "higgs": {
+    "neutrino": {
+      "yukawa": 0.001,
+      "mass": 0.002
+    },
+    "electron": {
+      "yukawa": 0.01,
+      "mass": 0.02
+    },
+    "muon": {
+      "yukawa": 0.1,
+      "mass": 0.2
+    },
+    "top": {
+      "yukawa": 1.0,
+      "mass": 1.618
+    }
+  }
+}
