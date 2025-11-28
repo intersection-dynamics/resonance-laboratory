@@ -1,0 +1,14 @@
+{
+  "J": 1.0,
+  "Lx": 2,
+  "Ly": 2,
+  "Lz": 2,
+  "T": 10.0,
+  "dt": 0.1,
+  "experiment_name": "substrate_3d_fullspace_exp",
+  "framework_version": "0.1.0",
+  "hz": 0.0,
+  "run_id": "20251127_235057_fullspace_demo",
+  "script": "substrate_3d_fullspace_exp.py",
+  "seed": 1234
+}

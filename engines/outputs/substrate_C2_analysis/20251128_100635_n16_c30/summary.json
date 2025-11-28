@@ -1,0 +1,78 @@
+{
+  "diagnostics": {
+    "excitation_map": {
+      "155d215f": 1.4136200514996617,
+      "19c96846": 0.2267529352029145,
+      "1d49f5e9": 1.1553325789670952,
+      "22209953": 0.8540384597384802,
+      "23ae47bd": 1.8034054925876544,
+      "274818bc": 0.9475035609019191,
+      "541ab470": 0.3431587861562184,
+      "62c599fb": 0.8169047080469429,
+      "755b4042": 0.450399321288554,
+      "9a640bc0": 0.25266305509676323,
+      "af8aeae6": 0.6386401214193762,
+      "bd7a38ab": 0.44161057485926425,
+      "c934d388": 1.602179948480308,
+      "d975e05b": 0.0,
+      "da199db8": 0.2884453063899026,
+      "f9330409": 0.8277817615114229
+    },
+    "excitation_threshold": 0.05,
+    "max_defects": 12,
+    "note": "Defect nodes selected by excitation level; C2_defects is the two-defect configuration space restricted to those nodes."
+  },
+  "framework_version": "0.2.0",
+  "metrics": {
+    "C2_defects": {
+      "defect_node_ids": [
+        "23ae47bd",
+        "c934d388",
+        "155d215f",
+        "1d49f5e9",
+        "274818bc",
+        "22209953",
+        "f9330409",
+        "62c599fb",
+        "af8aeae6",
+        "755b4042",
+        "bd7a38ab",
+        "541ab470"
+      ],
+      "effective_dimension": 1.5738088090826667,
+      "n_defect_nodes": 12,
+      "n_edges": 250,
+      "n_nodes": 66,
+      "short_cycle_count_max6": 13523
+    },
+    "C2_full": {
+      "effective_dimension": 1.6128542261596226,
+      "n_edges": 560,
+      "n_nodes": 120,
+      "short_cycle_count_max6": 53327
+    },
+    "base": {
+      "effective_dimension": 1.2442322361372284,
+      "fundamental_group_probe": "complex (30 cycles) \u2192 may support anyons",
+      "n_edges": 40,
+      "n_nodes": 16
+    }
+  },
+  "params": {
+    "connectivity": 0.3,
+    "dt": 0.1,
+    "excitation_threshold": 0.05,
+    "internal_dim": 2,
+    "max_defects": 12,
+    "n_evolution_steps": 50,
+    "n_nodes": 16,
+    "seed": 123
+  },
+  "run_id": "20251128_100635_n16_c30",
+  "script": "substrate_C2_analysis.py",
+  "timestamp": "2025-11-28T10:06:38.815157",
+  "verdicts": {
+    "C2_defects_dimension_hint": "2D-ish",
+    "C2_full_dimension_hint": "2D-ish"
+  }
+}

@@ -1,0 +1,18 @@
+2025-11-27 23:50:57 | INFO | ========================================================================
+2025-11-27 23:50:57 | INFO |  Experiment: substrate_3d_fullspace_exp
+2025-11-27 23:50:57 | INFO |  Script    : substrate_3d_fullspace_exp.py
+2025-11-27 23:50:57 | INFO |  Run ID    : 20251127_235057_fullspace_demo
+2025-11-27 23:50:57 | INFO | ========================================================================
+2025-11-27 23:50:57 | INFO | Engine parameters:
+2025-11-27 23:50:57 | INFO |   Lx: 2
+2025-11-27 23:50:57 | INFO |   Ly: 2
+2025-11-27 23:50:57 | INFO |   Lz: 2
+2025-11-27 23:50:57 | INFO |   J: 1.0
+2025-11-27 23:50:57 | INFO |   hz: 0.0
+2025-11-27 23:50:57 | INFO |   T: 10.0
+2025-11-27 23:50:57 | INFO |   dt: 0.1
+2025-11-27 23:50:57 | INFO |   seed: 1234
+2025-11-27 23:50:58 | INFO | Run completed successfully.
+2025-11-27 23:50:58 | INFO |   Output root : outputs
+2025-11-27 23:50:58 | INFO |   Run dir     : outputs\substrate_3d_fullspace_exp\20251127_235057_fullspace_demo
+2025-11-27 23:50:58 | INFO |   Results JSON: outputs\substrate_3d_fullspace_exp\20251127_235057_fullspace_demo\fullspace_results.json

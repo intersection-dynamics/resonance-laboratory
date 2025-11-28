@@ -65,29 +65,7 @@ docs/analytic_foundations_v1.md
 
 # **2. Repository Structure (current, in-progress)**
 
-The repo is presently organized as follows:
-
-```
-resonance-laboratory/
-│
-├── substrate.py                 # Core substrate engine (in progress)
-├── universality_test.py         # Universality scans
-├── noise_analysis.py            # Noise-type and size-scaling experiments
-├── stability_analysis.py        # Stability-basins under coupling/noise sweeps
-│
-├── docs/
-│   ├── analytic_foundations_v1.md   # Mature analytic framework
-│   └── notes/                       # Additional in-progress theory notes
-│
-├── noise_analysis/               # Auto-generated experiment output (temporary)
-├── stability_results/            # Auto-generated experiment output (temporary)
-├── universality_results/         # Auto-generated experiment output (temporary)
-│
-└── README.md                     # This file
-```
-
-A formalized `engines/`, `experiments/`, and `outputs/` layout will be introduced in v1.0.
-
+section under construction
 ---
 
 # **3. Core Components**

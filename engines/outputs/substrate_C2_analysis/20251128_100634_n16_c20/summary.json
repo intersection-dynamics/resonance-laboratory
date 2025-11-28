@@ -1,0 +1,78 @@
+{
+  "diagnostics": {
+    "excitation_map": {
+      "050ca9b3": 0.0,
+      "2f50ef6f": 0.2812598223711038,
+      "34d2b86a": 0.3869103052419267,
+      "382dd7fa": 0.1112524523948425,
+      "3c96e264": 0.1921455533227858,
+      "6aa0e62e": 0.3273092768767576,
+      "6e8fa7ad": 0.19211355033688102,
+      "755c7909": 1.4493256900123122,
+      "7b5a7352": 0.6090123673003325,
+      "85ed1290": 0.9428629846447292,
+      "913fb8fe": 1.0133247060586104,
+      "a2430b31": 0.2477724930901032,
+      "c3e106d0": 0.005925395413092449,
+      "c3ebbf95": 0.09484857251117274,
+      "d432146c": 0.0,
+      "d656248d": 0.0
+    },
+    "excitation_threshold": 0.05,
+    "max_defects": 12,
+    "note": "Defect nodes selected by excitation level; C2_defects is the two-defect configuration space restricted to those nodes."
+  },
+  "framework_version": "0.2.0",
+  "metrics": {
+    "C2_defects": {
+      "defect_node_ids": [
+        "382dd7fa",
+        "a2430b31",
+        "34d2b86a",
+        "3c96e264",
+        "7b5a7352",
+        "755c7909",
+        "913fb8fe",
+        "6aa0e62e",
+        "2f50ef6f",
+        "6e8fa7ad",
+        "85ed1290",
+        "c3ebbf95"
+      ],
+      "effective_dimension": 1.2515650656594393,
+      "n_defect_nodes": 12,
+      "n_edges": 100,
+      "n_nodes": 66,
+      "short_cycle_count_max6": 204
+    },
+    "C2_full": {
+      "effective_dimension": 0.8586653702569707,
+      "n_edges": 252,
+      "n_nodes": 120,
+      "short_cycle_count_max6": 891
+    },
+    "base": {
+      "effective_dimension": 1.143502568989921,
+      "fundamental_group_probe": "complex (15 cycles) \u2192 may support anyons",
+      "n_edges": 18,
+      "n_nodes": 16
+    }
+  },
+  "params": {
+    "connectivity": 0.2,
+    "dt": 0.1,
+    "excitation_threshold": 0.05,
+    "internal_dim": 2,
+    "max_defects": 12,
+    "n_evolution_steps": 50,
+    "n_nodes": 16,
+    "seed": 123
+  },
+  "run_id": "20251128_100634_n16_c20",
+  "script": "substrate_C2_analysis.py",
+  "timestamp": "2025-11-28T10:06:34.835975",
+  "verdicts": {
+    "C2_defects_dimension_hint": "1D-ish",
+    "C2_full_dimension_hint": "1D-ish"
+  }
+}

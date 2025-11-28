@@ -1,0 +1,21 @@
+{
+  "cli_args": {
+    "J": 1.0,
+    "Lx": 2,
+    "Ly": 2,
+    "Lz": 2,
+    "T": 10.0,
+    "dt": 0.1,
+    "hz": 0.0,
+    "output_root": "outputs",
+    "seed": 1234,
+    "tag": "fullspace_demo"
+  },
+  "experiment_name": "substrate_3d_fullspace_exp",
+  "git_commit": null,
+  "notes": "Full-Hilbert-space 3D substrate experiment (CuPy).",
+  "run_id": "20251127_235429_fullspace_demo",
+  "script": "substrate_3d_fullspace_exp.py",
+  "seed": 1234,
+  "timestamp": "2025-11-27T23:54:29.220111"
+}

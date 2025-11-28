@@ -1,0 +1,98 @@
+{
+  "diagnostics": {
+    "excitation_map": {
+      "11e8c80d": 0.4988803084362514,
+      "14e33ae8": 1.394854781007262,
+      "1d9cb071": 2.724485307003138,
+      "1ddc7b76": 0.4487811289199364,
+      "2310c071": 0.5477587820101641,
+      "25da4d81": 0.027645836061934048,
+      "2a81cc3a": 0.021342895427883812,
+      "2fe8f014": 0.2434927202309578,
+      "31e47046": 2.0726366760304726,
+      "37eb4fcd": 2.4497948695929748,
+      "40df345d": 0.1231603879750538,
+      "4386f7c2": 0.6047635054905851,
+      "45455e6b": 0.032642510172735784,
+      "46573cbc": 1.063771004228228,
+      "4ca1ac19": 0.014353975878413028,
+      "4f906041": 0.44327129655205066,
+      "67dbd0da": 0.08104530887611805,
+      "6d07011c": 0.8393323343456078,
+      "72d3291f": 0.11444041850431841,
+      "744b4472": 1.0921123113927478,
+      "87ff1e98": 0.0,
+      "88f83c8c": 0.31392007536051825,
+      "92d344f3": 0.44521752472537446,
+      "9cb29a3b": 0.20716926522507664,
+      "9fa6a9f1": 0.7495917583107972,
+      "a76add4c": 0.9346848009447939,
+      "a9241c7c": 0.24506720070284782,
+      "ae36d035": 0.17911104913295572,
+      "c8b36496": 0.9470444141710224,
+      "db35ab99": 0.4774544162260552,
+      "dbdea1f1": 0.5975442258352566,
+      "e1b4e42e": 0.31002424705771725,
+      "ef63d40b": 0.6914730318080506,
+      "f6552e14": 2.3656516568690367,
+      "ff546f5c": 0.11820438089669794,
+      "ff5fe9fc": 0.0
+    },
+    "excitation_threshold": 0.05,
+    "max_defects": 12,
+    "note": "Defect nodes selected by excitation level; C2_defects is the two-defect configuration space restricted to those nodes."
+  },
+  "framework_version": "0.2.0",
+  "metrics": {
+    "C2_defects": {
+      "defect_node_ids": [
+        "1d9cb071",
+        "37eb4fcd",
+        "f6552e14",
+        "31e47046",
+        "14e33ae8",
+        "744b4472",
+        "46573cbc",
+        "c8b36496",
+        "a76add4c",
+        "6d07011c",
+        "9fa6a9f1",
+        "ef63d40b"
+      ],
+      "effective_dimension": 1.3344628565078078,
+      "n_defect_nodes": 12,
+      "n_edges": 190,
+      "n_nodes": 66,
+      "short_cycle_count_max6": 2376
+    },
+    "C2_full": {
+      "effective_dimension": 2.263748246246936,
+      "n_edges": 4318,
+      "n_nodes": 630,
+      "short_cycle_count_max6": 955709
+    },
+    "base": {
+      "effective_dimension": 1.4141290179578692,
+      "fundamental_group_probe": "complex (50 cycles) \u2192 may support anyons",
+      "n_edges": 127,
+      "n_nodes": 36
+    }
+  },
+  "params": {
+    "connectivity": 0.2,
+    "dt": 0.1,
+    "excitation_threshold": 0.05,
+    "internal_dim": 2,
+    "max_defects": 12,
+    "n_evolution_steps": 50,
+    "n_nodes": 36,
+    "seed": 123
+  },
+  "run_id": "20251128_100652_n36_c20",
+  "script": "substrate_C2_analysis.py",
+  "timestamp": "2025-11-28T10:10:21.073792",
+  "verdicts": {
+    "C2_defects_dimension_hint": "1D-ish",
+    "C2_full_dimension_hint": "3D-ish or higher"
+  }
+}

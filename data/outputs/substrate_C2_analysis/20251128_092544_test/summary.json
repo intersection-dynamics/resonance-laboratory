@@ -1,0 +1,32 @@
+{
+  "diagnostics": {
+    "note": "C2 graph built from all unordered pairs of base nodes with hard-core exclusion."
+  },
+  "framework_version": "0.1.0",
+  "metrics": {
+    "C2": {
+      "effective_dimension": 1.6749827436612448,
+      "n_edges": 560,
+      "n_nodes": 120,
+      "short_cycle_count_max6": 53327
+    },
+    "base": {
+      "effective_dimension": 1.2442322361372284,
+      "fundamental_group_probe": "complex (30 cycles) \u2192 may support anyons",
+      "n_edges": 40,
+      "n_nodes": 16
+    }
+  },
+  "params": {
+    "connectivity": 0.3,
+    "internal_dim": 2,
+    "n_nodes": 16,
+    "seed": 123
+  },
+  "run_id": "20251128_092544_test",
+  "script": "substrate_C2_analysis.py",
+  "timestamp": "2025-11-28T09:25:47.170239",
+  "verdicts": {
+    "C2_dimension_hint": "2D-ish"
+  }
+}

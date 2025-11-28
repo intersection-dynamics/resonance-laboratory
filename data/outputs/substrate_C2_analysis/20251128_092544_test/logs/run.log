@@ -1,0 +1,12 @@
+======================================================================
+SUBSTRATE C2 CONFIGURATION-SPACE ANALYSIS
+======================================================================
+Run ID:       20251128_092544_test
+n_nodes:      16
+internal_dim: 2
+connectivity: 0.3
+seed:         123
+------------------------------------------------------------------
+
+[Console summary printed above]
+Done. Summary written to summary.json
