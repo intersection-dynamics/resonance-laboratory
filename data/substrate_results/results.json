@@ -1,89 +1,101 @@
 {
   "spacetime": {
     "arrival_times": [
-      null,
-      0.162,
-      0.485,
-      0.97,
-      1.374,
-      1.859,
-      2.343,
-      2.747
+      0.0,
+      0.16161616161616163,
+      0.48484848484848486,
+      0.9696969696969697,
+      1.373737373737374,
+      1.8585858585858588,
+      2.3434343434343434,
+      2.747474747474748
     ],
-    "velocity": 2.26
+    "light_cone_velocity": 2.2601679740791263,
+    "metric_signature": null
+  },
+  "statistics": {
+    "symmetric": {
+      "survival": 0.4999999999999999
+    },
+    "antisymmetric": {
+      "survival": 0.4999999999999999
+    },
+    "statistics_gap": 0.0
   },
   "gauge": {
-    "no_flux": {
-      "symmetric": 1.0,
-      "antisymmetric": -1.0
+    "bare_exchange": {
+      "symmetric": 0.9999999999999998,
+      "antisymmetric": -0.9999999999999998
     },
-    "with_flux": {
-      "symmetric": -1.0,
-      "antisymmetric": 1.0
+    "gauge_exchange": {},
+    "flux_effect": {
+      "symmetric": -0.9999999999999998,
+      "antisymmetric": 0.9999999999999998
     }
   },
   "qed": {
-    "initial": [
+    "photon_initial": [
       1.0,
       0.0,
       0.0
     ],
-    "final": [
-      0.427,
-      0.598,
-      0.268
+    "photon_final": [
+      0.4274859654140708,
+      0.5979723091583293,
+      0.26842106102506114
     ],
-    "absorbed": 0.573,
-    "scattered": 0.866
+    "photon_absorbed": 0.5725140345859292,
+    "photon_emitted": 0.8663933701833905
   },
   "qcd": {
-    "single_R": {
-      "energy": 6.97,
-      "casimir": 1.333
+    "single_quark": {
+      "energy": 6.966666666666668,
+      "casimir": 1.3333333333333335
     },
-    "triple_RRR": {
-      "energy": 58.23,
-      "casimir": 12.0
+    "colored_RRR": {
+      "energy": 58.23333333333334,
+      "casimir": 12.000000000000002
     },
     "baryon_RGB": {
-      "energy": 2.23,
+      "energy": 2.2333333333333343,
       "casimir": 0.0
     }
   },
   "weak": {
-    "left_coupling": 0.7,
-    "right_coupling": 0.0
+    "left_handed_coupling": 0.7,
+    "right_handed_coupling": 0.0,
+    "parity_violation": true
   },
   "mass": {
-    "m=0.0": {
-      "energy": -3.494,
-      "ipr": 0.084
+    "mass_0.0": {
+      "energy": -3.4939592074349344,
+      "ipr": 0.0841836734693882
     },
-    "m=0.5": {
-      "energy": -1.346,
-      "ipr": 0.214
+    "mass_0.5": {
+      "energy": -1.346329817057731,
+      "ipr": 0.2137105447597198
     },
-    "m=2.0": {
-      "energy": -0.757,
-      "ipr": 0.625
+    "mass_2.0": {
+      "energy": -0.7569005425329162,
+      "ipr": 0.6253770121211876
     }
   },
   "higgs": {
     "neutrino": {
       "yukawa": 0.001,
-      "mass": 0.002
+      "mass": 0.002000000000000668
     },
     "electron": {
       "yukawa": 0.01,
-      "mass": 0.02
+      "mass": 0.020000000000000018
     },
     "muon": {
       "yukawa": 0.1,
-      "mass": 0.2
+      "mass": 0.19999999999999973
     },
     "top": {
       "yukawa": 1.0,
-      "mass": 1.618
+      "mass": 1.6180339887498951
     }
   }
 }

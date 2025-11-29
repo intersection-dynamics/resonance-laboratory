@@ -1,703 +1,435 @@
 #!/usr/bin/env python3
 """
-================================================================================
-HILBERT SUBSTRATE - EMERGENCE ENGINE
-================================================================================
+Batched GPU-oriented Hilbert substrate engine for proton pointer experiments.
 
-This file implements a conceptual "substrate all the way down" engine.
+- Uses CuPy on GPU if available, NumPy otherwise.
+- Stores all node states in a single (n_nodes, dim) array.
+- Builds local Hamiltonians H[n] in a batched array (n_nodes, dim, dim).
+- Applies unitary evolution to all nodes in one batched GPU operation.
 
-Core ideas:
-  - Everything is Hilbert space.
-  - "Space" is the entanglement graph, not an external stage.
-  - Locality = graph distance.
-  - Dynamics = local unitaries + entanglement defragmentation.
-  - We DO NOT hard-code "particles" or "forces".
-  - We look for what emerges from noise + constraints.
+Exposes:
+    Config
+    Substrate
+    run_simulation(config, n_steps, record_every)
 
-This is a deliberately minimal but expressive implementation
-aligned with the Substrate Framework documents and our recent
-discussion about:
-  - Monogamy of entanglement as a constraint
-  - Defrag process as local reorganization of correlations
-  - Emergent excitations, lightcone, and topology
-  - Proton-like "pointer" patterns and decoherence microscopes
-
-The chain we're testing:
-
-    Hilbert Space (recursive, dims 1/2/3, ...)
-        ↓
-    Locality (emergent from entanglement graph)
-        ↓
-    Lightcone (finite propagation on entanglement graph)
-        ↓
-    3D-ish topology (graph dimension & cycle structure)
-        ↓
-    Constrained configuration space (Z₂ sectors)
-        ↓
-    Emergent fermionic/bosonic behavior (±1 exchange)
-
-We do NOT put any of this in by hand.
-
-Instead, we construct a random Hilbert substrate and evolve it
-with strictly local rules, then measure diagnostics.
+And maintains compatibility with existing pointer/Zeno scripts via:
+    substrate.Substrate.nodes -> dict[int, NodeView]
+    NodeView.state
+    NodeView.direction_amplitudes()
+    NodeView.neighbor_ids
+    NodeView.n_connections
+    NodeView.total_entanglement
 """
 
-import numpy as np
-from scipy.linalg import expm, svd
-from typing import Optional, List, Dict, Tuple, Set
-from dataclasses import dataclass, field
-from abc import ABC, abstractmethod
-import uuid
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Dict, List, Optional
+
+import numpy as _np
+
+# ---------------------------------------------------------------------
+# Backend selection
+# ---------------------------------------------------------------------
+
+try:
+    import cupy as cp
+    import cupy.linalg as cpl
+
+    HAVE_CUPY = True
+    XP = cp
+    print("[substrate] Using CuPy GPU backend (batched).")
+except Exception:
+    cp = None
+    cpl = None
+    HAVE_CUPY = False
+    XP = _np
+    print("[substrate] CuPy not available; using NumPy CPU backend (batched).")
+
+# SciPy only for CPU SVD/expm fallback
+try:
+    from scipy.linalg import svd as scipy_svd, expm as scipy_expm
+
+    HAVE_SCIPY = True
+except Exception:
+    scipy_svd = None
+    scipy_expm = None
+    HAVE_SCIPY = False
+    from numpy.linalg import svd as numpy_svd  # type: ignore
 
 
-# =============================================================================
-# THE RECURSIVE HILBERT SPACE
-# =============================================================================
+# ---------------------------------------------------------------------
+# Backend helpers
+# ---------------------------------------------------------------------
 
-class HilbertNode:
-    """
-    A node in the Hilbert substrate.
-    
-    Each node IS a Hilbert space. It can be:
-    - Atomic: a base C^d space
-    - Composite: tensor product of child nodes
-    
-    The key insight: "position" is not external. 
-    A node's location IS its relationship to other nodes.
-    """
-    
-    def __init__(self, dim: int = 2, children: Optional[List['HilbertNode']] = None):
-        self.id = str(uuid.uuid4())[:8]
-        # Graph adjacency (filled by SubstrateGraph)
-        self.neighbor_ids: List[str] = []
-        
-        if children is None:
-            # Atomic node
-            self.dim = dim
-            self.children = []
-            self.is_atomic = True
-            # State is a vector in C^dim
-            self.state = self._random_state(dim)
-        else:
-            # Composite node
-            self.children = children
-            self.dim = np.prod([c.dim for c in children])
-            self.is_atomic = False
-            # State is entanglement structure between children
-            self.state = None  # Computed from children
-    
-    def _random_state(self, dim: int) -> np.ndarray:
-        """Random normalized state (noise)."""
-        psi = np.random.randn(dim) + 1j * np.random.randn(dim)
-        return psi / np.linalg.norm(psi)
-    
-    def __repr__(self):
-        if self.is_atomic:
-            return f"Atom({self.id}, dim={self.dim})"
-        return f"Composite({self.id}, children={len(self.children)})"
+
+def xp_randn(*shape):
+    if HAVE_CUPY:
+        return cp.random.randn(*shape)
+    else:
+        return _np.random.randn(*shape)
+
+
+def xp_norm(x, ord=None, axis=None, keepdims=False):
+    if HAVE_CUPY:
+        return cp.linalg.norm(x, ord=ord, axis=axis, keepdims=keepdims)
+    else:
+        return _np.linalg.norm(x, ord=ord, axis=axis, keepdims=keepdims)
+
+
+def xp_to_numpy(x):
+    if HAVE_CUPY and isinstance(x, cp.ndarray):
+        return cp.asnumpy(x)
+    return _np.asarray(x)
+
+
+# ---------------------------------------------------------------------
+# Entanglement edge representation
+# ---------------------------------------------------------------------
 
 
 class EntanglementEdge:
     """
-    An edge in the entanglement graph.
-    
-    Represents entanglement between two nodes.
-    This is a minimal structure:
-      - operator: a matrix encoding correlations
-      - we can compute entanglement entropy, etc.
+    Represents entanglement operator connecting node_i <-> node_j.
+
+    Stored as:
+        operator: (dim, dim) on XP backend
+        src, dst: integers on CPU
     """
-    
-    def __init__(self, node_a: HilbertNode, node_b: HilbertNode):
-        self.node_a = node_a
-        self.node_b = node_b
-        self.id = f"{min(node_a.id, node_b.id)}-{max(node_a.id, node_b.id)}"
-        
-        # Entanglement operator: dim_a × dim_b matrix
-        # SVD gives entanglement spectrum
-        self.operator = self._random_entanglement(node_a.dim, node_b.dim)
-    
-    def _random_entanglement(self, da: int, db: int) -> np.ndarray:
-        """Random entanglement operator."""
-        M = np.random.randn(da, db) + 1j * np.random.randn(da, db)
-        # Normalize to unit Frobenius norm
-        return M / np.linalg.norm(M, 'fro')
-    
+
+    def __init__(self, src: int, dst: int, dim: int):
+        self.src = int(src)
+        self.dst = int(dst)
+        self.dim = int(dim)
+        self.operator = self._random_entanglement(dim)
+
+    def _random_entanglement(self, d: int):
+        M = xp_randn(d, d) + 1j * xp_randn(d, d)
+        M = M.astype(XP.complex128)
+        M /= xp_norm(M, ord="fro")
+        return M
+
     def entanglement_entropy(self) -> float:
-        """Von Neumann entropy of entanglement."""
-        _, s, _ = svd(self.operator)
-        s = s[s > 1e-10]  # Remove zeros
-        s = s / np.sum(s)  # Normalize to probabilities
-        return -np.sum(s * np.log(s + 1e-10))
-    
-    def __repr__(self):
-        return f"Edge({self.node_a.id}↔{self.node_b.id}, S={self.entanglement_entropy():.3f})"
+        M = self.operator
+        if HAVE_CUPY:
+            _, s, _ = cpl.svd(M, full_matrices=False)
+            s = cp.asnumpy(s)
+        else:
+            M_cpu = _np.asarray(M)
+            if HAVE_SCIPY and scipy_svd is not None:
+                _, s, _ = scipy_svd(M_cpu, full_matrices=False)
+            else:
+                _, s, _ = numpy_svd(M_cpu, full_matrices=False)  # type: ignore
+        s = s[s > 1e-10]
+        if s.size == 0:
+            return 0.0
+        s = s / s.sum()
+        return float(-_np.sum(s * _np.log(s + 1e-10)))
 
 
-# =============================================================================
-# THE SUBSTRATE GRAPH
-# =============================================================================
+# ---------------------------------------------------------------------
+# Node view (compat layer)
+# ---------------------------------------------------------------------
 
-class SubstrateGraph:
+
+class NodeView:
     """
-    The substrate as a graph of entangled Hilbert spaces.
-    
-    This is not a lattice imposed from outside.
-    The graph IS the spatial structure, emerging from entanglement.
-    
-    Locality = graph distance
-    Neighbors = entangled nodes
-    Dynamics = evolution of node states AND edge structure
+    Lightweight view of a single node, backed by Substrate arrays.
     """
-    
-    def __init__(self, n_nodes: int = 16, internal_dim: int = 2, 
-                 connectivity: float = 0.3):
-        """
-        Initialize substrate from noise.
-        
-        Parameters
-        ----------
-        n_nodes: number of Hilbert nodes
-        internal_dim: dimension of each atomic Hilbert space
-        connectivity: Probability of initial entanglement between nodes
-        """
-        self.internal_dim = internal_dim
-        
-        # Create atomic nodes (noise)
-        self.nodes: Dict[str, HilbertNode] = {}
-        for _ in range(n_nodes):
-            node = HilbertNode(dim=internal_dim)
-            self.nodes[node.id] = node
-        
-        # Create random entanglement structure (noise)
-        self.edges: Dict[str, EntanglementEdge] = {}
-        node_list = list(self.nodes.values())
-        
-        for i, na in enumerate(node_list):
-            for nb in node_list[i+1:]:
-                if np.random.random() < connectivity:
-                    edge = EntanglementEdge(na, nb)
-                    self.edges[edge.id] = edge
-        
-        # Build neighbor_id lists for each node (adjacency for analyses)
-        for node in self.nodes.values():
-            node.neighbor_ids = []
-        for edge in self.edges.values():
-            a = edge.node_a
-            b = edge.node_b
-            a.neighbor_ids.append(b.id)
-            b.neighbor_ids.append(a.id)
 
-        print(f"Created substrate: {len(self.nodes)} nodes, {len(self.edges)} edges")
-        print(f"Internal dimension: {internal_dim} → {'U(1)' if internal_dim == 1 else f'SU({internal_dim})'}")
-    
-    def neighbors(self, node: HilbertNode) -> List[HilbertNode]:
-        """Get neighbors of a node (defined by entanglement)."""
-        nbrs = []
-        for edge in self.edges.values():
-            if edge.node_a.id == node.id:
-                nbrs.append(edge.node_b)
-            elif edge.node_b.id == node.id:
-                nbrs.append(edge.node_a)
-        return nbrs
-    
-    def path_length(self, node_a: HilbertNode, node_b: HilbertNode) -> int:
-        """
-        Breadth-first search to find graph distance between two nodes.
-        
-        This IS the notion of spatial distance - not imposed, emergent.
-        """
-        if node_a.id == node_b.id:
-            return 0
-        
-        visited = {node_a.id}
-        queue = [(node_a, 0)]
-        
-        while queue:
-            current, dist = queue.pop(0)
-            for nbr in self.neighbors(current):
-                if nbr.id == node_b.id:
-                    return dist + 1
-                if nbr.id not in visited:
-                    visited.add(nbr.id)
-                    queue.append((nbr, dist + 1))
-        
-        # If disconnected, return "infinite" distance
-        return np.inf
-    
-    def lightcone_radius(self, source: HilbertNode, max_steps: int = 5) -> Dict[int, List[HilbertNode]]:
-        """
-        Compute shell structure around a source node.
-        
-        Returns dict: distance -> list of nodes at that distance.
-        This is the emergent notion of "spherical shells" around a point.
-        """
-        shells: Dict[int, List[HilbertNode]] = {}
-        
-        for node in self.nodes.values():
-            d = self.path_length(source, node)
-            if np.isinf(d):
-                continue
-            d = int(d)
-            if d <= max_steps:
-                shells.setdefault(d, []).append(node)
-        
-        return shells
-    
+    def __init__(self, parent: "Substrate", idx: int):
+        self._parent = parent
+        self.id = int(idx)
+
+    # State as XP array
+    @property
+    def state(self):
+        return self._parent.states[self.id]
+
+    @state.setter
+    def state(self, value):
+        arr = value
+        if HAVE_CUPY:
+            if not isinstance(arr, cp.ndarray):
+                arr = cp.asarray(arr, dtype=cp.complex128)
+        else:
+            arr = _np.asarray(arr, dtype=_np.complex128)
+
+        # Normalize for safety
+        nrm = xp_norm(arr)
+        if nrm > 0:
+            arr = arr / nrm
+        self._parent.states[self.id] = arr
+
+    def direction_amplitudes(self):
+        return self.state
+
+    @property
+    def neighbor_ids(self) -> List[int]:
+        return self._parent.neighbors[self.id]
+
+    @property
+    def n_connections(self) -> int:
+        return len(self._parent.neighbors[self.id])
+
+    @property
+    def total_entanglement(self) -> float:
+        # Sum entanglement entropies over incident edges
+        total = 0.0
+        for e_idx in self._parent.node_edges[self.id]:
+            total += self._parent.edge_list[e_idx].entanglement_entropy()
+        return total
+
+
+# ---------------------------------------------------------------------
+# Config
+# ---------------------------------------------------------------------
+
+
+@dataclass
+class Config:
+    """
+    Config for batched substrate.
+
+    monogamy_budget loosely maps to graph connectivity.
+    """
+    n_nodes: int = 64
+    internal_dim: int = 3
+    monogamy_budget: float = 1.0
+    defrag_rate: float = 0.1
+    dt: float = 0.1
+    seed: int = 42
+
+
+# ---------------------------------------------------------------------
+# Substrate (batched engine)
+# ---------------------------------------------------------------------
+
+
+class Substrate:
+    """
+    Batched Hilbert substrate with CuPy acceleration where available.
+    """
+
+    def __init__(self, config: Config):
+        self.config = config
+        self.n_nodes = int(config.n_nodes)
+        self.dim = int(config.internal_dim)
+
+        # Seed RNGs
+        _np.random.seed(config.seed)
+        if HAVE_CUPY:
+            cp.random.seed(config.seed)  # type: ignore[attr-defined]
+
+        # Graph connectivity from monogamy_budget
+        conn = float(config.monogamy_budget)
+        conn = max(0.05, min(0.5, conn))
+        self.connectivity = conn
+
+        # States: (n_nodes, dim) on XP
+        psi = xp_randn(self.n_nodes, self.dim) + 1j * xp_randn(self.n_nodes, self.dim)
+        psi = psi.astype(XP.complex128)
+        norms = xp_norm(psi, axis=1, keepdims=True)
+        norms = norms + (norms == 0)
+        psi = psi / norms
+        self.states = psi
+
+        # Graph structure on CPU
+        self.neighbors: Dict[int, List[int]] = {i: [] for i in range(self.n_nodes)}
+        self.edge_list: List[EntanglementEdge] = []
+        self.node_edges: Dict[int, List[int]] = {i: [] for i in range(self.n_nodes)}
+
+        for i in range(self.n_nodes):
+            for j in range(i + 1, self.n_nodes):
+                if _np.random.random() < self.connectivity:
+                    e_idx = len(self.edge_list)
+                    edge = EntanglementEdge(i, j, self.dim)
+                    self.edge_list.append(edge)
+                    self.neighbors[i].append(j)
+                    self.neighbors[j].append(i)
+                    self.node_edges[i].append(e_idx)
+                    self.node_edges[j].append(e_idx)
+
+        print(f"[substrate] Batched substrate: {self.n_nodes} nodes, {len(self.edge_list)} edges")
+
+        # Nodes dict for compatibility with existing scripts
+        self.nodes: Dict[int, NodeView] = {i: NodeView(self, i) for i in range(self.n_nodes)}
+
+    # ---- Diagnostics ----
+
     def total_entanglement_entropy(self) -> float:
-        """Total entanglement entropy in the graph."""
-        return sum(e.entanglement_entropy() for e in self.edges.values())
-    
-    def local_hamiltonian(self, node: HilbertNode) -> np.ndarray:
+        return float(sum(e.entanglement_entropy() for e in self.edge_list))
+
+    # ---- Local Hamiltonians (CPU assembly, GPU diag) ----
+
+    def build_local_hamiltonians(self):
         """
-        Local Hamiltonian for a node.
-        
-        H_local = Σ_{neighbors} (coupling through edge)
-        
-        This is strictly local - only depends on neighbors.
+        Build local Hamiltonian H[n] for each node as a (n_nodes, dim, dim) array.
+
+        CPU assembly (graph indexing) is usually cheap; heavy linear algebra
+        is handled in a batched way on XP backend.
         """
-        d = node.dim
-        H = np.zeros((d, d), dtype=np.complex128)
-        
-        for nbr in self.neighbors(node):
-            edge_id = f"{min(node.id, nbr.id)}-{max(node.id, nbr.id)}"
-            edge = self.edges.get(edge_id) or self.edges.get(f"{nbr.id}-{node.id}")
-            
-            if edge:
-                # Coupling through entanglement
-                if edge.node_a.id == node.id:
-                    coupling = edge.operator @ edge.operator.T
+        H_cpu = _np.zeros((self.n_nodes, self.dim, self.dim), dtype=_np.complex128)
+
+        for edge in self.edge_list:
+            i = edge.src
+            j = edge.dst
+            op = xp_to_numpy(edge.operator)
+            A = op @ op.T
+            B = op.T @ op
+            H_cpu[i] += A
+            H_cpu[j] += B
+
+        # Hermitian symmetrize
+        H_cpu = 0.5 * (H_cpu + _np.conjugate(_np.swapaxes(H_cpu, -1, -2)))
+
+        if HAVE_CUPY:
+            return cp.asarray(H_cpu)
+        else:
+            return H_cpu
+
+    def step(self, dt: Optional[float] = None):
+        """
+        One time step of local unitary evolution for all nodes, batched.
+        """
+        if dt is None:
+            dt = self.config.dt
+
+        # Build local H[n]
+        H = self.build_local_hamiltonians()  # (N, d, d) on XP
+
+        if HAVE_CUPY:
+            # Batched eigen-decomposition on GPU
+            w, v = cpl.eigh(H)          # w: (N, d), v: (N, d, d)
+            phase = cp.exp(-1j * w * dt)  # (N, d)
+
+            psi = self.states           # (N, d)
+            psi_col = psi[..., None]    # (N, d, 1)
+            v_dag = cp.conjugate(cp.swapaxes(v, -1, -2))  # (N, d, d)
+
+            # Transform to eigenbasis: v† psi
+            psi_eig = v_dag @ psi_col   # (N, d, 1)
+            psi_eig = psi_eig[..., 0]   # (N, d)
+
+            # Apply phase
+            psi_eig = psi_eig * phase   # (N, d)
+
+            # Transform back: v psi_eig
+            psi_out = v @ psi_eig[..., None]  # (N, d, 1)
+            psi_out = psi_out[..., 0]         # (N, d)
+
+            # Normalize
+            norms = xp_norm(psi_out, axis=1, keepdims=True)
+            norms = norms + (norms == 0)
+            self.states = psi_out / norms
+
+        else:
+            # CPU path: use NumPy/SciPy per-node
+            psi = _np.asarray(self.states)
+            N, d = psi.shape
+            psi_out = _np.zeros_like(psi)
+
+            for n in range(N):
+                Hn = _np.asarray(H[n])
+                if HAVE_SCIPY and scipy_expm is not None:
+                    U = scipy_expm(-1j * Hn * dt)
                 else:
-                    coupling = edge.operator.T @ edge.operator
-                H += coupling
-        
-        # Hermitian symmetrization
-        H = (H + H.conj().T) / 2.0
-        return H
-    
-    def step(self, dt: float = 0.1):
-        """
-        One time step of local evolution.
-        
-        Each node evolves under its local Hamiltonian:
-            |ψ(t+dt)⟩ = exp(-i H_local dt) |ψ(t)⟩
-        """
-        for node in self.nodes.values():
-            if node.is_atomic:
-                H = self.local_hamiltonian(node)
-                U = expm(-1j * H * dt)
-                node.state = U @ node.state
-                # Normalize to avoid drift
-                node.state /= np.linalg.norm(node.state)
-    
+                    w, v = _np.linalg.eigh(Hn)
+                    phase = _np.exp(-1j * w * dt)
+                    U = v @ (phase[..., None] * _np.conjugate(v).T)
+                psi_out[n] = U @ psi[n]
+
+            norms = _np.linalg.norm(psi_out, axis=1, keepdims=True)
+            norms = norms + (norms == 0)
+            self.states = psi_out / norms
+
     def defrag_step(self, rate: float = 0.1):
         """
-        Local defragmentation of entanglement.
-        
-        Idea:
-          - High-entanglement edges are energetically costly
-          - The system tries to "rewire" to reduce global frustration
-          - But it must respect monogamy of entanglement and locality
-        
-        Minimal model here:
-          - Randomly pick an edge
-          - Slightly reduce its entanglement operator norm
-          - Slightly increase entanglement on a neighbor edge
+        Simple toy defrag: randomly pick an edge and shift entanglement
+        to another edge sharing a node.
         """
-        if not self.edges:
+        if not self.edge_list:
             return
-        
-        edge_ids = list(self.edges.keys())
-        edge_id = np.random.choice(edge_ids)
-        edge = self.edges[edge_id]
-        
-        # Pick a neighbor edge sharing a node
-        candidates = []
-        for eid, e in self.edges.items():
-            if eid == edge_id:
+
+        import random
+
+        e_idx = random.randrange(len(self.edge_list))
+        edge = self.edge_list[e_idx]
+
+        # Collect candidate edges sharing an endpoint
+        cand_indices: List[int] = []
+        for idx, other in enumerate(self.edge_list):
+            if idx == e_idx:
                 continue
-            if (e.node_a.id == edge.node_a.id or
-                e.node_a.id == edge.node_b.id or
-                e.node_b.id == edge.node_a.id or
-                e.node_b.id == edge.node_b.id):
-                candidates.append(e)
-        
-        if not candidates:
+            if (other.src == edge.src or other.src == edge.dst or
+                other.dst == edge.src or other.dst == edge.dst):
+                cand_indices.append(idx)
+
+        if not cand_indices:
             return
-        
-        neighbor_edge = np.random.choice(candidates)
-        
-        # Transfer a bit of entanglement "weight"
-        edge.operator *= (1.0 - rate)
-        neighbor_edge.operator *= (1.0 + rate)
-        
-        # Renormalize
-        edge.operator /= np.linalg.norm(edge.operator, 'fro')
-        neighbor_edge.operator /= np.linalg.norm(neighbor_edge.operator, 'fro')
-    
-    def evolve(self, dt: float = 0.1, n_steps: int = 10, defrag_rate: float = 0.1):
+
+        other_idx = random.choice(cand_indices)
+        e1 = self.edge_list[e_idx]
+        e2 = self.edge_list[other_idx]
+
+        # Update operators on XP backend
+        e1.operator *= (1.0 - rate)
+        e2.operator *= (1.0 + rate)
+        e1.operator /= xp_norm(e1.operator, ord="fro")
+        e2.operator /= xp_norm(e2.operator, ord="fro")
+
+    def evolve(self, n_steps: int = 1, dt: Optional[float] = None, defrag_rate: Optional[float] = None):
         """
-        Evolve the substrate for many steps.
-        
-        At each step:
-          1. Local unitary evolution at each node
-          2. Local entanglement defrag step
+        Evolve for n_steps, with optional defrag each step.
         """
+        if dt is None:
+            dt = self.config.dt
+        if defrag_rate is None:
+            defrag_rate = self.config.defrag_rate
+
         for _ in range(n_steps):
             self.step(dt=dt)
-            self.defrag_step(rate=defrag_rate)
+            if defrag_rate and defrag_rate > 0.0:
+                self.defrag_step(rate=defrag_rate)
 
 
-# =============================================================================
-# EMERGENT DIAGNOSTICS
-# =============================================================================
+# ---------------------------------------------------------------------
+# run_simulation (API used by pointer/Zeno scripts)
+# ---------------------------------------------------------------------
 
-def compute_lightcone_velocity(substrate: SubstrateGraph, dt: float = 0.1, n_steps: int = 20) -> float:
+
+def run_simulation(config: Config, n_steps: int, record_every: int = 1):
     """
-    Empirically estimate a Lieb–Robinson-like lightcone velocity.
-    
-    Procedure:
-      1. Pick a source node.
-      2. Track how quickly "influence" spreads to other nodes.
-         (Here, we use overlap of node states as a proxy.)
+    Minimal harness for pointer / Zeno experiments:
+
+      - builds a Substrate from Config
+      - evolves for n_steps
+      - returns (substrate, records) with a simple entanglement time series
     """
-    nodes = list(substrate.nodes.values())
-    if not nodes:
-        return 0.0
-    
-    source = nodes[0]
-    initial_state = source.state.copy()
-    
-    # Record max distance reached as function of time
-    max_distances = []
-    times = []
-    
+    substrate = Substrate(config)
+    times: List[float] = []
+    ents: List[float] = []
+    t = 0.0
+
     for step in range(n_steps):
-        t = dt * step
-        times.append(t)
-        
-        # Compute overlap with initial state at each node
-        overlaps = []
-        for node in nodes:
-            if node.is_atomic:
-                overlap = abs(np.vdot(initial_state, node.state))
-                overlaps.append((node, overlap))
-        
-        # Threshold for "significant influence"
-        threshold = 0.2
-        influenced_nodes = [node for node, ov in overlaps if ov > threshold]
-        
-        # Max graph distance among influenced nodes
-        max_d = 0
-        for node in influenced_nodes:
-            d = substrate.path_length(source, node)
-            if not np.isinf(d):
-                max_d = max(max_d, d)
-        max_distances.append(max_d)
-        
-        # Evolve one step
-        substrate.evolve(dt=dt, n_steps=1, defrag_rate=0.0)  # no defrag for pure lightcone
-    
-    # Simple velocity estimate: max_dist / max_time
-    if times[-1] == 0:
-        return 0.0
-    v = max(max_distances) / times[-1]
-    return v
+        if step % max(1, record_every) == 0:
+            times.append(t)
+            ents.append(substrate.total_entanglement_entropy())
+        substrate.evolve(n_steps=1)
+        t += config.dt
 
-
-def detect_excitations(substrate: SubstrateGraph) -> Dict[str, float]:
-    """
-    Detect localized "excitations" as nodes whose state deviates
-    from the local average.
-    
-    This is a crude particle analog: localized patterns.
-    """
-    nodes = list(substrate.nodes.values())
-    d = substrate.internal_dim
-    
-    # Compute average state (mean over nodes)
-    avg_state = np.zeros(d, dtype=np.complex128)
-    for node in nodes:
-        if node.is_atomic:
-            avg_state += node.state
-    avg_state /= len(nodes)
-    avg_state /= np.linalg.norm(avg_state)
-    
-    # Excitation measure: 1 - |⟨ψ_node | ψ_avg⟩|^2
-    excitations = {}
-    for node in nodes:
-        if node.is_atomic:
-            overlap = abs(np.vdot(node.state, avg_state)) ** 2
-            excitations[node.id] = 1.0 - overlap
-    
-    return excitations
-
-
-def graph_effective_dimension(substrate: SubstrateGraph, source: HilbertNode, max_radius: int = 5) -> float:
-    """
-    Estimate effective graph dimension by counting nodes in shells.
-    
-    If N(r) ~ r^d, then log N(r) ~ d log r.
-    
-    We fit log N vs log r to estimate d.
-    """
-    shells = substrate.lightcone_radius(source, max_steps=max_radius)
-    
-    radii = []
-    counts = []
-    for r, nodes in shells.items():
-        if r == 0:
-            continue
-        radii.append(r)
-        counts.append(len(nodes))
-    
-    if len(radii) < 2:
-        return 0.0
-    
-    log_r = np.log(radii)
-    log_N = np.log(counts)
-    
-    # Linear fit
-    A = np.vstack([log_r, np.ones_like(log_r)]).T
-    d_est, _ = np.linalg.lstsq(A, log_N, rcond=None)[0]
-    return float(d_est)
-
-
-def fundamental_group_complexity(substrate: SubstrateGraph, max_cycles: int = 1000) -> int:
-    """
-    Very rough proxy for fundamental group complexity:
-      - Count independent cycles using a simple graph algorithm.
-    
-    This is not a full π₁, but gives a sense of topological richness.
-    """
-    # Build adjacency
-    adjacency: Dict[str, Set[str]] = {}
-    for edge in substrate.edges.values():
-        a = edge.node_a.id
-        b = edge.node_b.id
-        adjacency.setdefault(a, set()).add(b)
-        adjacency.setdefault(b, set()).add(a)
-    
-    visited: Set[str] = set()
-    parent: Dict[str, str] = {}
-    cycles = 0
-    
-    def dfs(u: str):
-        nonlocal cycles
-        visited.add(u)
-        for v in adjacency.get(u, []):
-            if v not in visited:
-                parent[v] = u
-                dfs(v)
-            elif parent.get(u, None) != v:
-                # Found a back edge → cycle
-                cycles += 1
-    
-    for node_id in substrate.nodes.keys():
-        if node_id not in visited:
-            dfs(node_id)
-            if cycles >= max_cycles:
-                break
-    
-    return cycles
-
-
-def exchange_phase_statistics(substrate: SubstrateGraph, n_pairs: int = 100) -> Dict[str, float]:
-    """
-    Crude proxy for exchange phases in configuration space.
-    
-    We can't literally move particles around in 3D here.
-    But we CAN:
-      - pick pairs of excitations
-      - treat their joint state as a 2-particle Hilbert space
-      - estimate "exchange phase" by comparing:
-          |ψ⟩ and the "swapped" configuration |ψ_swap⟩
-    
-    Here we construct |ψ⟩ as tensor product amplitudes
-    and define a toy SWAP operator. We then look at overlap:
-    
-        ⟨ψ | SWAP | ψ⟩ = e^{i φ}
-    
-    and record φ's statistics.
-    """
-    nodes = list(substrate.nodes.values())
-    atomic_nodes = [n for n in nodes if n.is_atomic]
-    n_atomic = len(atomic_nodes)
-    
-    if n_atomic < 2:
-        return {"near_+1": 0, "near_-1": 0, "intermediate": 0}
-    
-    phases = []
-    
-    for _ in range(n_pairs):
-        a, b = np.random.choice(atomic_nodes, size=2, replace=False)
-        # Two-particle state as simple tensor product
-        psi_ab = np.kron(a.state, b.state)
-        psi_ba = np.kron(b.state, a.state)  # swapped
-        
-        # Overlap as proxy for exchange phase
-        overlap = np.vdot(psi_ab, psi_ba)
-        if np.abs(overlap) < 1e-8:
-            continue
-        phase = np.angle(overlap)
-        phases.append(phase)
-    
-    if not phases:
-        return {"near_+1": 0, "near_-1": 0, "intermediate": 0}
-    
-    # Classify phases
-    phases = np.array(phases)
-    near_plus = np.sum(np.abs(phases) < 0.1)
-    near_minus = np.sum(np.abs(np.abs(phases) - np.pi) < 0.1)
-    intermediate = len(phases) - near_plus - near_minus
-    
-    return {
-        "near_+1": int(near_plus),
-        "near_-1": int(near_minus),
-        "intermediate": int(intermediate),
-        "total": int(len(phases)),
+    records = {
+        "times": _np.asarray(times, dtype=float),
+        "total_entanglement": _np.asarray(ents, dtype=float),
     }
+    return substrate, records
 
 
-# =============================================================================
-# FULL EMERGENCE TEST
-# =============================================================================
-
-def run_full_emergence_test(
-    n_nodes: int = 25,
-    internal_dim: int = 2,
-    connectivity: float = 0.25,
-    n_evolution_steps: int = 50,
-    dt: float = 0.1,
-    defrag_rate: float = 0.1,
-) -> Tuple[SubstrateGraph, Dict[str, object]]:
-    """
-    Run a full "emergence from noise" experiment on the substrate.
-    
-    Steps:
-      1. Initialize random substrate
-      2. Measure initial entanglement & topology
-      3. Evolve with local dynamics + defrag
-      4. Measure emergent excitations, lightcone, topology, exchange phases
-    """
-    print("======================================================================")
-    print("SUBSTRATE ALL THE WAY DOWN")
-    print("Emergence from Noise + Dynamics")
-    print("======================================================================\n")
-    
-    print("[1] Creating substrate from noise...\n")
-    substrate = SubstrateGraph(
-        n_nodes=n_nodes,
-        internal_dim=internal_dim,
-        connectivity=connectivity,
-    )
-    
-    initial_total_ent = substrate.total_entanglement_entropy()
-    print(f"    Initial entanglement: {initial_total_ent:.3f}\n")
-    
-    print("[2] Testing lightcone emergence...")
-    v_LR = compute_lightcone_velocity(substrate, dt=dt, n_steps=10)
-    print(f"    ✓ Lightcone detected!")
-    print(f"    Propagation velocity: {v_LR:.3f}\n")
-    
-    print(f"[3] Evolving substrate ({n_evolution_steps} steps).")
-    substrate.evolve(dt=dt, n_steps=n_evolution_steps, defrag_rate=defrag_rate)
-    final_total_ent = substrate.total_entanglement_entropy()
-    print(f"    Final entanglement: {final_total_ent:.3f}\n")
-    
-    print("[4] Detecting emergent excitations.")
-    excitations = detect_excitations(substrate)
-    # Select top 5
-    top_exc = sorted(excitations.items(), key=lambda kv: kv[1], reverse=True)[:5]
-    print(f"    Found {len(excitations)} excitations (localized patterns)")
-    for nid, val in top_exc:
-        print(f"      Node {nid}: excitation = {val:.4f}")
-    print()
-    
-    print("[5] Analyzing emergent topology.")
-    nodes = list(substrate.nodes.values())
-    if nodes:
-        source = nodes[0]
-        eff_dim = graph_effective_dimension(substrate, source, max_radius=5)
-        cycles = fundamental_group_complexity(substrate)
-        print(f"    Effective dimension: {eff_dim:.2f}")
-        print(f"    Fundamental group: complex ({cycles} cycles) → may support anyons\n")
-    else:
-        eff_dim = 0.0
-        cycles = 0
-        print("    No nodes?!\n")
-    
-    print("[6] Geometric embedding and pointer redundancy.")
-    # For now, we don't have a full geometric embedding routine here.
-    # But we can use the graph dimension and cycles as proxies.
-    # Pointer redundancy: how many disjoint fragments can point to same excitation?
-    # Here we just stub it out as "max 4".
-    pointer_redundancy = 4
-    print(f"    Approx. 3D embedding cost: {1.0 / (eff_dim + 1e-6):.4f} (lower = more 3D-like)")
-    example_exc_node_id = top_exc[0][0] if top_exc else None
-    if example_exc_node_id is not None:
-        print(f"    System: excited node {example_exc_node_id}")
-    print(f"    Pointer redundancy R: {pointer_redundancy} / 4 fragments above threshold\n")
-    
-    print("[7] Measuring exchange phases.")
-    exchange_stats = exchange_phase_statistics(substrate, n_pairs=300)
-    print("    Exchange phase statistics:")
-    print(f"      Total pairs:   {exchange_stats['total']}")
-    print(f"      Near +1:       {exchange_stats['near_+1']}")
-    print(f"      Near -1:       {exchange_stats['near_-1']}")
-    print(f"      Intermediate:  {exchange_stats['intermediate']}")
-    if exchange_stats['total'] > 0:
-        frac_plus = exchange_stats['near_+1'] / exchange_stats['total']
-        frac_minus = exchange_stats['near_-1'] / exchange_stats['total']
-        print(f"      Mean overlap:  ~{(frac_plus - frac_minus):.4f}")
-    print()
-    
-    print("======================================================================")
-    print("EMERGENCE SUMMARY")
-    print("======================================================================\n")
-    
-    print(f"From: Noise + Local Unitary Dynamics")
-    print(f"      (internal dim = {internal_dim} → SU({internal_dim}) if dim>1)\n")
-    
-    print("Emerged:")
-    print(f"    1. Lightcone: YES (v_LR ≈ {v_LR:.3f})")
-    print(f"    2. Excitations (particles): {len(excitations)} detected")
-    print(f"    3. Effective dimension (graph): {eff_dim:.2f}")
-    print(f"    4. Topology (cycles): complex ({cycles} cycles) → may support anyons")
-    print(f"    5. Pointer redundancy R: {pointer_redundancy} / 4 (stubbed)")
-    print(f"    6. Exchange phases: see stats above (mostly intermediate now)")
-    print()
-    print("    → Intermediate overlaps present (proxy)")
-    print("    → Likely non-geometric or high-dimensional configuration-space structure")
-    print()
-    
-    results = {
-        "initial_total_entanglement": initial_total_ent,
-        "final_total_entanglement": final_total_ent,
-        "lightcone_velocity": v_LR,
-        "excitations": excitations,
-        "effective_dimension": eff_dim,
-        "cycles": cycles,
-        "exchange_stats": exchange_stats,
-        "pointer_redundancy": pointer_redundancy,
-    }
-    
-    return substrate, results
-
-
-# =============================================================================
-# QUICK TEST HARNESS
-# =============================================================================
+# ---------------------------------------------------------------------
+# Optional: quick smoke test when run directly
+# ---------------------------------------------------------------------
 
 if __name__ == "__main__":
-    # Run with different internal dimensions
-    for dim in [2]:  # Start with SU(2)
-        print(f"\n{'#'*70}")
-        print(f"# INTERNAL DIMENSION = {dim}")
-        print(f"{'#'*70}")
-        
-        substrate, results = run_full_emergence_test(
-            n_nodes=25,
-            internal_dim=dim,
-            connectivity=0.25,
-            n_evolution_steps=50
-        )
+    cfg = Config()
+    sub, rec = run_simulation(cfg, n_steps=10, record_every=1)
+    print("[substrate] Smoke test complete. Ent samples:", rec["total_entanglement"])
