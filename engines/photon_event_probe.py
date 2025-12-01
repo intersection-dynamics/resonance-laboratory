@@ -33,6 +33,10 @@ Outputs:
     meta_json                : JSON string with config & run info
 
 Analysis will be done by analyze_photon_events.py.
+
+Updated for new substrate.py API:
+  - substrate._neighbors is list[list[int]], not dict
+  - Direct indexing instead of .get()
 """
 
 from __future__ import annotations
@@ -52,15 +56,16 @@ import pattern_detector as pd  # type: ignore
 # ---------------------------------------------------------------------
 
 
-def bfs_distances(neighbors: Dict[int, List[int]], src: int, max_radius: int) -> np.ndarray:
+def bfs_distances(neighbors: List[List[int]], src: int, max_radius: int) -> np.ndarray:
     """
     Compute BFS distances from src to all nodes up to max_radius.
 
+    neighbors: list of neighbor lists indexed by node id
     Returns:
       dist: np.ndarray of shape (N,), dist[i] = graph distance(src, i)
             or max_radius + 1 if further.
     """
-    n_nodes = max(neighbors.keys()) + 1 if neighbors else 0
+    n_nodes = len(neighbors)
     dist = np.full(n_nodes, max_radius + 1, dtype=int)
     if n_nodes == 0:
         return dist
@@ -74,14 +79,16 @@ def bfs_distances(neighbors: Dict[int, List[int]], src: int, max_radius: int) ->
         d = dist[nid]
         if d >= max_radius:
             continue
-        for nb in neighbors.get(nid, []):
+        for nb in neighbors[nid]:
+            if nb < 0 or nb >= n_nodes:
+                continue
             if dist[nb] > d + 1:
                 dist[nb] = d + 1
                 q.append(nb)
     return dist
 
 
-def graph_distance(neighbors: Dict[int, List[int]], a_id: int, b_id: int, max_radius: int) -> int:
+def graph_distance(neighbors: List[List[int]], a_id: int, b_id: int, max_radius: int) -> int:
     """
     BFS distance between nodes a and b in the substrate graph.
     """
@@ -113,8 +120,8 @@ def run_photon_event_probe(
     print("------------------------------------------------------------")
 
     substrate = Substrate(config)
-    neighbors = substrate.neighbors  # dict[int, list[int]]
-    n_nodes = len(substrate.nodes)
+    neighbors = substrate._neighbors  # list[list[int]]
+    n_nodes = substrate.n_nodes
 
     # Burn-in
     print("Burn-in evolution...")

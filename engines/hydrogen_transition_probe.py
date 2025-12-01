@@ -46,14 +46,10 @@ import pattern_detector as pd  # type: ignore
 
 
 def graph_distance(substrate: Substrate, a_id: int, b_id: int, max_radius: int = 10) -> int:
-    """
-    BFS distance between nodes a and b in the substrate graph.
-    If not found within max_radius, return max_radius + 1.
-    """
     if a_id == b_id:
         return 0
 
-    neighbors = substrate.neighbors  # dict[int, list[int]]
+    neighbors = substrate._neighbors  # list[list[int]]
     from collections import deque
 
     visited = {a_id}
@@ -63,15 +59,14 @@ def graph_distance(substrate: Substrate, a_id: int, b_id: int, max_radius: int =
         nid, d = q.popleft()
         if d >= max_radius:
             continue
-        for nb in neighbors.get(nid, []):
+        for nb in neighbors[nid]:  # direct index, not .get()
             if nb == b_id:
                 return d + 1
             if nb not in visited:
                 visited.add(nb)
                 q.append((nb, d + 1))
 
-    return max_radius + 1  # treat as "far"
-
+    return max_radius + 1
 
 # ---------------------------------------------------------------------
 # Main probe

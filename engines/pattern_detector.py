@@ -2,77 +2,118 @@
 """
 pattern_detector.py
 
-Pattern detectors for emergent "lumps" in the Hilbert substrate.
+Pattern detectors AND scan experiment for emergent "lumps" in the Hilbert substrate.
 
 Ontology:
   - There are no fundamental particles.
   - The Substrate is a big Hilbert sea with local DOFs and entanglement.
   - "Proton / electron / photon" are labels for *patterns* in this sea:
-      proton-like : heavy, strongly entangled, localized composite
+      proton-like  : heavy, strongly entangled, localized composite
       electron-like: lighter, localized, less entangled / less redundant
-      photon-like : bosonic, delocalized, *copyable* info:
-                    many sites carry very similar pointer-basis distributions.
+      photon-like  : bosonic, delocalized, *copyable* info:
+                     many sites carry very similar pointer-basis distributions.
 
-Implementation notes:
-  - We extract per-node features:
-      degree, clustering, total entanglement,
-      localization, coherence, excitation,
-      redundancy (copyability).
-  - Redundancy is computed from classical |psi|^2 distributions:
-      redundancy_i ~ average similarity to other nodes' |psi|^2
-      (Bhattacharyya coefficient).
-  - Photon score heavily favors high redundancy + low localization + coherence.
+Updated for new substrate.py API:
+  - Coupling matrix J replaces edge_list
+  - Node indices are integers; node IDs are strings like "n001"
+  - substrate._neighbors is list[list[int]]
+  - substrate.d replaces substrate.dim
+
+This file now serves two roles:
+
+  1) Library:
+       - compute_node_features(substrate)
+       - compute_species_scores(features)
+       - pick_species_candidates(scores)
+       - analyze_substrate(substrate)
+
+  2) Experiment script:
+       - When run as __main__, it builds a Substrate,
+         evolves it, and periodically scans for
+         proton/electron/photon-like patterns,
+         logging results to:
+
+           outputs/pattern_detector_scan/<run_id>/
+             params.json
+             summary.json
+             data/candidates.csv
+             data/frames/*.npz  (optional)
+
+Usage example (Windows, from engines directory):
+
+  python pattern_detector.py ^
+      --n-nodes 64 ^
+      --internal-dim 4 ^
+      --steps 4000 ^
+      --record-stride 10 ^
+      --defrag-rate 0.05 ^
+      --connectivity 0.2 ^
+      --dt 0.05 ^
+      --seed 42 ^
+      --output-root outputs ^
+      --tag proton_electron_photon_scan ^
+      --use-gpu ^
+      --save-frames
+
 """
 
 from __future__ import annotations
 
+import argparse
+import json
+import os
+import sys
 from dataclasses import dataclass
-from typing import Dict, List, Tuple
+from datetime import datetime
+from typing import Any, Dict, Tuple
 
 import numpy as np
 
-from substrate import Substrate  # type: ignore
+from substrate import Config, Substrate  # type: ignore
 
-# Optional CuPy awareness for pulling node.state
+
+# ---------------------------------------------------------------------
+# Helpers for backend conversion
+# ---------------------------------------------------------------------
+
 try:
     import cupy as cp  # type: ignore
 
-    HAVE_CUPY = True
+    _HAS_CUPY = True
 except Exception:
-    cp = None
-    HAVE_CUPY = False
+    cp = None  # type: ignore
+    _HAS_CUPY = False
 
 
-# ---------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------
-
-
-def to_numpy(x) -> np.ndarray:
-    """Convert a state to a NumPy array, handling CuPy arrays if present."""
-    if HAVE_CUPY and isinstance(x, cp.ndarray):
-        return cp.asnumpy(x)
+def _to_numpy(x) -> np.ndarray:
+    """Convert xp array (numpy or cupy) to NumPy ndarray."""
+    if hasattr(x, "get"):
+        return x.get()
     return np.asarray(x)
 
+
+# ---------------------------------------------------------------------
+# Data classes
+# ---------------------------------------------------------------------
 
 @dataclass
 class NodeFeatures:
     """Per-node features extracted from a single Substrate snapshot."""
-    degree: np.ndarray            # (N,)
-    clustering: np.ndarray        # (N,)
-    total_entanglement: np.ndarray  # (N,)
-    localization: np.ndarray      # (N,)
-    coherence: np.ndarray         # (N,)
-    excitation: np.ndarray        # (N,)
-    redundancy: np.ndarray        # (N,)  # "copyability" of pointer distributions
+    degree: np.ndarray             # (N,)
+    clustering: np.ndarray         # (N,)
+    total_entanglement: np.ndarray # (N,)
+    localization: np.ndarray       # (N,)
+    coherence: np.ndarray          # (N,)
+    excitation: np.ndarray         # (N,)
+    redundancy: np.ndarray         # (N,) "copyability" of pointer distributions
 
 
 @dataclass
 class SpeciesScores:
     """Per-node scores for each emergent species."""
-    proton_score: np.ndarray   # (N,)
-    electron_score: np.ndarray # (N,)
-    photon_score: np.ndarray   # (N,)
+    proton_score: np.ndarray    # (N,)
+    electron_score: np.ndarray  # (N,)
+    photon_score: np.ndarray    # (N,)
 
 
 @dataclass
@@ -90,7 +131,6 @@ class SpeciesCandidates:
 # Feature extraction
 # ---------------------------------------------------------------------
 
-
 def compute_node_features(substrate: Substrate) -> NodeFeatures:
     """
     Compute per-node features from a Substrate snapshot.
@@ -98,28 +138,30 @@ def compute_node_features(substrate: Substrate) -> NodeFeatures:
     Features:
       - degree        : number of neighbors
       - clustering    : simple local clustering coefficient
-      - total_ent     : sum of entanglement entropy on incident edges
+      - total_ent     : sum of |J_ij| for neighbors j
       - localization  : 1 - S(|psi|^2)/log(d)
       - coherence     : sum |rho_ij|, i != j, for pure state rho = |psi><psi|
       - excitation    : 1 - |<psi | psi_avg>|^2   (psi_avg over all nodes)
       - redundancy    : "copyability" of pointer distributions:
                         mean Bhattacharyya similarity of |psi|^2 to others'
     """
-    nodes = substrate.nodes
-    n_nodes = len(nodes)
+    n_nodes = substrate.n_nodes
+    d = substrate.d
+
     if n_nodes == 0:
         raise ValueError("Substrate has no nodes; cannot compute features.")
 
-    # --- adjacency & degrees ---
-    neighbors = substrate.neighbors  # dict[int, list[int]]
-    degree = np.zeros(n_nodes, dtype=float)
-    for i in range(n_nodes):
-        degree[i] = float(len(neighbors.get(i, [])))
+    # Get coupling matrix as numpy
+    J = _to_numpy(substrate.couplings)
+    neighbors = substrate._neighbors  # list[list[int]]
+
+    # --- degree ---
+    degree = np.array([len(neighbors[i]) for i in range(n_nodes)], dtype=float)
 
     # --- clustering coefficient (triangle density) ---
     clustering = np.zeros(n_nodes, dtype=float)
     for i in range(n_nodes):
-        nbs = neighbors.get(i, [])
+        nbs = neighbors[i]
         k = len(nbs)
         if k < 2:
             clustering[i] = 0.0
@@ -129,42 +171,18 @@ def compute_node_features(substrate: Substrate) -> NodeFeatures:
         for j_idx in range(k):
             j = nbs[j_idx]
             for k_idx in range(j_idx + 1, k):
-                l = nbs[k_idx]
-                if l in neighbors.get(j, []):
+                m = nbs[k_idx]
+                if m in neighbors[j]:
                     edges_between += 1
         clustering[i] = 2.0 * edges_between / (k * (k - 1))
 
-    # --- edge entanglement entropy, cached per edge ---
-    edge_ent = np.zeros(len(substrate.edge_list), dtype=float)
-    for e_idx, edge in enumerate(substrate.edge_list):
-        try:
-            edge_ent[e_idx] = float(edge.entanglement_entropy())
-        except Exception:
-            edge_ent[e_idx] = 0.0
+    # --- total entanglement (sum of |J_ij| over neighbors) ---
+    total_entanglement = np.sum(np.abs(J), axis=1)
 
-    total_entanglement = np.zeros(n_nodes, dtype=float)
-    for i in range(n_nodes):
-        e_indices = substrate.node_edges.get(i, [])
-        total_entanglement[i] = float(edge_ent[e_indices].sum()) if e_indices else 0.0
+    # --- states (as numpy) ---
+    states = _to_numpy(substrate.states).astype(np.complex128)
 
-    # --- states & global average (for excitation) ---
-    d = substrate.dim  # internal_dim of each node
-    states = np.zeros((n_nodes, d), dtype=np.complex128)
-    for i in range(n_nodes):
-        psi = nodes[i].state
-        psi_np = to_numpy(psi).astype(np.complex128)
-        if psi_np.shape[0] != d:
-            if psi_np.shape[0] < d:
-                tmp = np.zeros(d, dtype=np.complex128)
-                tmp[: psi_np.shape[0]] = psi_np
-                psi_np = tmp
-            else:
-                psi_np = psi_np[:d]
-        nrm = np.linalg.norm(psi_np)
-        if nrm > 0:
-            psi_np = psi_np / nrm
-        states[i] = psi_np
-
+    # Global average state for excitation calculation
     psi_avg = states.mean(axis=0)
     nrm_avg = np.linalg.norm(psi_avg)
     if nrm_avg > 0:
@@ -176,7 +194,7 @@ def compute_node_features(substrate: Substrate) -> NodeFeatures:
 
     logd = np.log(d) if d > 1 else 1.0
 
-    # classical probability distributions for redundancy
+    # Classical probability distributions for redundancy
     probs = np.abs(states) ** 2
     probs = probs / np.maximum(probs.sum(axis=1, keepdims=True), 1e-12)
     probs = np.clip(probs, 1e-12, 1.0)
@@ -185,26 +203,23 @@ def compute_node_features(substrate: Substrate) -> NodeFeatures:
         psi = states[i]
         p = probs[i]
 
-        # entropy / localization
+        # Entropy / localization
         S = float(-np.sum(p * np.log(p)))
         localization[i] = 1.0 - S / logd
 
-        # coherence: off-diagonal magnitude of rho = |psi><psi|
+        # Coherence: off-diagonal magnitude of rho = |psi><psi|
         rho = np.outer(psi, np.conjugate(psi))
         off = rho - np.diag(np.diag(rho))
         coherence[i] = float(np.sum(np.abs(off)))
 
-        # excitation relative to global average pattern
+        # Excitation relative to global average pattern
         ov = np.vdot(psi, psi_avg)
         excitation[i] = float(1.0 - np.abs(ov) ** 2)
 
     # --- redundancy / copyability ---
-    # Bhattacharyya coefficients between classical distributions:
-    # BC(i,j) = sum_k sqrt(p_i[k] p_j[k])
-    # redundancy_i = mean_{j != i} BC(i,j)
+    # Bhattacharyya coefficients: BC(i,j) = sum_k sqrt(p_i[k] p_j[k])
     sqrt_p = np.sqrt(probs)
-    bc_matrix = sqrt_p @ sqrt_p.T  # (N,N)
-    # zero out diagonal before averaging
+    bc_matrix = sqrt_p @ sqrt_p.T  # (N, N)
     np.fill_diagonal(bc_matrix, 0.0)
     redundancy = bc_matrix.sum(axis=1) / np.maximum(n_nodes - 1, 1)
 
@@ -222,7 +237,6 @@ def compute_node_features(substrate: Substrate) -> NodeFeatures:
 # ---------------------------------------------------------------------
 # Species scoring
 # ---------------------------------------------------------------------
-
 
 def _zscore(x: np.ndarray) -> np.ndarray:
     mu = float(np.mean(x))
@@ -290,6 +304,7 @@ def compute_species_scores(features: NodeFeatures) -> SpeciesScores:
 def pick_species_candidates(scores: SpeciesScores) -> SpeciesCandidates:
     """
     Choose best candidate ids and scores for each species from per-node scores.
+    Returns integer node indices (not string IDs).
     """
     p_idx = int(np.argmax(scores.proton_score))
     e_idx = int(np.argmax(scores.electron_score))
@@ -306,21 +321,293 @@ def pick_species_candidates(scores: SpeciesScores) -> SpeciesCandidates:
 
 
 # ---------------------------------------------------------------------
-# High-level analysis entry point
+# High-level analysis entry point (library API)
 # ---------------------------------------------------------------------
 
-
-def analyze_substrate(substrate: Substrate) -> Tuple[NodeFeatures, SpeciesScores, SpeciesCandidates]:
+def analyze_substrate(
+    substrate: Substrate,
+) -> Tuple[NodeFeatures, SpeciesScores, SpeciesCandidates]:
     """
     Analyze a Substrate snapshot and return:
 
       - NodeFeatures      : per-node feature arrays
       - SpeciesScores     : per-node proton/electron/photon heuristic scores
-      - SpeciesCandidates : best candidate ids & scores
+      - SpeciesCandidates : best candidate ids & scores (integer indices)
 
-    Use this as a high-level call from experiments.
+    Use this as a high-level call from experiments or from the CLI driver below.
     """
     feats = compute_node_features(substrate)
     scores = compute_species_scores(feats)
     cands = pick_species_candidates(scores)
     return feats, scores, cands
+
+
+# ---------------------------------------------------------------------
+# Experiment driver (when run as a script)
+# ---------------------------------------------------------------------
+
+def _ensure_dir(path: str) -> None:
+    os.makedirs(path, exist_ok=True)
+
+
+def _make_run_id(tag: str | None) -> str:
+    now = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    if tag:
+        safe_tag = "".join(
+            c if c.isalnum() or c in "-_" else "_" for c in str(tag)
+        )
+        return f"{now}_{safe_tag}"
+    return now
+
+
+def _write_json(path: str, data: Dict[str, Any]) -> None:
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, sort_keys=True)
+
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    p = argparse.ArgumentParser(
+        description=(
+            "Scan a Substrate for proton/electron/photon-like patterns "
+            "using Hilbert-space pattern detectors."
+        )
+    )
+
+    # Substrate / dynamics config
+    p.add_argument("--n-nodes", type=int, default=64, help="Number of nodes.")
+    p.add_argument(
+        "--internal-dim", type=int, default=4, help="Local Hilbert dimension d."
+    )
+    p.add_argument(
+        "--monogamy-budget",
+        type=float,
+        default=1.0,
+        help="Target row-sum of |J_ij| for each node.",
+    )
+    p.add_argument(
+        "--defrag-rate",
+        type=float,
+        default=0.05,
+        help="Defrag rate used in substrate defrag_step.",
+    )
+    p.add_argument(
+        "--connectivity",
+        type=float,
+        default=0.2,
+        help="Initial Bernoulli connectivity probability.",
+    )
+    p.add_argument(
+        "--dt",
+        type=float,
+        default=0.05,
+        help="Time step for the substrate integrator.",
+    )
+    p.add_argument(
+        "--steps",
+        type=int,
+        default=2000,
+        help="Total number of evolution steps to run.",
+    )
+    p.add_argument(
+        "--record-stride",
+        type=int,
+        default=20,
+        help="How many steps between particle-scan snapshots.",
+    )
+    p.add_argument(
+        "--seed",
+        type=int,
+        default=1,
+        help="Base random seed for the substrate.",
+    )
+    p.add_argument(
+        "--use-gpu",
+        action="store_true",
+        help="If set, request CuPy backend when available.",
+    )
+
+    # Output config
+    p.add_argument(
+        "--output-root",
+        type=str,
+        default="outputs",
+        help="Root directory for experiment outputs.",
+    )
+    p.add_argument(
+        "--tag",
+        type=str,
+        default="pattern_detector_scan",
+        help="Tag to include in the run_id (for easier grouping).",
+    )
+    p.add_argument(
+        "--save-frames",
+        action="store_true",
+        help="If set, saves per-snapshot feature arrays into data/frames/*.npz.",
+    )
+
+    return p.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> None:
+    args = parse_args(argv)
+
+    # ------------------- run directory -------------------
+    run_id = _make_run_id(args.tag)
+    run_root = os.path.join(args.output_root, "pattern_detector_scan", run_id)
+
+    data_dir = os.path.join(run_root, "data")
+    frames_dir = os.path.join(data_dir, "frames")
+    logs_dir = os.path.join(run_root, "logs")
+
+    _ensure_dir(run_root)
+    _ensure_dir(data_dir)
+    _ensure_dir(logs_dir)
+    if args.save_frames:
+        _ensure_dir(frames_dir)
+
+    # ------------------- substrate config -------------------
+    cfg = Config(
+        n_nodes=args.n_nodes,
+        internal_dim=args.internal_dim,
+        monogamy_budget=args.monogamy_budget,
+        defrag_rate=args.defrag_rate,
+        dt=args.dt,
+        seed=args.seed,
+        connectivity=args.connectivity,
+        use_gpu=True if args.use_gpu else False,
+    )
+
+    sub = Substrate(cfg)
+
+    # Save params.json
+    params = {
+        "n_nodes": args.n_nodes,
+        "internal_dim": args.internal_dim,
+        "monogamy_budget": args.monogamy_budget,
+        "defrag_rate": args.defrag_rate,
+        "connectivity": args.connectivity,
+        "dt": args.dt,
+        "steps": args.steps,
+        "record_stride": args.record_stride,
+        "seed": args.seed,
+        "use_gpu": args.use_gpu,
+        "run_id": run_id,
+    }
+    _write_json(os.path.join(run_root, "params.json"), params)
+
+    # Prepare candidates.csv
+    cand_path = os.path.join(data_dir, "candidates.csv")
+    with open(cand_path, "w", encoding="utf-8") as f:
+        f.write(
+            "step,t,"
+            "proton_id,proton_score,"
+            "electron_id,electron_score,"
+            "photon_id,photon_score\n"
+        )
+
+    print("=" * 60)
+    print("  Hilbert Pattern Detector Scan")
+    print("=" * 60)
+    print(f"Run ID:      {run_id}")
+    print(f"Output root: {run_root}")
+    print(f"Nodes:       {args.n_nodes}, d={args.internal_dim}")
+    print(f"Steps:       {args.steps}, record_stride={args.record_stride}")
+    print(f"Defrag rate: {args.defrag_rate}, connectivity={args.connectivity}")
+    print(f"Seed:        {args.seed}")
+    print("=" * 60)
+    sys.stdout.flush()
+
+    last_feats = None
+    last_scores = None
+    last_cands = None
+
+    # ------------------- evolution loop -------------------
+    for step in range(args.steps + 1):
+        t = step * args.dt
+
+        # Record before evolving at step 0, step=record_stride, ...
+        if step % args.record_stride == 0:
+            feats, scores, cands = analyze_substrate(sub)
+
+            last_feats = feats
+            last_scores = scores
+            last_cands = cands
+
+            # Append one row to candidates.csv
+            with open(cand_path, "a", encoding="utf-8") as f:
+                f.write(
+                    f"{step},{t:.8f},"
+                    f"{cands.proton_id},{cands.proton_score:.6f},"
+                    f"{cands.electron_id},{cands.electron_score:.6f},"
+                    f"{cands.photon_id},{cands.photon_score:.6f}\n"
+                )
+
+            print(
+                f"[step {step:6d} | t={t:8.4f}]  "
+                f"p: id={cands.proton_id:3d}, score={cands.proton_score:8.4f}  "
+                f"e: id={cands.electron_id:3d}, score={cands.electron_score:8.4f}  "
+                f"ph: id={cands.photon_id:3d}, score={cands.photon_score:8.4f}"
+            )
+            sys.stdout.flush()
+
+            # Optional: save full features/scores snapshot
+            if args.save_frames:
+                frame_name = f"frame_step_{step:06d}.npz"
+                frame_path = os.path.join(frames_dir, frame_name)
+                np.savez_compressed(
+                    frame_path,
+                    step=step,
+                    t=t,
+                    degree=feats.degree,
+                    clustering=feats.clustering,
+                    total_entanglement=feats.total_entanglement,
+                    localization=feats.localization,
+                    coherence=feats.coherence,
+                    excitation=feats.excitation,
+                    redundancy=feats.redundancy,
+                    proton_score=scores.proton_score,
+                    electron_score=scores.electron_score,
+                    photon_score=scores.photon_score,
+                )
+
+        if step >= args.steps:
+            break
+
+        # Single evolution step
+        sub.evolve(n_steps=1)
+
+    # ------------------- summary.json -------------------
+    summary: Dict[str, Any] = {
+        "run_id": run_id,
+        "steps": args.steps,
+        "dt": args.dt,
+        "defrag_rate": args.defrag_rate,
+        "connectivity": args.connectivity,
+    }
+
+    if last_cands is not None:
+        summary["final_candidates"] = {
+            "proton": {
+                "node_id": int(last_cands.proton_id),
+                "score": float(last_cands.proton_score),
+            },
+            "electron": {
+                "node_id": int(last_cands.electron_id),
+                "score": float(last_cands.electron_score),
+            },
+            "photon": {
+                "node_id": int(last_cands.photon_id),
+                "score": float(last_cands.photon_score),
+            },
+        }
+
+    _write_json(os.path.join(run_root, "summary.json"), summary)
+
+    print("=" * 60)
+    print("Scan complete.")
+    print(f"Candidate time series: {cand_path}")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    main()
