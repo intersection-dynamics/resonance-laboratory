@@ -1,0 +1,153 @@
+{
+  "clusters": [
+    {
+      "cluster_id": 0,
+      "count": 2476,
+      "fraction_of_points": 0.1934375,
+      "mean_features": {
+        "clustering": 0.9988007536973623,
+        "coherence": 2.601649159581668,
+        "degree": 62.8953957996769,
+        "electron_score": -2.1752872026136143,
+        "excitation": 0.4883258498248449,
+        "localization": 0.13607799192200687,
+        "photon_score": 1.9879762758631174,
+        "proton_score": -0.28314799440799016,
+        "redundancy": 0.8677108057379038,
+        "total_entanglement": 0.999931804291599
+      },
+      "species_domination": {
+        "electron_like_fraction": 0.006058158319870759,
+        "photon_like_fraction": 0.8517770597738288,
+        "proton_like_fraction": 0.1421647819063005
+      }
+    },
+    {
+      "cluster_id": 1,
+      "count": 4390,
+      "fraction_of_points": 0.34296875,
+      "mean_features": {
+        "clustering": 0.9985674812619407,
+        "coherence": 2.681747375633509,
+        "degree": 62.89020501138952,
+        "electron_score": -0.4632789341914722,
+        "excitation": 0.856327419327597,
+        "localization": 0.10920518077025929,
+        "photon_score": 2.5365697401104614,
+        "proton_score": -1.0664714663035988,
+        "redundancy": 0.877861249279351,
+        "total_entanglement": 0.9907456827428405
+      },
+      "species_domination": {
+        "electron_like_fraction": 0.07334851936218678,
+        "photon_like_fraction": 0.9266514806378132,
+        "proton_like_fraction": 0.0
+      }
+    },
+    {
+      "cluster_id": 2,
+      "count": 109,
+      "fraction_of_points": 0.008515625,
+      "mean_features": {
+        "clustering": 0.5669494071946557,
+        "coherence": 2.3409499271973684,
+        "degree": 27.513761467889907,
+        "electron_score": -0.02805650261967005,
+        "excitation": 0.7375752812324444,
+        "localization": 0.22241487231834536,
+        "photon_score": 0.2710921249139641,
+        "proton_score": -0.3330394619093126,
+        "redundancy": 0.8270046743670472,
+        "total_entanglement": 0.998512641162493
+      },
+      "species_domination": {
+        "electron_like_fraction": 0.3302752293577982,
+        "photon_like_fraction": 0.5137614678899083,
+        "proton_like_fraction": 0.1559633027522936
+      }
+    },
+    {
+      "cluster_id": 3,
+      "count": 3908,
+      "fraction_of_points": 0.3053125,
+      "mean_features": {
+        "clustering": 0.9975756727807821,
+        "coherence": 2.1482735520218332,
+        "degree": 62.88587512794268,
+        "electron_score": 0.9657409815384681,
+        "excitation": 0.7865747382023967,
+        "localization": 0.2840308864516088,
+        "photon_score": -1.7944501853783077,
+        "proton_score": 0.3295087031068862,
+        "redundancy": 0.8110508046428625,
+        "total_entanglement": 0.9943652745493505
+      },
+      "species_domination": {
+        "electron_like_fraction": 0.6655578300921188,
+        "photon_like_fraction": 0.04529170931422723,
+        "proton_like_fraction": 0.28915046059365407
+      }
+    },
+    {
+      "cluster_id": 4,
+      "count": 463,
+      "fraction_of_points": 0.036171875,
+      "mean_features": {
+        "clustering": 0.9994160871539175,
+        "coherence": 2.415291089576431,
+        "degree": 62.529157667386606,
+        "electron_score": -1.6106239042682922,
+        "excitation": 0.7560275365040692,
+        "localization": 0.1970970878269927,
+        "photon_score": 1.9501530135215024,
+        "proton_score": 2.8091411484166513,
+        "redundancy": 0.842400703876636,
+        "total_entanglement": 1.162676970683539
+      },
+      "species_domination": {
+        "electron_like_fraction": 0.004319654427645789,
+        "photon_like_fraction": 0.4146868250539957,
+        "proton_like_fraction": 0.5809935205183585
+      }
+    },
+    {
+      "cluster_id": 5,
+      "count": 1454,
+      "fraction_of_points": 0.11359375,
+      "mean_features": {
+        "clustering": 0.9973594370120655,
+        "coherence": 1.5661616530749896,
+        "degree": 62.92365887207703,
+        "electron_score": 3.0223293709637504,
+        "excitation": 0.7563248631495247,
+        "localization": 0.5066368952672018,
+        "photon_score": -6.862124470797564,
+        "proton_score": 1.9469278604652496,
+        "redundancy": 0.7298808816496856,
+        "total_entanglement": 0.9986133845846789
+      },
+      "species_domination": {
+        "electron_like_fraction": 0.7579092159559835,
+        "photon_like_fraction": 0.0,
+        "proton_like_fraction": 0.24209078404401652
+      }
+    }
+  ],
+  "feature_names": [
+    "degree",
+    "clustering",
+    "total_entanglement",
+    "localization",
+    "coherence",
+    "excitation",
+    "redundancy",
+    "proton_score",
+    "electron_score",
+    "photon_score"
+  ],
+  "inertia": 42529.80589630347,
+  "k": 6,
+  "run_id": "20251201T191609Z_quark_gluon_probe",
+  "source_run": "20251201T190712Z_proton_electron_photon_scan",
+  "total_points": 12800
+}

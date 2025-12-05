@@ -1,0 +1,100 @@
+============================================================
+  Hilbert-Substrate Precipitating Event (single-file, gauge-ready)
+============================================================
+Run root:      outputs\precipitating_event\20251203_205012_flux_event_J2
+Geometry file: lr_embedding_3d.npz
+Seed:          117
+Use gauge:     True
+------------------------------------------------------------
+Geometry n_sites: 8
+Edges:            [(0, 1), (0, 2), (0, 4), (1, 3), (1, 5), (2, 3), (2, 6), (3, 7), (4, 5), (4, 6), (5, 7), (6, 7)]
+------------------------------------------------------------
+[GAUGE] Starting internal gauge optimization...
+[GAUGE] n_sites=8, n_edges=12, n_squares=6
+[GAUGE] edges = [(0, 1), (0, 2), (0, 4), (1, 3), (1, 5), (2, 3), (2, 6), (3, 7), (4, 5), (4, 6), (5, 7), (6, 7)]
+[GAUGE] squares (4-cycles) = [[0, 1, 3, 2], [0, 1, 5, 4], [0, 2, 6, 4], [1, 3, 7, 5], [2, 3, 7, 6], [4, 5, 7, 6]]
+------------------------------------------------------------
+[GAUGE step 000] E0=-22.730226, C_total=4.902510, C_ent=-0.635434, C_flux=11.075889
+[GAUGE step 001] E0=-21.604234, C_total=3.587085, C_ent=-0.531681, C_flux=8.237533
+[GAUGE step 002] E0=-21.405211, C_total=3.271739, C_ent=-0.492549, C_flux=7.528575
+[GAUGE step 003] E0=-21.427729, C_total=3.277725, C_ent=-0.429706, C_flux=7.414862
+[GAUGE step 004] E0=-21.441094, C_total=3.146175, C_ent=-0.568365, C_flux=7.429080
+[GAUGE step 005] E0=-21.589536, C_total=3.308498, C_ent=-0.368955, C_flux=7.354905
+[GAUGE step 006] E0=-21.220775, C_total=3.029401, C_ent=-0.545558, C_flux=7.149918
+[GAUGE step 007] E0=-21.938921, C_total=3.426951, C_ent=-0.383772, C_flux=7.621447
+[GAUGE step 008] E0=-21.268405, C_total=3.261106, C_ent=-0.252803, C_flux=7.027818
+[GAUGE step 009] E0=-21.441013, C_total=3.017736, C_ent=-0.733586, C_flux=7.502643
+[GAUGE step 010] E0=-21.111177, C_total=3.001940, C_ent=-0.507283, C_flux=7.018447
+[GAUGE step 011] E0=-22.147775, C_total=3.530146, C_ent=-0.398173, C_flux=7.856638
+[GAUGE step 012] E0=-21.321308, C_total=3.287020, C_ent=-0.231363, C_flux=7.036766
+[GAUGE step 013] E0=-21.420860, C_total=3.084402, C_ent=-0.604777, C_flux=7.378359
+[GAUGE step 014] E0=-21.677884, C_total=3.325254, C_ent=-0.352033, C_flux=7.354575
+[GAUGE step 015] E0=-21.242314, C_total=3.172038, C_ent=-0.361378, C_flux=7.066833
+[GAUGE step 016] E0=-21.757783, C_total=3.333713, C_ent=-0.497816, C_flux=7.663059
+[GAUGE step 017] E0=-21.214710, C_total=3.001112, C_ent=-0.565050, C_flux=7.132324
+[GAUGE step 018] E0=-21.929050, C_total=3.418319, C_ent=-0.373799, C_flux=7.584236
+[GAUGE step 019] E0=-21.283404, C_total=3.277840, C_ent=-0.232433, C_flux=7.020546
+[GAUGE step 020] E0=-21.430012, C_total=3.032378, C_ent=-0.696342, C_flux=7.457440
+[GAUGE step 021] E0=-21.441611, C_total=3.266615, C_ent=-0.314322, C_flux=7.161875
+[GAUGE step 022] E0=-21.277262, C_total=2.992431, C_ent=-0.617815, C_flux=7.220492
+[GAUGE step 023] E0=-21.718714, C_total=3.339951, C_ent=-0.347830, C_flux=7.375563
+[GAUGE step 024] E0=-21.263358, C_total=3.222135, C_ent=-0.303088, C_flux=7.050446
+[GAUGE step 025] E0=-21.531752, C_total=3.138154, C_ent=-0.635515, C_flux=7.547338
+[GAUGE step 026] E0=-21.569732, C_total=3.291178, C_ent=-0.345462, C_flux=7.273280
+[GAUGE step 027] E0=-21.230724, C_total=3.061542, C_ent=-0.498474, C_flux=7.120031
+[GAUGE step 028] E0=-22.019687, C_total=3.465704, C_ent=-0.396834, C_flux=7.725076
+[GAUGE step 029] E0=-21.274602, C_total=3.258483, C_ent=-0.256926, C_flux=7.030817
+[GAUGE step 030] E0=-21.433028, C_total=3.012173, C_ent=-0.731736, C_flux=7.487818
+[GAUGE step 031] E0=-21.111975, C_total=3.005353, C_ent=-0.503379, C_flux=7.017465
+[GAUGE step 032] E0=-22.176744, C_total=3.545412, C_ent=-0.398678, C_flux=7.888179
+[GAUGE step 033] E0=-21.331663, C_total=3.290672, C_ent=-0.228984, C_flux=7.039314
+[GAUGE step 034] E0=-21.426482, C_total=3.109246, C_ent=-0.570319, C_flux=7.359129
+[GAUGE step 035] E0=-21.669513, C_total=3.318858, C_ent=-0.365947, C_flux=7.369610
+[GAUGE step 036] E0=-21.215386, C_total=3.112715, C_ent=-0.425247, C_flux=7.075925
+[GAUGE step 037] E0=-22.002992, C_total=3.469752, C_ent=-0.429414, C_flux=7.798332
+[GAUGE step 038] E0=-21.219031, C_total=3.156804, C_ent=-0.370686, C_flux=7.054981
+[GAUGE step 039] E0=-21.871799, C_total=3.403353, C_ent=-0.473922, C_flux=7.754551
+[GAUGE] optimization finished.
+[GAUGE] final E0=-21.163503, C_total=2.944384, C_ent=-0.603060, C_flux=7.094888
+[GAUGE] Phase extraction complete.
+------------------------------------------------------------
+Configuration (Precipitating Event):
+  n_sites          = 8
+  local_dim        = 2
+  J_coupling       = 2.0
+  h_field          = 0.2
+  defrag_hot       = 0.0
+  defrag_cold      = 2.0
+  t_total          = 20.0
+  t_quench         = 4.0
+  n_steps          = 201
+  z_threshold      = 0.1
+------------------------------------------------------------
+Starting Precipitating Event evolution...
+------------------------------------------------------------
+Evolution complete.
+------------------------------------------------------------
+==== Precipitating Event Summary ====
+t_quench_effective:      4.000000
+final_n_lumps:           1
+final_lump_sizes:        [1]
+mean_lump_count:         0.652
+has_candidates:          True
+timesteps_with_any_lump: 106
+fraction_time_with_any:  0.527
+max_dominant_size:       3
+mean_dominant_size:      0.642
+first_lump_time:         0.0
+last_lump_time:          20.0
+parity_mean:             0.026057
+parity_std:              0.000000
+N_mean:                  3.979461
+N_std:                   0.000000
+uses_gauge_phases:       True
+------------------------------------------------------------
+Gauge summary:
+  final gauge E0:        -21.163503
+  final gauge C_total:   2.944384
+  final gauge C_ent:     -0.603060
+  final gauge C_flux:    7.094888
+======================================

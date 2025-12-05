@@ -1,0 +1,13 @@
+{
+  "L": 8,
+  "defrag_rate": 0.0,
+  "dt": 0.05,
+  "gauge_noise": 0.01,
+  "gauge_phase_rate": 0.05,
+  "internal_dim": 8,
+  "output_root": "outputs",
+  "record_every": 10,
+  "seed": 42,
+  "steps": 4000,
+  "tag": "hydrogen_probe"
+}

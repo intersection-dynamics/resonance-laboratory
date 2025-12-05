@@ -1,0 +1,52 @@
+============================================================================
+Emergent Hydrogen Pointer Substrate (GPU-aware, Built-in Analysis)
+============================================================================
+Run ID   : 20251202_112152
+Run dir  : outputs\emergent_pointer_hydrogen\20251202_112152
+Seed     : 12345
+Steps    : 5000
+Stride   : 10
+Lattice  : 16 x 16 x 16
+dt       : 0.02
+use_gpu  : False (CuPy available: True)
+============================================================================
+
+[progress] step 0/5000 (  0.0%)  elapsed=   0.05s  ETA~4976034.16s
+[progress] step 250/5000 (  5.0%)  elapsed=  52.44s  ETA~ 996.40s
+[progress] step 500/5000 ( 10.0%)  elapsed= 102.60s  ETA~ 923.41s
+[progress] step 750/5000 ( 15.0%)  elapsed= 150.93s  ETA~ 855.29s
+[progress] step 1000/5000 ( 20.0%)  elapsed= 200.03s  ETA~ 800.11s
+[progress] step 1250/5000 ( 25.0%)  elapsed= 251.24s  ETA~ 753.72s
+[progress] step 1500/5000 ( 30.0%)  elapsed= 303.82s  ETA~ 708.90s
+[progress] step 1750/5000 ( 35.0%)  elapsed= 368.86s  ETA~ 685.02s
+[progress] step 2000/5000 ( 40.0%)  elapsed= 418.89s  ETA~ 628.33s
+[progress] step 2250/5000 ( 45.0%)  elapsed= 469.24s  ETA~ 573.51s
+[progress] step 2500/5000 ( 50.0%)  elapsed= 518.38s  ETA~ 518.38s
+[progress] step 2750/5000 ( 55.0%)  elapsed= 570.45s  ETA~ 466.74s
+[progress] step 3000/5000 ( 60.0%)  elapsed= 619.45s  ETA~ 412.96s
+[progress] step 3250/5000 ( 65.0%)  elapsed= 666.07s  ETA~ 358.65s
+[progress] step 3500/5000 ( 70.0%)  elapsed= 708.82s  ETA~ 303.78s
+[progress] step 3750/5000 ( 75.0%)  elapsed= 752.56s  ETA~ 250.85s
+[progress] step 4000/5000 ( 80.0%)  elapsed= 797.49s  ETA~ 199.37s
+[progress] step 4250/5000 ( 85.0%)  elapsed= 841.40s  ETA~ 148.48s
+[progress] step 4500/5000 ( 90.0%)  elapsed= 884.69s  ETA~  98.30s
+[progress] step 4750/5000 ( 95.0%)  elapsed= 927.76s  ETA~  48.83s
+[progress] step 5000/5000 (100.0%)  elapsed= 971.18s  ETA~   0.00s
+
+---- Run summary ----
+Converged            : True
+Runtime (s)          : 971.223
+final_electron_radius: 4.131570392742112
+final_photon_radius  : 5.018157870585624
+final_proton_radius  : 0.0
+final_decoherence_C  : 2.0652354237054253e-72
+emission_observed    : True
+decoherence_in_basis : True
+----------------------
+
+Generating plots into figures/ ...
+Plots written: radii_vs_time.png, decoherence_vs_time.png, radial_profiles.png, electron_slice_xy.png
+
+============================================================================
+Run complete.
+============================================================================

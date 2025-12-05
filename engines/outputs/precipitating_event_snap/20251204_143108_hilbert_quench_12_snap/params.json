@@ -1,0 +1,21 @@
+{
+  "geometry": "lr_embedding_3d_12.npz",
+  "output_root": "outputs",
+  "tag": "hilbert_quench_12_snap",
+  "seed": 117,
+  "J_coupling": 2.0,
+  "h_field_x": 1.0,
+  "defrag_hot": 0.3,
+  "defrag_cold": 1.0,
+  "t_total": 10.0,
+  "t_quench": 4.0,
+  "n_steps": 101,
+  "z_threshold": 0.02,
+  "use_cuda": false,
+  "snapshot_indices": [
+    60,
+    80
+  ],
+  "snapshot_every": 0,
+  "run_root": "outputs\\precipitating_event_snap\\20251204_143108_hilbert_quench_12_snap"
+}

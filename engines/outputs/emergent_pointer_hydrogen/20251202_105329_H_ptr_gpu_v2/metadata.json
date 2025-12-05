@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "emergent_hydrogen_pointer_substrate.py",
+    "--L",
+    "16",
+    "--steps",
+    "5000",
+    "--record-stride",
+    "10",
+    "--use-gpu",
+    "--tag",
+    "H_ptr_gpu_v2"
+  ],
+  "hostname": "unknown",
+  "run_id": "20251202_105329_H_ptr_gpu_v2",
+  "script": "emergent_hydrogen_pointer_substrate.py",
+  "timestamp": "2025-12-02T10:53:29.922530"
+}

@@ -1,0 +1,25 @@
+{
+  "args": {
+    "J_coupling": 1.0,
+    "defrag_cold": 1.0,
+    "defrag_hot": 0.3,
+    "geometry": "lr_embedding_3d.npz",
+    "h_field": 0.2,
+    "n_steps": 101,
+    "output_root": "outputs",
+    "seed": 117,
+    "t_quench": 4.0,
+    "t_total": 10.0,
+    "tag": "hilbert_quench_v1",
+    "z_threshold": 0.5
+  },
+  "extras_in_geometry": [
+    "X",
+    "D_lr",
+    "D_prop"
+  ],
+  "geometry_file": "c:\\GitHub\\resonance-laboratory\\engines\\lr_embedding_3d.npz",
+  "run_root": "c:\\GitHub\\resonance-laboratory\\engines\\outputs\\precipitating_event\\20251203_131958_hilbert_quench_v1",
+  "script": "precipitating_event.py",
+  "seed": 117
+}

@@ -1,0 +1,121 @@
+{
+  "run_root": "c:\\GitHub\\resonance-laboratory\\engines\\outputs\\precipitating_event\\20251204_004044_hilbert_quench_12_z0p02",
+  "n_microstates": 101,
+  "n_internal_states": 101,
+  "n_transitions": 100,
+  "n_scc": 101,
+  "largest_scc_size": 1,
+  "min_edge_count": 1,
+  "top_hubs": [
+    {
+      "rank": 1,
+      "idx": 1,
+      "state_id": 1,
+      "pattern_bits": "011011001101",
+      "center_site": 1,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 99
+    },
+    {
+      "rank": 2,
+      "idx": 2,
+      "state_id": 2,
+      "pattern_bits": "111011000100",
+      "center_site": 9,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 98
+    },
+    {
+      "rank": 3,
+      "idx": 3,
+      "state_id": 3,
+      "pattern_bits": "011101010100",
+      "center_site": 3,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 97
+    },
+    {
+      "rank": 4,
+      "idx": 4,
+      "state_id": 4,
+      "pattern_bits": "011101000100",
+      "center_site": 1,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 96
+    },
+    {
+      "rank": 5,
+      "idx": 6,
+      "state_id": 6,
+      "pattern_bits": "101010001110",
+      "center_site": 0,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 94
+    },
+    {
+      "rank": 6,
+      "idx": 5,
+      "state_id": 5,
+      "pattern_bits": "111001100110",
+      "center_site": 2,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 95
+    },
+    {
+      "rank": 7,
+      "idx": 7,
+      "state_id": 7,
+      "pattern_bits": "110011100100",
+      "center_site": 0,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 93
+    },
+    {
+      "rank": 8,
+      "idx": 8,
+      "state_id": 8,
+      "pattern_bits": "110000110101",
+      "center_site": 0,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 92
+    },
+    {
+      "rank": 9,
+      "idx": 12,
+      "state_id": 12,
+      "pattern_bits": "000001110101",
+      "center_site": 6,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 88
+    },
+    {
+      "rank": 10,
+      "idx": 9,
+      "state_id": 9,
+      "pattern_bits": "110000100001",
+      "center_site": 0,
+      "total_degree": 2.0,
+      "in_degree": 1.0,
+      "out_degree": 1.0,
+      "scc_index": 91
+    }
+  ]
+}

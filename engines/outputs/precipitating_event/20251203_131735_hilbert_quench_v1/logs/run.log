@@ -1,0 +1,8 @@
+============================================================
+  Hilbert-Substrate Precipitating Event
+============================================================
+Run root:        outputs\precipitating_event\20251203_131735_hilbert_quench_v1
+Geometry file:   lr_embedding_3d.npz
+Seed:            117
+------------------------------------------------------------
+[ERROR] Failed to load geometry: Geometry npz must contain 'graph_dist' array.

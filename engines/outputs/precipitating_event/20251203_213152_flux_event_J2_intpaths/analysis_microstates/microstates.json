@@ -1,0 +1,1456 @@
+{
+  "geometry": "c:\\GitHub\\resonance-laboratory\\engines\\lr_embedding_3d.npz",
+  "microstates": [
+    {
+      "center_site": -1,
+      "count": 3,
+      "pattern_bits": "00011110",
+      "times": [
+        3.2,
+        6.9,
+        8.4
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 3,
+      "pattern_bits": "10000101",
+      "times": [
+        16.2,
+        19.3,
+        19.5
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 3,
+      "pattern_bits": "11000001",
+      "times": [
+        4.2,
+        12.100000000000001,
+        18.8
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "00000111",
+      "times": [
+        16.1,
+        16.3
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "00011101",
+      "times": [
+        7.7,
+        9.3
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "00100110",
+      "times": [
+        3.1,
+        17.900000000000002
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "00100111",
+      "times": [
+        15.100000000000001,
+        15.9
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "00101101",
+      "times": [
+        9.5,
+        9.8
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "00111010",
+      "times": [
+        10.100000000000001,
+        17.3
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "01011100",
+      "times": [
+        6.300000000000001,
+        18.5
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "01100110",
+      "times": [
+        8.8,
+        17.400000000000002
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "01110110",
+      "times": [
+        3.0,
+        19.900000000000002
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "10000011",
+      "times": [
+        10.0,
+        11.8
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "10010110",
+      "times": [
+        14.4,
+        14.5
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "10011001",
+      "times": [
+        10.5,
+        17.6
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 2,
+      "pattern_bits": "10101001",
+      "times": [
+        6.0,
+        13.4
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00001011",
+      "times": [
+        11.200000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00010001",
+      "times": [
+        15.4
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00010011",
+      "times": [
+        8.6
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00010101",
+      "times": [
+        9.4
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00010110",
+      "times": [
+        15.600000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00010111",
+      "times": [
+        5.800000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00011010",
+      "times": [
+        6.800000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00011111",
+      "times": [
+        19.1
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00100101",
+      "times": [
+        15.5
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00101001",
+      "times": [
+        7.4
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00101011",
+      "times": [
+        7.300000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00101100",
+      "times": [
+        6.2
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00110101",
+      "times": [
+        4.3
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00110110",
+      "times": [
+        15.0
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00111000",
+      "times": [
+        4.4
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00111101",
+      "times": [
+        15.200000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "00111110",
+      "times": [
+        8.5
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01000111",
+      "times": [
+        2.3000000000000003
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01001010",
+      "times": [
+        1.8
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01001111",
+      "times": [
+        9.200000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01010110",
+      "times": [
+        0.8
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01011000",
+      "times": [
+        2.9000000000000004
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01011001",
+      "times": [
+        12.5
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01011010",
+      "times": [
+        8.1
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01100011",
+      "times": [
+        5.9
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01101000",
+      "times": [
+        9.0
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01111000",
+      "times": [
+        10.8
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "01111100",
+      "times": [
+        3.3000000000000003
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10000100",
+      "times": [
+        4.1000000000000005
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10001001",
+      "times": [
+        5.2
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10001010",
+      "times": [
+        4.0
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10001011",
+      "times": [
+        13.100000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10001100",
+      "times": [
+        7.6000000000000005
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10001111",
+      "times": [
+        7.0
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10010001",
+      "times": [
+        1.1
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10010010",
+      "times": [
+        17.5
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10010100",
+      "times": [
+        14.9
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10010101",
+      "times": [
+        6.6000000000000005
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10011100",
+      "times": [
+        15.700000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10100001",
+      "times": [
+        13.5
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10100110",
+      "times": [
+        17.8
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10101000",
+      "times": [
+        4.7
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10101010",
+      "times": [
+        14.0
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10101101",
+      "times": [
+        7.5
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10110000",
+      "times": [
+        10.9
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10110001",
+      "times": [
+        13.9
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10110010",
+      "times": [
+        8.9
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10110100",
+      "times": [
+        14.700000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "10111000",
+      "times": [
+        1.2000000000000002
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11000110",
+      "times": [
+        2.2
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11000111",
+      "times": [
+        12.700000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11001000",
+      "times": [
+        4.800000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11001010",
+      "times": [
+        11.100000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11001101",
+      "times": [
+        1.4000000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11010000",
+      "times": [
+        12.200000000000001
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11010010",
+      "times": [
+        2.1
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11010100",
+      "times": [
+        18.7
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11011000",
+      "times": [
+        2.8000000000000003
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11100100",
+      "times": [
+        19.6
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11101000",
+      "times": [
+        4.6000000000000005
+      ]
+    },
+    {
+      "center_site": -1,
+      "count": 1,
+      "pattern_bits": "11111000",
+      "times": [
+        1.3
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 2,
+      "pattern_bits": "00011100",
+      "times": [
+        16.900000000000002,
+        17.0
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 2,
+      "pattern_bits": "10000011",
+      "times": [
+        2.7,
+        12.4
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 2,
+      "pattern_bits": "10010000",
+      "times": [
+        11.0,
+        13.0
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "00000011",
+      "times": [
+        16.400000000000002
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "00010110",
+      "times": [
+        10.700000000000001
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "00010111",
+      "times": [
+        11.600000000000001
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "00101000",
+      "times": [
+        14.100000000000001
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "00110111",
+      "times": [
+        11.3
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "00111100",
+      "times": [
+        14.200000000000001
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "01001110",
+      "times": [
+        1.7000000000000002
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "01010111",
+      "times": [
+        19.0
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "01100001",
+      "times": [
+        8.700000000000001
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "01101001",
+      "times": [
+        16.8
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "10001000",
+      "times": [
+        11.9
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "10001011",
+      "times": [
+        3.9000000000000004
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "10001100",
+      "times": [
+        0.5
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "10011100",
+      "times": [
+        13.600000000000001
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "10110010",
+      "times": [
+        12.3
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "10110100",
+      "times": [
+        3.5
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "10111010",
+      "times": [
+        2.0
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "11001000",
+      "times": [
+        12.0
+      ]
+    },
+    {
+      "center_site": 0,
+      "count": 1,
+      "pattern_bits": "11001100",
+      "times": [
+        0.4
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "00011001",
+      "times": [
+        9.700000000000001
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "00011011",
+      "times": [
+        9.600000000000001
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "00100111",
+      "times": [
+        11.700000000000001
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "00101001",
+      "times": [
+        6.1000000000000005
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "00101110",
+      "times": [
+        3.7
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "01001010",
+      "times": [
+        8.200000000000001
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "10000111",
+      "times": [
+        0.6000000000000001
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "10010011",
+      "times": [
+        16.6
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "10011001",
+      "times": [
+        14.3
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "10011100",
+      "times": [
+        19.200000000000003
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "10101001",
+      "times": [
+        13.700000000000001
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "10111100",
+      "times": [
+        3.6
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "11011001",
+      "times": [
+        5.7
+      ]
+    },
+    {
+      "center_site": 1,
+      "count": 1,
+      "pattern_bits": "11111000",
+      "times": [
+        4.5
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "00001011",
+      "times": [
+        10.3
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "00011101",
+      "times": [
+        7.800000000000001
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "00011111",
+      "times": [
+        16.5
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "00100010",
+      "times": [
+        12.8
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "00101001",
+      "times": [
+        13.8
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "01000101",
+      "times": [
+        6.4
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "01010011",
+      "times": [
+        7.9
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "01010101",
+      "times": [
+        12.600000000000001
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "01011110",
+      "times": [
+        9.1
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "10001111",
+      "times": [
+        2.4000000000000004
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "10011001",
+      "times": [
+        5.1000000000000005
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "10011011",
+      "times": [
+        10.4
+      ]
+    },
+    {
+      "center_site": 2,
+      "count": 1,
+      "pattern_bits": "11011011",
+      "times": [
+        8.3
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "00011001",
+      "times": [
+        14.600000000000001
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "00011010",
+      "times": [
+        13.3
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "00101001",
+      "times": [
+        18.0
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "00110000",
+      "times": [
+        10.600000000000001
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "01001101",
+      "times": [
+        2.5
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "01011010",
+      "times": [
+        13.200000000000001
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "01011100",
+      "times": [
+        5.0
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "01100101",
+      "times": [
+        17.1
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "10000101",
+      "times": [
+        2.6
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "10000111",
+      "times": [
+        7.1000000000000005
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "10010101",
+      "times": [
+        15.3
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "10100011",
+      "times": [
+        3.8000000000000003
+      ]
+    },
+    {
+      "center_site": 3,
+      "count": 1,
+      "pattern_bits": "11011000",
+      "times": [
+        6.7
+      ]
+    },
+    {
+      "center_site": 4,
+      "count": 1,
+      "pattern_bits": "10100111",
+      "times": [
+        7.2
+      ]
+    },
+    {
+      "center_site": 4,
+      "count": 1,
+      "pattern_bits": "10110100",
+      "times": [
+        14.8
+      ]
+    },
+    {
+      "center_site": 4,
+      "count": 1,
+      "pattern_bits": "11000111",
+      "times": [
+        6.5
+      ]
+    },
+    {
+      "center_site": 4,
+      "count": 1,
+      "pattern_bits": "11100010",
+      "times": [
+        0.0
+      ]
+    },
+    {
+      "center_site": 5,
+      "count": 1,
+      "pattern_bits": "00000110",
+      "times": [
+        1.6
+      ]
+    },
+    {
+      "center_site": 5,
+      "count": 1,
+      "pattern_bits": "00010111",
+      "times": [
+        18.900000000000002
+      ]
+    },
+    {
+      "center_site": 5,
+      "count": 1,
+      "pattern_bits": "00101011",
+      "times": [
+        10.200000000000001
+      ]
+    },
+    {
+      "center_site": 5,
+      "count": 1,
+      "pattern_bits": "01101011",
+      "times": [
+        16.7
+      ]
+    },
+    {
+      "center_site": 5,
+      "count": 1,
+      "pattern_bits": "10000101",
+      "times": [
+        1.5
+      ]
+    },
+    {
+      "center_site": 5,
+      "count": 1,
+      "pattern_bits": "10000110",
+      "times": [
+        19.400000000000002
+      ]
+    },
+    {
+      "center_site": 5,
+      "count": 1,
+      "pattern_bits": "10111010",
+      "times": [
+        1.9000000000000001
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 2,
+      "pattern_bits": "11001001",
+      "times": [
+        0.30000000000000004,
+        19.8
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "00001111",
+      "times": [
+        0.7000000000000001
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "00010011",
+      "times": [
+        16.0
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "00011101",
+      "times": [
+        18.3
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "00111100",
+      "times": [
+        15.8
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "01000001",
+      "times": [
+        1.0
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "01000111",
+      "times": [
+        11.5
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "01010010",
+      "times": [
+        8.0
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "01100101",
+      "times": [
+        0.9
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "01111000",
+      "times": [
+        0.2
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "10101101",
+      "times": [
+        17.7
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "11001100",
+      "times": [
+        19.700000000000003
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "11010101",
+      "times": [
+        5.6000000000000005
+      ]
+    },
+    {
+      "center_site": 6,
+      "count": 1,
+      "pattern_bits": "11110100",
+      "times": [
+        3.4000000000000004
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "00000111",
+      "times": [
+        11.4
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "00001101",
+      "times": [
+        18.2
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "00011100",
+      "times": [
+        18.6
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "00100001",
+      "times": [
+        9.9
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "00110110",
+      "times": [
+        5.300000000000001
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "00111010",
+      "times": [
+        12.9
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "01011010",
+      "times": [
+        4.9
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "01011101",
+      "times": [
+        18.400000000000002
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "01110110",
+      "times": [
+        0.1
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "10000101",
+      "times": [
+        17.2
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "10001101",
+      "times": [
+        18.1
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "10101010",
+      "times": [
+        5.4
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "10111100",
+      "times": [
+        5.5
+      ]
+    },
+    {
+      "center_site": 7,
+      "count": 1,
+      "pattern_bits": "11110010",
+      "times": [
+        20.0
+      ]
+    }
+  ],
+  "n_sites": 8,
+  "n_times": 201,
+  "n_unique_microstates": 178,
+  "run_root": "c:\\GitHub\\resonance-laboratory\\engines\\outputs\\precipitating_event\\20251203_213152_flux_event_J2_intpaths"
+}

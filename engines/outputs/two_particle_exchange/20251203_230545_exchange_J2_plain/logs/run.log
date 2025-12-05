@@ -1,0 +1,40 @@
+======================================================================
+  Two-Particle Exchange Experiment (Hilbert substrate, CUDA-aware)
+======================================================================
+Run root:  outputs\two_particle_exchange\20251203_230545_exchange_J2_plain
+Geometry:  lr_embedding_3d.npz
+Gauge run: (none)
+CuPy/CUDA: ENABLED
+----------------------------------------------------------------------
+Geometry n_sites: 8
+Edges:           [(0, 1), (0, 2), (0, 4), (1, 3), (1, 5), (2, 3), (2, 6), (3, 7), (4, 5), (4, 6), (5, 7), (6, 7)]
+----------------------------------------------------------------------
+[GAUGE] No gauge-run-root provided; using plain Heisenberg+ZZ.
+Initial pinned ground state energy E_init = -39.431052
+----------------------------------------------------------------------
+Starting time evolution...
+  total_time = 20.0, n_steps = 200, dt = 0.1005
+  bias_strength = 1.0, init_pin_strength = 4.0
+----------------------------------------------------------------------
+[step   20/199] t=2.010 Z_triv[0]=-0.061, Z_exch[0]=-0.061
+[step   40/199] t=4.020 Z_triv[0]=+0.164, Z_exch[0]=+0.080
+[step   60/199] t=6.030 Z_triv[0]=-0.031, Z_exch[0]=-0.128
+[step   80/199] t=8.040 Z_triv[0]=+0.084, Z_exch[0]=+0.036
+[step  100/199] t=10.050 Z_triv[0]=+0.041, Z_exch[0]=-0.049
+[step  120/199] t=12.060 Z_triv[0]=+0.080, Z_exch[0]=+0.069
+[step  140/199] t=14.070 Z_triv[0]=+0.101, Z_exch[0]=-0.001
+[step  160/199] t=16.080 Z_triv[0]=+0.055, Z_exch[0]=+0.039
+[step  180/199] t=18.090 Z_triv[0]=+0.108, Z_exch[0]=+0.006
+[step  199/199] t=20.000 Z_triv[0]=-0.021, Z_exch[0]=-0.047
+----------------------------------------------------------------------
+Time evolution complete.
+----------------------------------------------------------------------
+Final overlap <psi_trivial|psi_exchange> = +0.970181+0.002119i
+|overlap| = 0.970184
+arg(overlap) [radians] = 0.002184
+arg(overlap) [degrees] = 0.125
+----------------------------------------------------------------------
+==== Exchange Summary ====
+Overlap magnitude: 0.970184
+Overlap phase:     0.002184 rad  (0.125 deg)
+======================================

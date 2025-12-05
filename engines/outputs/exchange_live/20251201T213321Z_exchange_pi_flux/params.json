@@ -1,0 +1,36 @@
+{
+  "args": {
+    "connectivity": 0.4,
+    "defrag_rate": 0.5,
+    "dt": 0.1,
+    "internal_dim": 4,
+    "n_nodes": 64,
+    "output_root": "outputs",
+    "pi_window": 1.0471975511965976,
+    "prob_threshold": 0.5,
+    "seed": 42,
+    "steps": 4000,
+    "tag": "exchange_pi_flux",
+    "top_k": 16,
+    "use_gpu": null
+  },
+  "config": {
+    "connectivity": 0.4,
+    "defrag_cutoff": 0.0,
+    "defrag_rate": 0.5,
+    "dt": 0.1,
+    "gauge_matter_coupling": 2.0,
+    "gauge_noise": 0.01,
+    "gauge_phase_rate": 0.05,
+    "internal_dim": 4,
+    "monogamy_budget": 1.0,
+    "n_nodes": 64,
+    "pressure_gamma": 1.0,
+    "pressure_lambda": 0.0,
+    "pressure_p": 0.5,
+    "pressure_q": 2.0,
+    "seed": 42,
+    "use_gpu": null
+  },
+  "run_id": "20251201T213321Z_exchange_pi_flux"
+}

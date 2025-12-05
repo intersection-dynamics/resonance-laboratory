@@ -1,0 +1,22 @@
+{
+  "burn_in_steps": 500,
+  "connectivity": 0.35,
+  "defrag_rate": 0.05,
+  "dt": 0.1,
+  "electron_inner_quantile": 0.5,
+  "electron_target_norm": 0.3,
+  "internal_dim": 16,
+  "kmeans_iters": 50,
+  "measurement_stride": 50,
+  "monogamy_budget": 1.0,
+  "n_clusters": 3,
+  "n_nodes": 64,
+  "output_root": "outputs",
+  "photon_near_quantile": 0.5,
+  "photon_target_norm": 0.4,
+  "proton_target_norm": 0.3,
+  "record_stride": 10,
+  "seed": 42,
+  "tag": "pointer_trajectory",
+  "total_steps": 4000
+}

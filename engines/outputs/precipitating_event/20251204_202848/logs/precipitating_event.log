@@ -1,0 +1,9 @@
+============================================================
+  Hilbert-Substrate Precipitating Event (single-file, gauge-ready, CUDA-aware)
+============================================================
+Run root:      outputs\precipitating_event\20251204_202848
+Geometry file: lr_embedding_16.npz
+Seed:          117
+Use gauge:     False
+CuPy/CUDA:     ENABLED
+------------------------------------------------------------

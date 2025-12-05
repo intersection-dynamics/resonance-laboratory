@@ -1,0 +1,28 @@
+Emergent Particles Summary
+==========================
+
+asset_dir      : cubic_universe_L3
+metrics_file   : lr_metrics.npz
+embedding_file : lr_embedding_3d.npz
+embedding_smooth_file : lr_embedding_3d_smooth.npz
+seed           : 117
+t_max, n_steps : 10.0, 4000
+quench_fraction: 0.4
+Omega          : (0.0, 0.0, 1.0)
+max_cycle_len  : 4
+min_abs_q      : 1
+output_dir     : emergent_particles_L3_Omega1_seed117
+
+Snapshot index : 4000
+Snapshot time  : 10.000000
+Q_net(0)       : -1
+Q_net(final)   : 6
+
+Total cycles          : 36
+Nonzero-vorticity cycles (|q| >= 1): 14
+
+Identified clusters   : 1
+
+idx | Q_cluster | weight   | radius   | center_x  center_y  center_z | n_nodes | n_cycles
+----+----------+----------+----------+--------------------------------+---------+---------
+  0 |        6 |  0.9468 |  1.3843 |   0.9185   1.0478   0.9185 |      25 |       14

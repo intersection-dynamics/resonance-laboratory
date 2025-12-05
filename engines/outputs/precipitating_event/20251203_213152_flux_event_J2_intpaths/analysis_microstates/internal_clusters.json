@@ -1,0 +1,4023 @@
+{
+  "center_sites": {
+    "-1": {
+      "center_site": -1,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.09950248756218906,
+          "fraction_of_center_site": 0.20833333333333334,
+          "members": [
+            {
+              "count": 3,
+              "internal_change_count": 0,
+              "pattern_bits": "00011110",
+              "state_id": 32
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "01011100",
+              "state_id": 63
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "00011101",
+              "state_id": 76
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "00111010",
+              "state_id": 97
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "10010110",
+              "state_id": 135
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01010110",
+              "state_id": 8
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00010111",
+              "state_id": 58
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00011010",
+              "state_id": 68
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01011010",
+              "state_id": 80
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00111110",
+              "state_id": 83
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00110110",
+              "state_id": 140
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00010110",
+              "state_id": 146
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10011100",
+              "state_id": 147
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00011111",
+              "state_id": 172
+            }
+          ],
+          "representative_pattern": "00011110",
+          "total_count": 20
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.07462686567164178,
+          "fraction_of_center_site": 0.15625,
+          "members": [
+            {
+              "count": 3,
+              "internal_change_count": 0,
+              "pattern_bits": "11000001",
+              "state_id": 42
+            },
+            {
+              "count": 3,
+              "internal_change_count": 0,
+              "pattern_bits": "10000101",
+              "state_id": 151
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "10000011",
+              "state_id": 96
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10010001",
+              "state_id": 11
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11001101",
+              "state_id": 14
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11001000",
+              "state_id": 48
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10001001",
+              "state_id": 52
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11010000",
+              "state_id": 116
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11000111",
+              "state_id": 120
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10100001",
+              "state_id": 126
+            }
+          ],
+          "representative_pattern": "11000001",
+          "total_count": 15
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.03482587064676617,
+          "fraction_of_center_site": 0.07291666666666667,
+          "members": [
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "01110110",
+              "state_id": 30
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "00100110",
+              "state_id": 31
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "01100110",
+              "state_id": 86
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01111100",
+              "state_id": 33
+            }
+          ],
+          "representative_pattern": "01110110",
+          "total_count": 7
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.07462686567164178,
+          "fraction_of_center_site": 0.15625,
+          "members": [
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "10101001",
+              "state_id": 60
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "00101101",
+              "state_id": 92
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "10011001",
+              "state_id": 101
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10111000",
+              "state_id": 12
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11101000",
+              "state_id": 46
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10101000",
+              "state_id": 47
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00101011",
+              "state_id": 72
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00101001",
+              "state_id": 73
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10101101",
+              "state_id": 74
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10001011",
+              "state_id": 123
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10110001",
+              "state_id": 130
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10101010",
+              "state_id": 131
+            }
+          ],
+          "representative_pattern": "10101001",
+          "total_count": 15
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.04477611940298507,
+          "fraction_of_center_site": 0.09375,
+          "members": [
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "00100111",
+              "state_id": 141
+            },
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "00000111",
+              "state_id": 150
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01000111",
+              "state_id": 23
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00110101",
+              "state_id": 43
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01100011",
+              "state_id": 59
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00100101",
+              "state_id": 145
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10100110",
+              "state_id": 162
+            }
+          ],
+          "representative_pattern": "00100111",
+          "total_count": 9
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.03482587064676617,
+          "fraction_of_center_site": 0.07291666666666667,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11111000",
+              "state_id": 13
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11011000",
+              "state_id": 28
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01011000",
+              "state_id": 29
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00111000",
+              "state_id": 44
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01101000",
+              "state_id": 88
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01111000",
+              "state_id": 104
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10110000",
+              "state_id": 105
+            }
+          ],
+          "representative_pattern": "11111000",
+          "total_count": 7
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.024875621890547265,
+          "fraction_of_center_site": 0.052083333333333336,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01001010",
+              "state_id": 18
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10001010",
+              "state_id": 40
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01001111",
+              "state_id": 90
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11001010",
+              "state_id": 107
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00001011",
+              "state_id": 108
+            }
+          ],
+          "representative_pattern": "01001010",
+          "total_count": 5
+        },
+        {
+          "cluster_id": 7,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.024875621890547265,
+          "fraction_of_center_site": 0.052083333333333336,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11010010",
+              "state_id": 21
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11000110",
+              "state_id": 22
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10110010",
+              "state_id": 87
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10010010",
+              "state_id": 160
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11010100",
+              "state_id": 169
+            }
+          ],
+          "representative_pattern": "11010010",
+          "total_count": 5
+        },
+        {
+          "cluster_id": 8,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.029850746268656716,
+          "fraction_of_center_site": 0.0625,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10000100",
+              "state_id": 41
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10010101",
+              "state_id": 66
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10001100",
+              "state_id": 75
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10110100",
+              "state_id": 137
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10010100",
+              "state_id": 139
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11100100",
+              "state_id": 175
+            }
+          ],
+          "representative_pattern": "10000100",
+          "total_count": 6
+        },
+        {
+          "cluster_id": 9,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.020833333333333332,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00101100",
+              "state_id": 62
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00111101",
+              "state_id": 142
+            }
+          ],
+          "representative_pattern": "00101100",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 10,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.010416666666666666,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10001111",
+              "state_id": 69
+            }
+          ],
+          "representative_pattern": "10001111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 11,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.03125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00010011",
+              "state_id": 84
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00010101",
+              "state_id": 91
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00010001",
+              "state_id": 144
+            }
+          ],
+          "representative_pattern": "00010011",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 12,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.010416666666666666,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01011001",
+              "state_id": 118
+            }
+          ],
+          "representative_pattern": "01011001",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 96
+    },
+    "0": {
+      "center_site": 0,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.25,
+          "fraction_of_all_times": 0.01990049751243781,
+          "fraction_of_center_site": 0.16,
+          "members": [
+            {
+              "count": 2,
+              "internal_change_count": 1,
+              "pattern_bits": "10000011",
+              "state_id": 27
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10001011",
+              "state_id": 39
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00000011",
+              "state_id": 152
+            }
+          ],
+          "representative_pattern": "10000011",
+          "total_count": 4
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.029850746268656716,
+          "fraction_of_center_site": 0.24,
+          "members": [
+            {
+              "count": 2,
+              "internal_change_count": 0,
+              "pattern_bits": "10010000",
+              "state_id": 106
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10110100",
+              "state_id": 35
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10001000",
+              "state_id": 114
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10110010",
+              "state_id": 117
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10011100",
+              "state_id": 127
+            }
+          ],
+          "representative_pattern": "10010000",
+          "total_count": 6
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.6,
+          "fraction_of_all_times": 0.024875621890547265,
+          "fraction_of_center_site": 0.2,
+          "members": [
+            {
+              "count": 2,
+              "internal_change_count": 1,
+              "pattern_bits": "00011100",
+              "state_id": 157
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "10001100",
+              "state_id": 5
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00010110",
+              "state_id": 103
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "00111100",
+              "state_id": 133
+            }
+          ],
+          "representative_pattern": "00011100",
+          "total_count": 5
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.3333333333333333,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.12,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11001100",
+              "state_id": 4
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01001110",
+              "state_id": 17
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "11001000",
+              "state_id": 115
+            }
+          ],
+          "representative_pattern": "11001100",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.04,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10111010",
+              "state_id": 20
+            }
+          ],
+          "representative_pattern": "10111010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.08,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01100001",
+              "state_id": 85
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01101001",
+              "state_id": 156
+            }
+          ],
+          "representative_pattern": "01100001",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.12,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00110111",
+              "state_id": 109
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00010111",
+              "state_id": 112
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01010111",
+              "state_id": 171
+            }
+          ],
+          "representative_pattern": "00110111",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 7,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.04,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00101000",
+              "state_id": 132
+            }
+          ],
+          "representative_pattern": "00101000",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 25
+    },
+    "1": {
+      "center_site": 1,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.21428571428571427,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10000111",
+              "state_id": 6
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00100111",
+              "state_id": 113
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10010011",
+              "state_id": 154
+            }
+          ],
+          "representative_pattern": "10000111",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.21428571428571427,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10111100",
+              "state_id": 36
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11111000",
+              "state_id": 45
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10011100",
+              "state_id": 173
+            }
+          ],
+          "representative_pattern": "10111100",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07142857142857142,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "00101110",
+              "state_id": 37
+            }
+          ],
+          "representative_pattern": "00101110",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.3333333333333333,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.21428571428571427,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11011001",
+              "state_id": 57
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "00011001",
+              "state_id": 94
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10011001",
+              "state_id": 134
+            }
+          ],
+          "representative_pattern": "11011001",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00101001",
+              "state_id": 61
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10101001",
+              "state_id": 128
+            }
+          ],
+          "representative_pattern": "00101001",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07142857142857142,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01001010",
+              "state_id": 81
+            }
+          ],
+          "representative_pattern": "01001010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07142857142857142,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00011011",
+              "state_id": 93
+            }
+          ],
+          "representative_pattern": "00011011",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 14
+    },
+    "2": {
+      "center_site": 2,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.25,
+          "fraction_of_all_times": 0.01990049751243781,
+          "fraction_of_center_site": 0.3076923076923077,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10001111",
+              "state_id": 24
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00001011",
+              "state_id": 99
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "10011011",
+              "state_id": 100
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00011111",
+              "state_id": 153
+            }
+          ],
+          "representative_pattern": "10001111",
+          "total_count": 4
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.23076923076923078,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10011001",
+              "state_id": 51
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00011101",
+              "state_id": 77
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11011011",
+              "state_id": 82
+            }
+          ],
+          "representative_pattern": "10011001",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01000101",
+              "state_id": 64
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01010101",
+              "state_id": 119
+            }
+          ],
+          "representative_pattern": "01000101",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "01010011",
+              "state_id": 78
+            }
+          ],
+          "representative_pattern": "01010011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01011110",
+              "state_id": 89
+            }
+          ],
+          "representative_pattern": "01011110",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00100010",
+              "state_id": 121
+            }
+          ],
+          "representative_pattern": "00100010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00101001",
+              "state_id": 129
+            }
+          ],
+          "representative_pattern": "00101001",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 13
+    },
+    "3": {
+      "center_site": 3,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.23076923076923078,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01001101",
+              "state_id": 25
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01011100",
+              "state_id": 50
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01100101",
+              "state_id": 158
+            }
+          ],
+          "representative_pattern": "01001101",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.3333333333333333,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.23076923076923078,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "10000101",
+              "state_id": 26
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10000111",
+              "state_id": 70
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10010101",
+              "state_id": 143
+            }
+          ],
+          "representative_pattern": "10000101",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10100011",
+              "state_id": 38
+            }
+          ],
+          "representative_pattern": "10100011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11011000",
+              "state_id": 67
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01011010",
+              "state_id": 124
+            }
+          ],
+          "representative_pattern": "11011000",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00110000",
+              "state_id": 102
+            }
+          ],
+          "representative_pattern": "00110000",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.5,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "00011010",
+              "state_id": 125
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00011001",
+              "state_id": 136
+            }
+          ],
+          "representative_pattern": "00011010",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00101001",
+              "state_id": 163
+            }
+          ],
+          "representative_pattern": "00101001",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 13
+    },
+    "4": {
+      "center_site": 4,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11100010",
+              "state_id": 0
+            }
+          ],
+          "representative_pattern": "11100010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.5,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11000111",
+              "state_id": 65
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10100111",
+              "state_id": 71
+            }
+          ],
+          "representative_pattern": "11000111",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10110100",
+              "state_id": 138
+            }
+          ],
+          "representative_pattern": "10110100",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 4
+    },
+    "5": {
+      "center_site": 5,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.2857142857142857,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10000101",
+              "state_id": 15
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10000110",
+              "state_id": 174
+            }
+          ],
+          "representative_pattern": "10000101",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.5,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.2857142857142857,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "00000110",
+              "state_id": 16
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00010111",
+              "state_id": 170
+            }
+          ],
+          "representative_pattern": "00000110",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10111010",
+              "state_id": 19
+            }
+          ],
+          "representative_pattern": "10111010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.2857142857142857,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00101011",
+              "state_id": 98
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01101011",
+              "state_id": 155
+            }
+          ],
+          "representative_pattern": "00101011",
+          "total_count": 2
+        }
+      ],
+      "total_occurrences": 7
+    },
+    "6": {
+      "center_site": 6,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.75,
+          "fraction_of_all_times": 0.01990049751243781,
+          "fraction_of_center_site": 0.26666666666666666,
+          "members": [
+            {
+              "count": 2,
+              "internal_change_count": 2,
+              "pattern_bits": "11001001",
+              "state_id": 3
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "01000001",
+              "state_id": 10
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11001100",
+              "state_id": 176
+            }
+          ],
+          "representative_pattern": "11001001",
+          "total_count": 4
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.13333333333333333,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01111000",
+              "state_id": 2
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00111100",
+              "state_id": 148
+            }
+          ],
+          "representative_pattern": "01111000",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.2,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00001111",
+              "state_id": 7
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01000111",
+              "state_id": 111
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00011101",
+              "state_id": 166
+            }
+          ],
+          "representative_pattern": "00001111",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.06666666666666667,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01100101",
+              "state_id": 9
+            }
+          ],
+          "representative_pattern": "01100101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.13333333333333333,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11110100",
+              "state_id": 34
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11010101",
+              "state_id": 56
+            }
+          ],
+          "representative_pattern": "11110100",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.13333333333333333,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01010010",
+              "state_id": 79
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00010011",
+              "state_id": 149
+            }
+          ],
+          "representative_pattern": "01010010",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.06666666666666667,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10101101",
+              "state_id": 161
+            }
+          ],
+          "representative_pattern": "10101101",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 15
+    },
+    "7": {
+      "center_site": 7,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.21428571428571427,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01110110",
+              "state_id": 1
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00110110",
+              "state_id": 53
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "11110010",
+              "state_id": 177
+            }
+          ],
+          "representative_pattern": "01110110",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01011010",
+              "state_id": 49
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00111010",
+              "state_id": 122
+            }
+          ],
+          "representative_pattern": "01011010",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07142857142857142,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "10101010",
+              "state_id": 54
+            }
+          ],
+          "representative_pattern": "10101010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.5,
+          "fraction_of_all_times": 0.009950248756218905,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "10111100",
+              "state_id": 55
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00011100",
+              "state_id": 168
+            }
+          ],
+          "representative_pattern": "10111100",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07142857142857142,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00100001",
+              "state_id": 95
+            }
+          ],
+          "representative_pattern": "00100001",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.3333333333333333,
+          "fraction_of_all_times": 0.014925373134328358,
+          "fraction_of_center_site": 0.21428571428571427,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "00000111",
+              "state_id": 110
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10000101",
+              "state_id": 159
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "00001101",
+              "state_id": 165
+            }
+          ],
+          "representative_pattern": "00000111",
+          "total_count": 3
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07142857142857142,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "10001101",
+              "state_id": 164
+            }
+          ],
+          "representative_pattern": "10001101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 7,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.004975124378109453,
+          "fraction_of_center_site": 0.07142857142857142,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "01011101",
+              "state_id": 167
+            }
+          ],
+          "representative_pattern": "01011101",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 14
+    }
+  },
+  "cluster_radius": 2,
+  "n_sites": 8,
+  "n_states": 178,
+  "n_times": 201,
+  "run_root": "c:\\GitHub\\resonance-laboratory\\engines\\outputs\\precipitating_event\\20251203_213152_flux_event_J2_intpaths",
+  "transitions": {
+    "edges": [
+      {
+        "count": 1,
+        "from_state": 0,
+        "to_state": 1
+      },
+      {
+        "count": 1,
+        "from_state": 1,
+        "to_state": 2
+      },
+      {
+        "count": 1,
+        "from_state": 2,
+        "to_state": 3
+      },
+      {
+        "count": 1,
+        "from_state": 3,
+        "to_state": 4
+      },
+      {
+        "count": 1,
+        "from_state": 3,
+        "to_state": 30
+      },
+      {
+        "count": 1,
+        "from_state": 4,
+        "to_state": 5
+      },
+      {
+        "count": 1,
+        "from_state": 5,
+        "to_state": 6
+      },
+      {
+        "count": 1,
+        "from_state": 6,
+        "to_state": 7
+      },
+      {
+        "count": 1,
+        "from_state": 7,
+        "to_state": 8
+      },
+      {
+        "count": 1,
+        "from_state": 8,
+        "to_state": 9
+      },
+      {
+        "count": 1,
+        "from_state": 9,
+        "to_state": 10
+      },
+      {
+        "count": 1,
+        "from_state": 10,
+        "to_state": 11
+      },
+      {
+        "count": 1,
+        "from_state": 11,
+        "to_state": 12
+      },
+      {
+        "count": 1,
+        "from_state": 12,
+        "to_state": 13
+      },
+      {
+        "count": 1,
+        "from_state": 13,
+        "to_state": 14
+      },
+      {
+        "count": 1,
+        "from_state": 14,
+        "to_state": 15
+      },
+      {
+        "count": 1,
+        "from_state": 15,
+        "to_state": 16
+      },
+      {
+        "count": 1,
+        "from_state": 16,
+        "to_state": 17
+      },
+      {
+        "count": 1,
+        "from_state": 17,
+        "to_state": 18
+      },
+      {
+        "count": 1,
+        "from_state": 18,
+        "to_state": 19
+      },
+      {
+        "count": 1,
+        "from_state": 19,
+        "to_state": 20
+      },
+      {
+        "count": 1,
+        "from_state": 20,
+        "to_state": 21
+      },
+      {
+        "count": 1,
+        "from_state": 21,
+        "to_state": 22
+      },
+      {
+        "count": 1,
+        "from_state": 22,
+        "to_state": 23
+      },
+      {
+        "count": 1,
+        "from_state": 23,
+        "to_state": 24
+      },
+      {
+        "count": 1,
+        "from_state": 24,
+        "to_state": 25
+      },
+      {
+        "count": 1,
+        "from_state": 25,
+        "to_state": 26
+      },
+      {
+        "count": 1,
+        "from_state": 26,
+        "to_state": 27
+      },
+      {
+        "count": 1,
+        "from_state": 27,
+        "to_state": 28
+      },
+      {
+        "count": 1,
+        "from_state": 27,
+        "to_state": 118
+      },
+      {
+        "count": 1,
+        "from_state": 28,
+        "to_state": 29
+      },
+      {
+        "count": 1,
+        "from_state": 29,
+        "to_state": 30
+      },
+      {
+        "count": 1,
+        "from_state": 30,
+        "to_state": 31
+      },
+      {
+        "count": 1,
+        "from_state": 30,
+        "to_state": 177
+      },
+      {
+        "count": 1,
+        "from_state": 31,
+        "to_state": 32
+      },
+      {
+        "count": 1,
+        "from_state": 31,
+        "to_state": 163
+      },
+      {
+        "count": 1,
+        "from_state": 32,
+        "to_state": 33
+      },
+      {
+        "count": 1,
+        "from_state": 32,
+        "to_state": 69
+      },
+      {
+        "count": 1,
+        "from_state": 32,
+        "to_state": 83
+      },
+      {
+        "count": 1,
+        "from_state": 33,
+        "to_state": 34
+      },
+      {
+        "count": 1,
+        "from_state": 34,
+        "to_state": 35
+      },
+      {
+        "count": 1,
+        "from_state": 35,
+        "to_state": 36
+      },
+      {
+        "count": 1,
+        "from_state": 36,
+        "to_state": 37
+      },
+      {
+        "count": 1,
+        "from_state": 37,
+        "to_state": 38
+      },
+      {
+        "count": 1,
+        "from_state": 38,
+        "to_state": 39
+      },
+      {
+        "count": 1,
+        "from_state": 39,
+        "to_state": 40
+      },
+      {
+        "count": 1,
+        "from_state": 40,
+        "to_state": 41
+      },
+      {
+        "count": 1,
+        "from_state": 41,
+        "to_state": 42
+      },
+      {
+        "count": 1,
+        "from_state": 42,
+        "to_state": 43
+      },
+      {
+        "count": 1,
+        "from_state": 42,
+        "to_state": 116
+      },
+      {
+        "count": 1,
+        "from_state": 42,
+        "to_state": 170
+      },
+      {
+        "count": 1,
+        "from_state": 43,
+        "to_state": 44
+      },
+      {
+        "count": 1,
+        "from_state": 44,
+        "to_state": 45
+      },
+      {
+        "count": 1,
+        "from_state": 45,
+        "to_state": 46
+      },
+      {
+        "count": 1,
+        "from_state": 46,
+        "to_state": 47
+      },
+      {
+        "count": 1,
+        "from_state": 47,
+        "to_state": 48
+      },
+      {
+        "count": 1,
+        "from_state": 48,
+        "to_state": 49
+      },
+      {
+        "count": 1,
+        "from_state": 49,
+        "to_state": 50
+      },
+      {
+        "count": 1,
+        "from_state": 50,
+        "to_state": 51
+      },
+      {
+        "count": 1,
+        "from_state": 51,
+        "to_state": 52
+      },
+      {
+        "count": 1,
+        "from_state": 52,
+        "to_state": 53
+      },
+      {
+        "count": 1,
+        "from_state": 53,
+        "to_state": 54
+      },
+      {
+        "count": 1,
+        "from_state": 54,
+        "to_state": 55
+      },
+      {
+        "count": 1,
+        "from_state": 55,
+        "to_state": 56
+      },
+      {
+        "count": 1,
+        "from_state": 56,
+        "to_state": 57
+      },
+      {
+        "count": 1,
+        "from_state": 57,
+        "to_state": 58
+      },
+      {
+        "count": 1,
+        "from_state": 58,
+        "to_state": 59
+      },
+      {
+        "count": 1,
+        "from_state": 59,
+        "to_state": 60
+      },
+      {
+        "count": 1,
+        "from_state": 60,
+        "to_state": 61
+      },
+      {
+        "count": 1,
+        "from_state": 60,
+        "to_state": 126
+      },
+      {
+        "count": 1,
+        "from_state": 61,
+        "to_state": 62
+      },
+      {
+        "count": 1,
+        "from_state": 62,
+        "to_state": 63
+      },
+      {
+        "count": 1,
+        "from_state": 63,
+        "to_state": 64
+      },
+      {
+        "count": 1,
+        "from_state": 63,
+        "to_state": 168
+      },
+      {
+        "count": 1,
+        "from_state": 64,
+        "to_state": 65
+      },
+      {
+        "count": 1,
+        "from_state": 65,
+        "to_state": 66
+      },
+      {
+        "count": 1,
+        "from_state": 66,
+        "to_state": 67
+      },
+      {
+        "count": 1,
+        "from_state": 67,
+        "to_state": 68
+      },
+      {
+        "count": 1,
+        "from_state": 68,
+        "to_state": 32
+      },
+      {
+        "count": 1,
+        "from_state": 69,
+        "to_state": 70
+      },
+      {
+        "count": 1,
+        "from_state": 70,
+        "to_state": 71
+      },
+      {
+        "count": 1,
+        "from_state": 71,
+        "to_state": 72
+      },
+      {
+        "count": 1,
+        "from_state": 72,
+        "to_state": 73
+      },
+      {
+        "count": 1,
+        "from_state": 73,
+        "to_state": 74
+      },
+      {
+        "count": 1,
+        "from_state": 74,
+        "to_state": 75
+      },
+      {
+        "count": 1,
+        "from_state": 75,
+        "to_state": 76
+      },
+      {
+        "count": 1,
+        "from_state": 76,
+        "to_state": 77
+      },
+      {
+        "count": 1,
+        "from_state": 76,
+        "to_state": 91
+      },
+      {
+        "count": 1,
+        "from_state": 77,
+        "to_state": 78
+      },
+      {
+        "count": 1,
+        "from_state": 78,
+        "to_state": 79
+      },
+      {
+        "count": 1,
+        "from_state": 79,
+        "to_state": 80
+      },
+      {
+        "count": 1,
+        "from_state": 80,
+        "to_state": 81
+      },
+      {
+        "count": 1,
+        "from_state": 81,
+        "to_state": 82
+      },
+      {
+        "count": 1,
+        "from_state": 82,
+        "to_state": 32
+      },
+      {
+        "count": 1,
+        "from_state": 83,
+        "to_state": 84
+      },
+      {
+        "count": 1,
+        "from_state": 84,
+        "to_state": 85
+      },
+      {
+        "count": 1,
+        "from_state": 85,
+        "to_state": 86
+      },
+      {
+        "count": 1,
+        "from_state": 86,
+        "to_state": 87
+      },
+      {
+        "count": 1,
+        "from_state": 86,
+        "to_state": 160
+      },
+      {
+        "count": 1,
+        "from_state": 87,
+        "to_state": 88
+      },
+      {
+        "count": 1,
+        "from_state": 88,
+        "to_state": 89
+      },
+      {
+        "count": 1,
+        "from_state": 89,
+        "to_state": 90
+      },
+      {
+        "count": 1,
+        "from_state": 90,
+        "to_state": 76
+      },
+      {
+        "count": 1,
+        "from_state": 91,
+        "to_state": 92
+      },
+      {
+        "count": 1,
+        "from_state": 92,
+        "to_state": 93
+      },
+      {
+        "count": 1,
+        "from_state": 92,
+        "to_state": 95
+      },
+      {
+        "count": 1,
+        "from_state": 93,
+        "to_state": 94
+      },
+      {
+        "count": 1,
+        "from_state": 94,
+        "to_state": 92
+      },
+      {
+        "count": 1,
+        "from_state": 95,
+        "to_state": 96
+      },
+      {
+        "count": 1,
+        "from_state": 96,
+        "to_state": 97
+      },
+      {
+        "count": 1,
+        "from_state": 96,
+        "to_state": 114
+      },
+      {
+        "count": 1,
+        "from_state": 97,
+        "to_state": 86
+      },
+      {
+        "count": 1,
+        "from_state": 97,
+        "to_state": 98
+      },
+      {
+        "count": 1,
+        "from_state": 98,
+        "to_state": 99
+      },
+      {
+        "count": 1,
+        "from_state": 99,
+        "to_state": 100
+      },
+      {
+        "count": 1,
+        "from_state": 100,
+        "to_state": 101
+      },
+      {
+        "count": 1,
+        "from_state": 101,
+        "to_state": 102
+      },
+      {
+        "count": 1,
+        "from_state": 101,
+        "to_state": 161
+      },
+      {
+        "count": 1,
+        "from_state": 102,
+        "to_state": 103
+      },
+      {
+        "count": 1,
+        "from_state": 103,
+        "to_state": 104
+      },
+      {
+        "count": 1,
+        "from_state": 104,
+        "to_state": 105
+      },
+      {
+        "count": 1,
+        "from_state": 105,
+        "to_state": 106
+      },
+      {
+        "count": 1,
+        "from_state": 106,
+        "to_state": 107
+      },
+      {
+        "count": 1,
+        "from_state": 106,
+        "to_state": 123
+      },
+      {
+        "count": 1,
+        "from_state": 107,
+        "to_state": 108
+      },
+      {
+        "count": 1,
+        "from_state": 108,
+        "to_state": 109
+      },
+      {
+        "count": 1,
+        "from_state": 109,
+        "to_state": 110
+      },
+      {
+        "count": 1,
+        "from_state": 110,
+        "to_state": 111
+      },
+      {
+        "count": 1,
+        "from_state": 111,
+        "to_state": 112
+      },
+      {
+        "count": 1,
+        "from_state": 112,
+        "to_state": 113
+      },
+      {
+        "count": 1,
+        "from_state": 113,
+        "to_state": 96
+      },
+      {
+        "count": 1,
+        "from_state": 114,
+        "to_state": 115
+      },
+      {
+        "count": 1,
+        "from_state": 115,
+        "to_state": 42
+      },
+      {
+        "count": 1,
+        "from_state": 116,
+        "to_state": 117
+      },
+      {
+        "count": 1,
+        "from_state": 117,
+        "to_state": 27
+      },
+      {
+        "count": 1,
+        "from_state": 118,
+        "to_state": 119
+      },
+      {
+        "count": 1,
+        "from_state": 119,
+        "to_state": 120
+      },
+      {
+        "count": 1,
+        "from_state": 120,
+        "to_state": 121
+      },
+      {
+        "count": 1,
+        "from_state": 121,
+        "to_state": 122
+      },
+      {
+        "count": 1,
+        "from_state": 122,
+        "to_state": 106
+      },
+      {
+        "count": 1,
+        "from_state": 123,
+        "to_state": 124
+      },
+      {
+        "count": 1,
+        "from_state": 124,
+        "to_state": 125
+      },
+      {
+        "count": 1,
+        "from_state": 125,
+        "to_state": 60
+      },
+      {
+        "count": 1,
+        "from_state": 126,
+        "to_state": 127
+      },
+      {
+        "count": 1,
+        "from_state": 127,
+        "to_state": 128
+      },
+      {
+        "count": 1,
+        "from_state": 128,
+        "to_state": 129
+      },
+      {
+        "count": 1,
+        "from_state": 129,
+        "to_state": 130
+      },
+      {
+        "count": 1,
+        "from_state": 130,
+        "to_state": 131
+      },
+      {
+        "count": 1,
+        "from_state": 131,
+        "to_state": 132
+      },
+      {
+        "count": 1,
+        "from_state": 132,
+        "to_state": 133
+      },
+      {
+        "count": 1,
+        "from_state": 133,
+        "to_state": 134
+      },
+      {
+        "count": 1,
+        "from_state": 134,
+        "to_state": 135
+      },
+      {
+        "count": 1,
+        "from_state": 135,
+        "to_state": 135
+      },
+      {
+        "count": 1,
+        "from_state": 135,
+        "to_state": 136
+      },
+      {
+        "count": 1,
+        "from_state": 136,
+        "to_state": 137
+      },
+      {
+        "count": 1,
+        "from_state": 137,
+        "to_state": 138
+      },
+      {
+        "count": 1,
+        "from_state": 138,
+        "to_state": 139
+      },
+      {
+        "count": 1,
+        "from_state": 139,
+        "to_state": 140
+      },
+      {
+        "count": 1,
+        "from_state": 140,
+        "to_state": 141
+      },
+      {
+        "count": 1,
+        "from_state": 141,
+        "to_state": 142
+      },
+      {
+        "count": 1,
+        "from_state": 141,
+        "to_state": 149
+      },
+      {
+        "count": 1,
+        "from_state": 142,
+        "to_state": 143
+      },
+      {
+        "count": 1,
+        "from_state": 143,
+        "to_state": 144
+      },
+      {
+        "count": 1,
+        "from_state": 144,
+        "to_state": 145
+      },
+      {
+        "count": 1,
+        "from_state": 145,
+        "to_state": 146
+      },
+      {
+        "count": 1,
+        "from_state": 146,
+        "to_state": 147
+      },
+      {
+        "count": 1,
+        "from_state": 147,
+        "to_state": 148
+      },
+      {
+        "count": 1,
+        "from_state": 148,
+        "to_state": 141
+      },
+      {
+        "count": 1,
+        "from_state": 149,
+        "to_state": 150
+      },
+      {
+        "count": 1,
+        "from_state": 150,
+        "to_state": 151
+      },
+      {
+        "count": 1,
+        "from_state": 150,
+        "to_state": 152
+      },
+      {
+        "count": 1,
+        "from_state": 151,
+        "to_state": 150
+      },
+      {
+        "count": 1,
+        "from_state": 151,
+        "to_state": 174
+      },
+      {
+        "count": 1,
+        "from_state": 151,
+        "to_state": 175
+      },
+      {
+        "count": 1,
+        "from_state": 152,
+        "to_state": 153
+      },
+      {
+        "count": 1,
+        "from_state": 153,
+        "to_state": 154
+      },
+      {
+        "count": 1,
+        "from_state": 154,
+        "to_state": 155
+      },
+      {
+        "count": 1,
+        "from_state": 155,
+        "to_state": 156
+      },
+      {
+        "count": 1,
+        "from_state": 156,
+        "to_state": 157
+      },
+      {
+        "count": 1,
+        "from_state": 157,
+        "to_state": 157
+      },
+      {
+        "count": 1,
+        "from_state": 157,
+        "to_state": 158
+      },
+      {
+        "count": 1,
+        "from_state": 158,
+        "to_state": 159
+      },
+      {
+        "count": 1,
+        "from_state": 159,
+        "to_state": 97
+      },
+      {
+        "count": 1,
+        "from_state": 160,
+        "to_state": 101
+      },
+      {
+        "count": 1,
+        "from_state": 161,
+        "to_state": 162
+      },
+      {
+        "count": 1,
+        "from_state": 162,
+        "to_state": 31
+      },
+      {
+        "count": 1,
+        "from_state": 163,
+        "to_state": 164
+      },
+      {
+        "count": 1,
+        "from_state": 164,
+        "to_state": 165
+      },
+      {
+        "count": 1,
+        "from_state": 165,
+        "to_state": 166
+      },
+      {
+        "count": 1,
+        "from_state": 166,
+        "to_state": 167
+      },
+      {
+        "count": 1,
+        "from_state": 167,
+        "to_state": 63
+      },
+      {
+        "count": 1,
+        "from_state": 168,
+        "to_state": 169
+      },
+      {
+        "count": 1,
+        "from_state": 169,
+        "to_state": 42
+      },
+      {
+        "count": 1,
+        "from_state": 170,
+        "to_state": 171
+      },
+      {
+        "count": 1,
+        "from_state": 171,
+        "to_state": 172
+      },
+      {
+        "count": 1,
+        "from_state": 172,
+        "to_state": 173
+      },
+      {
+        "count": 1,
+        "from_state": 173,
+        "to_state": 151
+      },
+      {
+        "count": 1,
+        "from_state": 174,
+        "to_state": 151
+      },
+      {
+        "count": 1,
+        "from_state": 175,
+        "to_state": 176
+      },
+      {
+        "count": 1,
+        "from_state": 176,
+        "to_state": 3
+      }
+    ],
+    "states": [
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11100010",
+        "state_id": 0
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01110110",
+        "state_id": 1
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01111000",
+        "state_id": 2
+      },
+      {
+        "center_site": 6,
+        "count": 2,
+        "internal_change_count": 2,
+        "pattern_bits": "11001001",
+        "state_id": 3
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11001100",
+        "state_id": 4
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "10001100",
+        "state_id": 5
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10000111",
+        "state_id": 6
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00001111",
+        "state_id": 7
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01010110",
+        "state_id": 8
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01100101",
+        "state_id": 9
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "01000001",
+        "state_id": 10
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10010001",
+        "state_id": 11
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10111000",
+        "state_id": 12
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11111000",
+        "state_id": 13
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11001101",
+        "state_id": 14
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10000101",
+        "state_id": 15
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "00000110",
+        "state_id": 16
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01001110",
+        "state_id": 17
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01001010",
+        "state_id": 18
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10111010",
+        "state_id": 19
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10111010",
+        "state_id": 20
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11010010",
+        "state_id": 21
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11000110",
+        "state_id": 22
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01000111",
+        "state_id": 23
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10001111",
+        "state_id": 24
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01001101",
+        "state_id": 25
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "10000101",
+        "state_id": 26
+      },
+      {
+        "center_site": 0,
+        "count": 2,
+        "internal_change_count": 1,
+        "pattern_bits": "10000011",
+        "state_id": 27
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11011000",
+        "state_id": 28
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01011000",
+        "state_id": 29
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "01110110",
+        "state_id": 30
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "00100110",
+        "state_id": 31
+      },
+      {
+        "center_site": -1,
+        "count": 3,
+        "internal_change_count": 0,
+        "pattern_bits": "00011110",
+        "state_id": 32
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01111100",
+        "state_id": 33
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11110100",
+        "state_id": 34
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10110100",
+        "state_id": 35
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10111100",
+        "state_id": 36
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "00101110",
+        "state_id": 37
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10100011",
+        "state_id": 38
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10001011",
+        "state_id": 39
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10001010",
+        "state_id": 40
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10000100",
+        "state_id": 41
+      },
+      {
+        "center_site": -1,
+        "count": 3,
+        "internal_change_count": 0,
+        "pattern_bits": "11000001",
+        "state_id": 42
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00110101",
+        "state_id": 43
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00111000",
+        "state_id": 44
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11111000",
+        "state_id": 45
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11101000",
+        "state_id": 46
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10101000",
+        "state_id": 47
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11001000",
+        "state_id": 48
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01011010",
+        "state_id": 49
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01011100",
+        "state_id": 50
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10011001",
+        "state_id": 51
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10001001",
+        "state_id": 52
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00110110",
+        "state_id": 53
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "10101010",
+        "state_id": 54
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "10111100",
+        "state_id": 55
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11010101",
+        "state_id": 56
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11011001",
+        "state_id": 57
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00010111",
+        "state_id": 58
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01100011",
+        "state_id": 59
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "10101001",
+        "state_id": 60
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00101001",
+        "state_id": 61
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00101100",
+        "state_id": 62
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "01011100",
+        "state_id": 63
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01000101",
+        "state_id": 64
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11000111",
+        "state_id": 65
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10010101",
+        "state_id": 66
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11011000",
+        "state_id": 67
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00011010",
+        "state_id": 68
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10001111",
+        "state_id": 69
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10000111",
+        "state_id": 70
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10100111",
+        "state_id": 71
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00101011",
+        "state_id": 72
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00101001",
+        "state_id": 73
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10101101",
+        "state_id": 74
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10001100",
+        "state_id": 75
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "00011101",
+        "state_id": 76
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00011101",
+        "state_id": 77
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "01010011",
+        "state_id": 78
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01010010",
+        "state_id": 79
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01011010",
+        "state_id": 80
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01001010",
+        "state_id": 81
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11011011",
+        "state_id": 82
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00111110",
+        "state_id": 83
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00010011",
+        "state_id": 84
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01100001",
+        "state_id": 85
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "01100110",
+        "state_id": 86
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10110010",
+        "state_id": 87
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01101000",
+        "state_id": 88
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01011110",
+        "state_id": 89
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01001111",
+        "state_id": 90
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00010101",
+        "state_id": 91
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "00101101",
+        "state_id": 92
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00011011",
+        "state_id": 93
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "00011001",
+        "state_id": 94
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00100001",
+        "state_id": 95
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "10000011",
+        "state_id": 96
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "00111010",
+        "state_id": 97
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00101011",
+        "state_id": 98
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00001011",
+        "state_id": 99
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "10011011",
+        "state_id": 100
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "10011001",
+        "state_id": 101
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00110000",
+        "state_id": 102
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00010110",
+        "state_id": 103
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01111000",
+        "state_id": 104
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10110000",
+        "state_id": 105
+      },
+      {
+        "center_site": 0,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "10010000",
+        "state_id": 106
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11001010",
+        "state_id": 107
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00001011",
+        "state_id": 108
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00110111",
+        "state_id": 109
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00000111",
+        "state_id": 110
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01000111",
+        "state_id": 111
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00010111",
+        "state_id": 112
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00100111",
+        "state_id": 113
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10001000",
+        "state_id": 114
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "11001000",
+        "state_id": 115
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11010000",
+        "state_id": 116
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10110010",
+        "state_id": 117
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01011001",
+        "state_id": 118
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01010101",
+        "state_id": 119
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11000111",
+        "state_id": 120
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00100010",
+        "state_id": 121
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00111010",
+        "state_id": 122
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10001011",
+        "state_id": 123
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01011010",
+        "state_id": 124
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "00011010",
+        "state_id": 125
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10100001",
+        "state_id": 126
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10011100",
+        "state_id": 127
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10101001",
+        "state_id": 128
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00101001",
+        "state_id": 129
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10110001",
+        "state_id": 130
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10101010",
+        "state_id": 131
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00101000",
+        "state_id": 132
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "00111100",
+        "state_id": 133
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10011001",
+        "state_id": 134
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "10010110",
+        "state_id": 135
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00011001",
+        "state_id": 136
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10110100",
+        "state_id": 137
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10110100",
+        "state_id": 138
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10010100",
+        "state_id": 139
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00110110",
+        "state_id": 140
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "00100111",
+        "state_id": 141
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00111101",
+        "state_id": 142
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10010101",
+        "state_id": 143
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00010001",
+        "state_id": 144
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00100101",
+        "state_id": 145
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00010110",
+        "state_id": 146
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10011100",
+        "state_id": 147
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00111100",
+        "state_id": 148
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00010011",
+        "state_id": 149
+      },
+      {
+        "center_site": -1,
+        "count": 2,
+        "internal_change_count": 0,
+        "pattern_bits": "00000111",
+        "state_id": 150
+      },
+      {
+        "center_site": -1,
+        "count": 3,
+        "internal_change_count": 0,
+        "pattern_bits": "10000101",
+        "state_id": 151
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00000011",
+        "state_id": 152
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00011111",
+        "state_id": 153
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10010011",
+        "state_id": 154
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01101011",
+        "state_id": 155
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01101001",
+        "state_id": 156
+      },
+      {
+        "center_site": 0,
+        "count": 2,
+        "internal_change_count": 1,
+        "pattern_bits": "00011100",
+        "state_id": 157
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01100101",
+        "state_id": 158
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10000101",
+        "state_id": 159
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10010010",
+        "state_id": 160
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10101101",
+        "state_id": 161
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10100110",
+        "state_id": 162
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00101001",
+        "state_id": 163
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10001101",
+        "state_id": 164
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "00001101",
+        "state_id": 165
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00011101",
+        "state_id": 166
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01011101",
+        "state_id": 167
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00011100",
+        "state_id": 168
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11010100",
+        "state_id": 169
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00010111",
+        "state_id": 170
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "01010111",
+        "state_id": 171
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "00011111",
+        "state_id": 172
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10011100",
+        "state_id": 173
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "10000110",
+        "state_id": 174
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11100100",
+        "state_id": 175
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11001100",
+        "state_id": 176
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "11110010",
+        "state_id": 177
+      }
+    ]
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "gauge_summary": {
+    "E0_final": -21.163570610214368,
+    "cost_ent_final": -0.6035486596255402,
+    "cost_flux_final": 7.0951118509898015,
+    "cost_total_final": 2.9440072658693603,
+    "n_gauge_steps": 40,
+    "square_fluxes": [
+      {
+        "flux_raw": 4.603100497878566,
+        "flux_wrapped": -1.6800848093010199,
+        "legs": [
+          {
+            "edge": [
+              0,
+              1
+            ],
+            "phase_used": 2.0050879850443417
+          },
+          {
+            "edge": [
+              1,
+              3
+            ],
+            "phase_used": -0.9377870112077531
+          },
+          {
+            "edge": [
+              3,
+              2
+            ],
+            "phase_used": 1.3359675841073668
+          },
+          {
+            "edge": [
+              2,
+              0
+            ],
+            "phase_used": 2.1998319399346107
+          }
+        ],
+        "plaquette": [
+          0,
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "flux_raw": 2.3117558452705333,
+        "flux_wrapped": 2.3117558452705333,
+        "legs": [
+          {
+            "edge": [
+              0,
+              1
+            ],
+            "phase_used": 2.0050879850443417
+          },
+          {
+            "edge": [
+              1,
+              5
+            ],
+            "phase_used": -0.2049677739407163
+          },
+          {
+            "edge": [
+              5,
+              4
+            ],
+            "phase_used": 1.565668095759254
+          },
+          {
+            "edge": [
+              4,
+              0
+            ],
+            "phase_used": -1.054032461592346
+          }
+        ],
+        "plaquette": [
+          0,
+          1,
+          5,
+          4
+        ]
+      },
+      {
+        "flux_raw": -2.2913456835786983,
+        "flux_wrapped": -2.2913456835786983,
+        "legs": [
+          {
+            "edge": [
+              0,
+              2
+            ],
+            "phase_used": -2.1998319399346107
+          },
+          {
+            "edge": [
+              2,
+              6
+            ],
+            "phase_used": 1.2889404241479108
+          },
+          {
+            "edge": [
+              6,
+              4
+            ],
+            "phase_used": -0.3264217061996524
+          },
+          {
+            "edge": [
+              4,
+              0
+            ],
+            "phase_used": -1.054032461592346
+          }
+        ],
+        "plaquette": [
+          0,
+          2,
+          6,
+          4
+        ]
+      },
+      {
+        "flux_raw": -3.9918394786668228,
+        "flux_wrapped": 2.291345828512764,
+        "legs": [
+          {
+            "edge": [
+              1,
+              3
+            ],
+            "phase_used": -0.9377870112077531
+          },
+          {
+            "edge": [
+              3,
+              7
+            ],
+            "phase_used": -0.8384150739347662
+          },
+          {
+            "edge": [
+              7,
+              5
+            ],
+            "phase_used": -2.4206051674650197
+          },
+          {
+            "edge": [
+              5,
+              1
+            ],
+            "phase_used": 0.2049677739407163
+          }
+        ],
+        "plaquette": [
+          1,
+          3,
+          7,
+          5
+        ]
+      },
+      {
+        "flux_raw": -2.3117536384008517,
+        "flux_wrapped": -2.3117536384008517,
+        "legs": [
+          {
+            "edge": [
+              2,
+              3
+            ],
+            "phase_used": -1.3359675841073668
+          },
+          {
+            "edge": [
+              3,
+              7
+            ],
+            "phase_used": -0.8384150739347662
+          },
+          {
+            "edge": [
+              7,
+              6
+            ],
+            "phase_used": 1.1515694437891923
+          },
+          {
+            "edge": [
+              6,
+              2
+            ],
+            "phase_used": -1.2889404241479108
+          }
+        ],
+        "plaquette": [
+          2,
+          3,
+          7,
+          6
+        ]
+      },
+      {
+        "flux_raw": 1.6800848092953058,
+        "flux_wrapped": 1.6800848092953053,
+        "legs": [
+          {
+            "edge": [
+              4,
+              5
+            ],
+            "phase_used": -1.565668095759254
+          },
+          {
+            "edge": [
+              5,
+              7
+            ],
+            "phase_used": 2.4206051674650197
+          },
+          {
+            "edge": [
+              7,
+              6
+            ],
+            "phase_used": 1.1515694437891923
+          },
+          {
+            "edge": [
+              6,
+              4
+            ],
+            "phase_used": -0.3264217061996524
+          }
+        ],
+        "plaquette": [
+          4,
+          5,
+          7,
+          6
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "N_mean": 3.9794613318121788,
+    "N_std": 1.0207854022728901e-15,
+    "final_lump_sizes": [
+      1
+    ],
+    "final_n_lumps": 1,
+    "first_lump_t_index": 0,
+    "first_lump_time": 0.0,
+    "fraction_time_with_any_lump": 0.5223880597014925,
+    "has_internal_dynamics": true,
+    "has_particle_candidates": true,
+    "internal_change_count": 18,
+    "internal_change_fraction": 0.09,
+    "last_lump_t_index": 200,
+    "last_lump_time": 20.0,
+    "max_dominant_lump_size": 3,
+    "mean_dominant_lump_size": 0.6368159203980099,
+    "mean_lump_count": 0.6467661691542289,
+    "parity_mean": 0.02605673529343873,
+    "parity_std": 1.7543506096259244e-15,
+    "t_quench_effective": 4.0,
+    "t_quench_index": 40,
+    "timesteps_with_any_lump": 105,
+    "uses_gauge_phases": true
+  },
+  "precipitation_config": {
+    "J_coupling": 2.0,
+    "defrag_cold": 2.0,
+    "defrag_hot": 0.0,
+    "h_field": 0.2,
+    "local_dim": 2,
+    "n_sites": 8,
+    "n_steps": 201,
+    "t_quench": 4.0,
+    "t_total": 20.0,
+    "z_threshold": 0.1
+  },
+  "timestamp": "2025-12-03T21:34:53.443043"
+}

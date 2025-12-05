@@ -1,0 +1,25 @@
+{
+  "config": {
+    "J_coupling": 1.0,
+    "defrag_cold": 1.5,
+    "defrag_hot": 0.0,
+    "h_field": 0.2,
+    "local_dim": 2,
+    "n_sites": 8,
+    "n_steps": 201,
+    "t_quench": 4.0,
+    "t_total": 20.0,
+    "z_threshold": 0.1
+  },
+  "metrics": {
+    "final_lump_sizes": [
+      3
+    ],
+    "final_n_lumps": 1,
+    "has_particle_candidates": true,
+    "mean_lump_count": 0.6915422885572139,
+    "t_quench_effective": 4.0,
+    "t_quench_index": 40
+  },
+  "timestamp": "2025-12-03T13:53:35.782766"
+}

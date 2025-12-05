@@ -1,0 +1,16 @@
+Spinor Topological Charge Analysis
+==================================
+
+Config (from spinor_particle_features):
+{'asset_dir': 'cubic_universe_L3', 'metrics_file': 'lr_metrics.npz', 'embedding_smooth_file': 'lr_embedding_3d_smooth.npz', 'embedding_file': 'lr_embedding_3d.npz', 'spin_dim': 2, 'hot_strength': 1.0, 'J_hop': 1.0, 't_max': 10.0, 'n_steps': 2000, 'quench_fraction': 0.4, 'timeline_file': None, 'init_random_spinor': True, 'seed': 117, 'output_dir': 'precipitating_event_L3_spinor_seed117'}
+
+Grid shape: Lx=3, Ly=3, Lz=3
+Grid reconstruction OK? True
+
+Per-slice skyrmion numbers Q_z (z-slices, xy planes):
+  z=0: Q_z = -0.820125
+  z=1: Q_z = -0.101705
+  z=2: Q_z = -0.209802
+
+Total Q_xy (sum over z slices) = -1.131632
+

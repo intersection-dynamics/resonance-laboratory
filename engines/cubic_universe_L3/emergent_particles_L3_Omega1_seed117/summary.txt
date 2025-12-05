@@ -1,0 +1,56 @@
+Precipitating Event on Emergent 3D LR Graph
+===========================================
+
+Config:
+{'asset_dir': 'cubic_universe_L3', 'metrics_file': 'lr_metrics.npz', 'embedding_smooth_file': 'lr_embedding_3d_smooth.npz', 'embedding_file': 'lr_embedding_3d.npz', 'hot_strength': 1.0, 'J_order': 1.0, 'rot_strength': 0.3, 'Omega_x': 0.0, 'Omega_y': 0.0, 'Omega_z': 1.0, 't_max': 10.0, 'n_steps': 4000, 'quench_fraction': 0.4, 'init_random_phase': True, 'seed': 117, 'max_cycle_len': 4, 'output_dir': 'emergent_particles_L3_Omega1_seed117'}
+
+Number of nodes N = 27
+
+Using smoothed embedding: True
+
+Short cycles used for vorticity (first up to 20):
+  [0, 1, 4, 3]
+  [0, 1, 10, 9]
+  [0, 3, 12, 9]
+  [1, 2, 5, 4]
+  [1, 2, 11, 10]
+  [1, 4, 13, 10]
+  [2, 5, 14, 11]
+  [3, 4, 7, 6]
+  [3, 4, 13, 12]
+  [3, 6, 15, 12]
+  [4, 5, 8, 7]
+  [4, 5, 14, 13]
+  [4, 7, 16, 13]
+  [5, 8, 17, 14]
+  [6, 7, 16, 15]
+  [7, 8, 17, 16]
+  [9, 10, 13, 12]
+  [9, 10, 19, 18]
+  [9, 12, 21, 18]
+  [10, 11, 14, 13]
+
+Sample times and topological data:
+  t=  0.000  N+= 4  N-= 5  Q= -1  align=+0.075
+  t=  0.907  N+= 5  N-= 5  Q=  0  align=-0.064
+  t=  1.818  N+= 8  N-=10  Q= -2  align=-0.010
+  t=  2.725  N+= 5  N-= 7  Q= -2  align=-0.096
+  t=  3.635  N+= 8  N-= 4  Q=  4  align=-0.092
+  t=  4.545  N+= 7  N-= 4  Q=  3  align=-0.055
+  t=  5.452  N+=10  N-= 4  Q=  6  align=-0.027
+  t=  6.362  N+=10  N-= 3  Q=  7  align=-0.010
+  t=  7.272  N+=10  N-= 2  Q=  8  align=-0.030
+  t=  8.180  N+=10  N-= 4  Q=  6  align=-0.064
+  t=  9.090  N+=10  N-= 4  Q=  6  align=-0.087
+  t= 10.000  N+=10  N-= 4  Q=  6  align=-0.090
+
+Interpretation hints:
+  - N_plus and N_minus count cycles with winding q=+1/-1.
+  - Q_net = sum(q) is the net chirality (topological charge).
+  - align ~ 1 means phases are strongly aligned on edges.
+  - align ~ 0 means disordered phases.
+  - During 0 <= t <= t_quench, lambda(t) ramps from 0 to 1.
+  - During t_quench <= t <= t_max, mu(t) decays from 1 to 0,
+    effectively turning off H and freezing the pattern.
+  - A persistent |Q_net| > 0 at late times is a toy freeze-in
+    of chiral vortices on a spinning emergent 3D background.

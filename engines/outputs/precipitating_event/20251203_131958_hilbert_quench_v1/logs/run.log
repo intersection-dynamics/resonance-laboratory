@@ -1,0 +1,32 @@
+============================================================
+  Hilbert-Substrate Precipitating Event
+============================================================
+Run root:        outputs\precipitating_event\20251203_131958_hilbert_quench_v1
+Geometry file:   lr_embedding_3d.npz
+Seed:            117
+------------------------------------------------------------
+Geometry n_sites: 8
+------------------------------------------------------------
+Configuration:
+  n_sites          = 8
+  local_dim        = 2
+  J_coupling       = 1.0
+  h_field          = 0.2
+  defrag_hot       = 0.3
+  defrag_cold      = 1.0
+  t_total          = 10.0
+  t_quench         = 4.0
+  n_steps          = 101
+  z_threshold      = 0.5
+------------------------------------------------------------
+Starting Precipitating Event evolution...
+------------------------------------------------------------
+Evolution complete.
+------------------------------------------------------------
+==== Precipitating Event Summary ====
+t_quench_effective: 4.000000
+final_n_lumps:      0
+final_lump_sizes:   []
+mean_lump_count:    0.000
+has_candidates:     False
+======================================

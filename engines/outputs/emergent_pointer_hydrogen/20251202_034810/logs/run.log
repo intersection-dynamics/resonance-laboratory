@@ -1,0 +1,40 @@
+============================================================================
+Emergent Hydrogen Pointer Substrate (GPU-aware)
+============================================================================
+Run ID   : 20251202_034810
+Run dir  : outputs\emergent_pointer_hydrogen\20251202_034810
+Seed     : 12345
+Steps    : 5000
+Stride   : 10
+Lattice  : 16 x 16 x 16
+dt       : 0.02
+use_gpu  : False (CuPy available: True)
+============================================================================
+
+[progress] step 0/5000 (  0.0%)  elapsed=   0.06s  ETA~6372189.52s
+[progress] step 250/5000 (  5.0%)  elapsed= 196.52s  ETA~3733.95s
+[progress] step 500/5000 ( 10.0%)  elapsed= 410.19s  ETA~3691.67s
+[progress] step 750/5000 ( 15.0%)  elapsed= 560.87s  ETA~3178.28s
+[progress] step 1000/5000 ( 20.0%)  elapsed= 655.69s  ETA~2622.76s
+[progress] step 1250/5000 ( 25.0%)  elapsed= 751.86s  ETA~2255.58s
+[progress] step 1500/5000 ( 30.0%)  elapsed= 908.62s  ETA~2120.12s
+[progress] step 1750/5000 ( 35.0%)  elapsed=1090.13s  ETA~2024.53s
+[progress] step 2000/5000 ( 40.0%)  elapsed=1261.25s  ETA~1891.88s
+[progress] step 2250/5000 ( 45.0%)  elapsed=1393.94s  ETA~1703.70s
+[progress] step 2500/5000 ( 50.0%)  elapsed=1497.36s  ETA~1497.36s
+[progress] step 2750/5000 ( 55.0%)  elapsed=1628.69s  ETA~1332.56s
+[progress] step 3000/5000 ( 60.0%)  elapsed=1803.59s  ETA~1202.39s
+[progress] step 3250/5000 ( 65.0%)  elapsed=1971.15s  ETA~1061.39s
+[progress] step 3500/5000 ( 70.0%)  elapsed=2128.87s  ETA~ 912.37s
+[progress] step 3750/5000 ( 75.0%)  elapsed=2225.45s  ETA~ 741.82s
+[progress] step 4000/5000 ( 80.0%)  elapsed=2339.49s  ETA~ 584.87s
+[progress] step 4250/5000 ( 85.0%)  elapsed=2538.31s  ETA~ 447.94s
+[progress] step 4500/5000 ( 90.0%)  elapsed=2719.63s  ETA~ 302.18s
+[progress] step 4750/5000 ( 95.0%)  elapsed=2879.26s  ETA~ 151.54s
+[progress] step 5000/5000 (100.0%)  elapsed=2980.98s  ETA~   0.00s
+
+============================================================================
+Run complete.
+Converged: True
+Runtime  : 2981.076 s
+============================================================================

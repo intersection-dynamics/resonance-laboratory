@@ -1,0 +1,17 @@
+Hydrogen pointer LR analysis
+============================
+
+Config: {'nx': 12, 'ny': 12, 'nz': 12, 't_hop': 1.0, 'mass_scale': 1.0, 'Z': 1.0, 'a_soft': 0.5, 't_max': 10.0, 'n_times': 200, 'init_sigma': 1.5, 'init_offset': (0.0, 0.0, 0.0), 'use_gpu': True, 'dtype': 'complex64', 'lr_asset_dir': 'substrate_cube2_gpu_v1', 'output_dir': 'hydrogen_pointer_lr_12x12x12_v1'}
+
+Mean radius over time (first and last 5 samples):
+  t=   0.000  <r>=1.6966
+  t=   0.050  <r>=1.7004
+  t=   0.101  <r>=1.7117
+  t=   0.151  <r>=1.7305
+  t=   0.201  <r>=1.7567
+  ...
+  t=   9.799  <r>=5.4204
+  t=   9.849  <r>=5.4486
+  t=   9.899  <r>=5.4731
+  t=   9.950  <r>=5.4940
+  t=  10.000  <r>=5.5112

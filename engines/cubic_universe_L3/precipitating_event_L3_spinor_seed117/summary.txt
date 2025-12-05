@@ -1,0 +1,31 @@
+Precipitating Event (Spinor Hilbert Space)
+==========================================
+
+Config:
+{'asset_dir': 'cubic_universe_L3', 'metrics_file': 'lr_metrics.npz', 'embedding_smooth_file': 'lr_embedding_3d_smooth.npz', 'embedding_file': 'lr_embedding_3d.npz', 'spin_dim': 2, 'hot_strength': 1.0, 'J_hop': 1.0, 't_max': 10.0, 'n_steps': 2000, 'quench_fraction': 0.4, 'timeline_file': None, 'init_random_spinor': True, 'seed': 117, 'output_dir': 'precipitating_event_L3_spinor_seed117'}
+
+N sites = 27, spin_dim = 2, D = 54
+Using smoothed embedding: True
+
+Hamiltonian pieces:
+  hot_strength = 1.0
+  J_hop        = 1.0
+
+Timeline: constructed from t_max and n_steps
+  t_end          = 10.0
+  quench_fraction= 0.4
+  t_quench       = 4.0
+
+Sample spin expectations:
+  t=  0.000  Sx= +0.022  Sy= +0.107  Sz= +0.122
+  t=  0.905  Sx= -0.057  Sy= -0.108  Sz= +0.081
+  t=  1.815  Sx= -0.004  Sy= -0.231  Sz= +0.117
+  t=  2.725  Sx= -0.010  Sy= -0.136  Sz= +0.037
+  t=  3.635  Sx= -0.012  Sy= -0.122  Sz= +0.016
+  t=  4.545  Sx= -0.012  Sy= -0.123  Sz= +0.016
+  t=  5.450  Sx= -0.012  Sy= -0.123  Sz= +0.016
+  t=  6.360  Sx= -0.012  Sy= -0.123  Sz= +0.016
+  t=  7.270  Sx= -0.012  Sy= -0.123  Sz= +0.016
+  t=  8.180  Sx= -0.012  Sy= -0.123  Sz= +0.016
+  t=  9.090  Sx= -0.012  Sy= -0.123  Sz= +0.016
+  t= 10.000  Sx= -0.012  Sy= -0.123  Sz= +0.016

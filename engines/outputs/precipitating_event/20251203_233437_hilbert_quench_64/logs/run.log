@@ -1,0 +1,10 @@
+============================================================
+  Hilbert-Substrate Precipitating Event (single-file, gauge-ready, CUDA-aware)
+============================================================
+Run root:      outputs\precipitating_event\20251203_233437_hilbert_quench_64
+Geometry file: lr_embedding_3d_64.npz
+Seed:          117
+Use gauge:     False
+CuPy/CUDA:     ENABLED
+------------------------------------------------------------
+[ERROR] Failed to load geometry: Geometry file not found: lr_embedding_3d_64.npz

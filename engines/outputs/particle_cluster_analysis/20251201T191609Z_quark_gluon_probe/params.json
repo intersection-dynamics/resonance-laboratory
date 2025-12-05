@@ -1,0 +1,8 @@
+{
+  "cluster_seed": 0,
+  "k": 6,
+  "max_frames": 200,
+  "run_id": "20251201T191609Z_quark_gluon_probe",
+  "source_root": "outputs/pattern_detector_scan",
+  "source_run": "20251201T190712Z_proton_electron_photon_scan"
+}

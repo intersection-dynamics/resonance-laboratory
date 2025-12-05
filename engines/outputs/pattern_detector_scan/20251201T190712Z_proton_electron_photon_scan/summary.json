@@ -1,0 +1,21 @@
+{
+  "connectivity": 0.2,
+  "defrag_rate": 0.05,
+  "dt": 0.05,
+  "final_candidates": {
+    "electron": {
+      "node_id": 44,
+      "score": 5.578981214782315
+    },
+    "photon": {
+      "node_id": 36,
+      "score": 4.783158310885105
+    },
+    "proton": {
+      "node_id": 60,
+      "score": 5.529416303115435
+    }
+  },
+  "run_id": "20251201T190712Z_proton_electron_photon_scan",
+  "steps": 4000
+}

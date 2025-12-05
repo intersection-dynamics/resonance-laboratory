@@ -1,0 +1,41 @@
+{
+  "diagnostics": {
+    "core_index": 36,
+    "core_position": [
+      4,
+      4
+    ],
+    "mode_labels": [
+      "ground",
+      "excited"
+    ],
+    "n_records": 401
+  },
+  "framework_version": "0.1.0",
+  "metrics": {
+    "final_excited_occupancy": 0.014194984277632118,
+    "final_ground_occupancy": 0.05495520141036495,
+    "max_excited_occupancy": 0.16594126900037398,
+    "max_photon_energy_proxy": 1.1832913578315177e-30
+  },
+  "params": {
+    "L": 8,
+    "defrag_rate": 0.0,
+    "dt": 0.05,
+    "gauge_noise": 0.01,
+    "gauge_phase_rate": 0.05,
+    "internal_dim": 8,
+    "output_root": "outputs",
+    "record_every": 10,
+    "seed": 42,
+    "steps": 4000,
+    "tag": "hydrogen_probe"
+  },
+  "run_id": "20251202T061908Z_hydrogen_probe",
+  "script": "hydrogen_transition_probe.py",
+  "timestamp": "2025-12-02T06:19:09Z",
+  "verdicts": {
+    "has_excited_mode_activity": true,
+    "has_nontrivial_photon_activity": false
+  }
+}

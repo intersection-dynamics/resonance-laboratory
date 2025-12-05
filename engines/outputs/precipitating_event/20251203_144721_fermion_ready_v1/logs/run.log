@@ -1,0 +1,42 @@
+============================================================
+  Hilbert-Substrate Precipitating Event (fermion-ready)
+============================================================
+Run root:        outputs\precipitating_event\20251203_144721_fermion_ready_v1
+Geometry file:   lr_embedding_3d.npz
+Seed:            117
+------------------------------------------------------------
+Geometry n_sites: 8
+------------------------------------------------------------
+Configuration:
+  n_sites          = 8
+  local_dim        = 2
+  J_coupling       = 1.0
+  h_field          = 0.2
+  defrag_hot       = 0.0
+  defrag_cold      = 1.5
+  t_total          = 20.0
+  t_quench         = 4.0
+  n_steps          = 201
+  z_threshold      = 0.1
+------------------------------------------------------------
+Starting Precipitating Event evolution...
+------------------------------------------------------------
+Evolution complete.
+------------------------------------------------------------
+==== Precipitating Event Summary ====
+t_quench_effective:      4.000000
+final_n_lumps:           1
+final_lump_sizes:        [3]
+mean_lump_count:         0.692
+has_candidates:          True
+timesteps_with_any_lump: 117
+fraction_time_with_any:  0.582
+max_dominant_size:       4
+mean_dominant_size:      0.652
+first_lump_time:         0.0
+last_lump_time:          20.0
+parity_mean:             0.026057
+parity_std:              0.000000
+N_mean:                  3.979461
+N_std:                   0.000000
+======================================

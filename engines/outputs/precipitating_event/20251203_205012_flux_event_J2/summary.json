@@ -1,0 +1,287 @@
+{
+  "gauge_summary": {
+    "E0_final": -21.163503046394528,
+    "cost_ent_final": -0.6030602087212474,
+    "cost_flux_final": 7.094887523895624,
+    "cost_total_final": 2.9443835532265643,
+    "n_gauge_steps": 40,
+    "square_fluxes": [
+      {
+        "flux_raw": 4.602998539472708,
+        "flux_wrapped": -1.6801867677068785,
+        "legs": [
+          {
+            "edge": [
+              0,
+              1
+            ],
+            "phase_used": 2.0051210041859653
+          },
+          {
+            "edge": [
+              1,
+              3
+            ],
+            "phase_used": -0.9378710096763712
+          },
+          {
+            "edge": [
+              3,
+              2
+            ],
+            "phase_used": 1.336000603504244
+          },
+          {
+            "edge": [
+              2,
+              0
+            ],
+            "phase_used": 2.1997479414588694
+          }
+        ],
+        "plaquette": [
+          0,
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "flux_raw": 2.3120552639731793,
+        "flux_wrapped": 2.3120552639731793,
+        "legs": [
+          {
+            "edge": [
+              0,
+              1
+            ],
+            "phase_used": 2.0051210041859653
+          },
+          {
+            "edge": [
+              1,
+              5
+            ],
+            "phase_used": -0.20485108373438843
+          },
+          {
+            "edge": [
+              5,
+              4
+            ],
+            "phase_used": 1.565701114900531
+          },
+          {
+            "edge": [
+              4,
+              0
+            ],
+            "phase_used": -1.0539157713789287
+          }
+        ],
+        "plaquette": [
+          0,
+          1,
+          5,
+          4
+        ]
+      },
+      {
+        "flux_raw": -2.2909443059464953,
+        "flux_wrapped": -2.2909443059464953,
+        "legs": [
+          {
+            "edge": [
+              0,
+              2
+            ],
+            "phase_used": -2.1997479414588694
+          },
+          {
+            "edge": [
+              2,
+              6
+            ],
+            "phase_used": 1.2890571146152654
+          },
+          {
+            "edge": [
+              6,
+              4
+            ],
+            "phase_used": -0.32633770772396264
+          },
+          {
+            "edge": [
+              4,
+              0
+            ],
+            "phase_used": -1.0539157713789287
+          }
+        ],
+        "plaquette": [
+          0,
+          2,
+          6,
+          4
+        ]
+      },
+      {
+        "flux_raw": -3.992240856270462,
+        "flux_wrapped": 2.290944450909125,
+        "legs": [
+          {
+            "edge": [
+              1,
+              3
+            ],
+            "phase_used": -0.9378710096763712
+          },
+          {
+            "edge": [
+              3,
+              7
+            ],
+            "phase_used": -0.8385317643950385
+          },
+          {
+            "edge": [
+              7,
+              5
+            ],
+            "phase_used": -2.4206891659334406
+          },
+          {
+            "edge": [
+              5,
+              1
+            ],
+            "phase_used": 0.20485108373438843
+          }
+        ],
+        "plaquette": [
+          1,
+          3,
+          7,
+          5
+        ]
+      },
+      {
+        "flux_raw": -2.312053058122391,
+        "flux_wrapped": -2.312053058122391,
+        "legs": [
+          {
+            "edge": [
+              2,
+              3
+            ],
+            "phase_used": -1.336000603504244
+          },
+          {
+            "edge": [
+              3,
+              7
+            ],
+            "phase_used": -0.8385317643950385
+          },
+          {
+            "edge": [
+              7,
+              6
+            ],
+            "phase_used": 1.151536424392157
+          },
+          {
+            "edge": [
+              6,
+              2
+            ],
+            "phase_used": -1.2890571146152654
+          }
+        ],
+        "plaquette": [
+          2,
+          3,
+          7,
+          6
+        ]
+      },
+      {
+        "flux_raw": 1.680186767701104,
+        "flux_wrapped": 1.6801867677011035,
+        "legs": [
+          {
+            "edge": [
+              4,
+              5
+            ],
+            "phase_used": -1.565701114900531
+          },
+          {
+            "edge": [
+              5,
+              7
+            ],
+            "phase_used": 2.4206891659334406
+          },
+          {
+            "edge": [
+              7,
+              6
+            ],
+            "phase_used": 1.151536424392157
+          },
+          {
+            "edge": [
+              6,
+              4
+            ],
+            "phase_used": -0.32633770772396264
+          }
+        ],
+        "plaquette": [
+          4,
+          5,
+          7,
+          6
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "N_mean": 3.9794613318121765,
+    "N_std": 1.6859567911200954e-15,
+    "final_lump_sizes": [
+      1
+    ],
+    "final_n_lumps": 1,
+    "first_lump_t_index": 0,
+    "first_lump_time": 0.0,
+    "fraction_time_with_any_lump": 0.527363184079602,
+    "has_particle_candidates": true,
+    "last_lump_t_index": 200,
+    "last_lump_time": 20.0,
+    "max_dominant_lump_size": 3,
+    "mean_dominant_lump_size": 0.6417910447761194,
+    "mean_lump_count": 0.6517412935323383,
+    "parity_mean": 0.026056735293433275,
+    "parity_std": 2.7061995813739414e-15,
+    "t_quench_effective": 4.0,
+    "t_quench_index": 40,
+    "timesteps_with_any_lump": 106,
+    "uses_gauge_phases": true
+  },
+  "precipitation_config": {
+    "J_coupling": 2.0,
+    "defrag_cold": 2.0,
+    "defrag_hot": 0.0,
+    "h_field": 0.2,
+    "local_dim": 2,
+    "n_sites": 8,
+    "n_steps": 201,
+    "t_quench": 4.0,
+    "t_total": 20.0,
+    "z_threshold": 0.1
+  },
+  "timestamp": "2025-12-03T20:54:15.308611"
+}

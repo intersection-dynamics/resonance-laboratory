@@ -1,0 +1,25 @@
+============================================================
+  Hilbert-Substrate Precipitating Event (fermion-ready, gauge-ready)
+============================================================
+Run root:        outputs\precipitating_event\20251203_202133_flux_event_J2
+Geometry file:   lr_embedding_3d.npz
+Seed:            117
+Gauge phases:    outputs\gauge_flux_experiment\20251203_XXXX_gauge_flux_pi_v1\data\phases.json
+------------------------------------------------------------
+Geometry n_sites: 8
+------------------------------------------------------------
+Configuration:
+  n_sites          = 8
+  local_dim        = 2
+  J_coupling       = 2.0
+  h_field          = 0.2
+  defrag_hot       = 0.0
+  defrag_cold      = 2.0
+  t_total          = 20.0
+  t_quench         = 4.0
+  n_steps          = 201
+  z_threshold      = 0.1
+------------------------------------------------------------
+Starting Precipitating Event evolution...
+------------------------------------------------------------
+[ERROR] Evolution failed: [Errno 2] No such file or directory: 'outputs\\gauge_flux_experiment\\20251203_XXXX_gauge_flux_pi_v1\\data\\phases.json'

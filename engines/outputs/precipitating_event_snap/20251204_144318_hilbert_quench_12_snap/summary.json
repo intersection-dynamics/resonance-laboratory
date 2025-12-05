@@ -1,0 +1,17 @@
+{
+  "run_root": "outputs\\precipitating_event_snap\\20251204_144318_hilbert_quench_12_snap",
+  "n_sites": 12,
+  "dim": 4096,
+  "t_total": 10.0,
+  "n_steps": 101,
+  "z_threshold": 0.02,
+  "total_lumps_over_time": 182,
+  "fraction_time_with_lumps": 1.0,
+  "max_lumps_per_step": 4,
+  "max_lump_size": 4,
+  "snapshot_indices": [
+    60,
+    80
+  ],
+  "snapshot_every": 0
+}

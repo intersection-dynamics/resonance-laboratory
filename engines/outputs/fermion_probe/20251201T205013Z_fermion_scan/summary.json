@@ -1,0 +1,28 @@
+{
+  "best_candidates": {
+    "electron": {
+      "node_id": 21,
+      "score": 4.3626261076368325
+    },
+    "photon": {
+      "node_id": 1,
+      "score": 6.061375030511435
+    },
+    "proton": {
+      "node_id": 25,
+      "score": 6.779652098004474
+    }
+  },
+  "connectivity": 0.4,
+  "defrag_rate": 0.5,
+  "dt": 0.1,
+  "files": {
+    "fermion_candidates_csv": "outputs\\fermion_probe\\20251201T205013Z_fermion_scan\\data\\fermion_candidates.csv"
+  },
+  "internal_dim": 4,
+  "n_nodes": 64,
+  "run_id": "20251201T205013Z_fermion_scan",
+  "seed": 42,
+  "steps": 4000,
+  "top_k": 16
+}

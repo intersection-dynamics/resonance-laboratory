@@ -1,0 +1,80 @@
+======================================================================
+SUBSTRATE QED MINI
+======================================================================
+Run ID: 20251202T072039Z_qed_mini_baseline
+
+n_nodes:        64
+internal_dim:   16
+connectivity:   0.35
+monogamy_budget:1.0
+
+burn_in_steps:  500
+total_steps:    4000
+record_stride:  10
+defrag_rate:    0.05
+dt:             0.1
+
+n_clusters:     3
+kmeans_iters:   50
+
+seed:           42
+
+{
+  "diagnostics": {
+    "cluster_centers": [
+      [
+        1.748803217063621,
+        0.0,
+        -0.19192099040099792
+      ],
+      [
+        -0.13541393048193082,
+        0.0,
+        1.359369275306933
+      ],
+      [
+        -0.39632880034377854,
+        0.0,
+        -0.47362382629730276
+      ]
+    ],
+    "cluster_counts": {
+      "electron": 10,
+      "photon": 39,
+      "proton": 15
+    },
+    "cluster_roles": {
+      "0": "electron",
+      "1": "proton",
+      "2": "photon"
+    }
+  },
+  "metrics": {
+    "electron_weight_final": 0.15304603980021975,
+    "electron_weight_max": 0.2283639913930008,
+    "global_norm_final": 1.0000000000000588,
+    "photon_weight_final": 0.5940006039237651,
+    "photon_weight_max": 0.6463851559251886,
+    "proton_weight_final": 0.2529533562761332,
+    "proton_weight_max": 0.2690973025432579
+  },
+  "params": {
+    "burn_in_steps": 500,
+    "connectivity": 0.35,
+    "defrag_rate": 0.05,
+    "dt": 0.1,
+    "internal_dim": 16,
+    "kmeans_iters": 50,
+    "monogamy_budget": 1.0,
+    "n_clusters": 3,
+    "n_nodes": 64,
+    "output_root": "outputs",
+    "record_stride": 10,
+    "seed": 42,
+    "tag": "qed_mini_baseline",
+    "total_steps": 4000
+  },
+  "run_id": "20251202T072039Z_qed_mini_baseline",
+  "script": "substrate_qed_mini.py",
+  "timestamp": "2025-12-02T07:21:16Z"
+}

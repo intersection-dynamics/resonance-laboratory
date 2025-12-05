@@ -1,0 +1,40 @@
+============================================================================
+Emergent Hydrogen Pointer Substrate (GPU-aware, Safe Logger)
+============================================================================
+Run ID   : 20251202_103437_H_ptr_gpu_v1
+Run dir  : outputs\emergent_pointer_hydrogen\20251202_103437_H_ptr_gpu_v1
+Seed     : 12345
+Steps    : 5000
+Stride   : 10
+Lattice  : 16 x 16 x 16
+dt       : 0.02
+use_gpu  : True (CuPy available: True)
+============================================================================
+
+[progress] step 0/5000 (  0.0%)  elapsed=   0.26s  ETA~25991225.24s
+[progress] step 250/5000 (  5.0%)  elapsed=  13.77s  ETA~ 261.62s
+[progress] step 500/5000 ( 10.0%)  elapsed=  28.23s  ETA~ 254.10s
+[progress] step 750/5000 ( 15.0%)  elapsed=  44.47s  ETA~ 252.00s
+[progress] step 1000/5000 ( 20.0%)  elapsed=  61.64s  ETA~ 246.54s
+[progress] step 1250/5000 ( 25.0%)  elapsed=  79.20s  ETA~ 237.61s
+[progress] step 1500/5000 ( 30.0%)  elapsed=  96.92s  ETA~ 226.15s
+[progress] step 1750/5000 ( 35.0%)  elapsed= 112.93s  ETA~ 209.73s
+[progress] step 2000/5000 ( 40.0%)  elapsed= 128.02s  ETA~ 192.03s
+[progress] step 2250/5000 ( 45.0%)  elapsed= 143.05s  ETA~ 174.84s
+[progress] step 2500/5000 ( 50.0%)  elapsed= 158.04s  ETA~ 158.04s
+[progress] step 2750/5000 ( 55.0%)  elapsed= 173.15s  ETA~ 141.67s
+[progress] step 3000/5000 ( 60.0%)  elapsed= 189.50s  ETA~ 126.33s
+[progress] step 3250/5000 ( 65.0%)  elapsed= 206.69s  ETA~ 111.29s
+[progress] step 3500/5000 ( 70.0%)  elapsed= 223.79s  ETA~  95.91s
+[progress] step 3750/5000 ( 75.0%)  elapsed= 240.87s  ETA~  80.29s
+[progress] step 4000/5000 ( 80.0%)  elapsed= 255.93s  ETA~  63.98s
+[progress] step 4250/5000 ( 85.0%)  elapsed= 268.92s  ETA~  47.46s
+[progress] step 4500/5000 ( 90.0%)  elapsed= 281.91s  ETA~  31.32s
+[progress] step 4750/5000 ( 95.0%)  elapsed= 294.91s  ETA~  15.52s
+[progress] step 5000/5000 (100.0%)  elapsed= 307.92s  ETA~   0.00s
+
+============================================================================
+Run complete.
+Converged: True
+Runtime  : 309.578 s
+============================================================================

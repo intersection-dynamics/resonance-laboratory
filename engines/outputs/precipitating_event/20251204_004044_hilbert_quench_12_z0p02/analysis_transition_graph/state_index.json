@@ -1,0 +1,709 @@
+{
+  "0": {
+    "state_id": 0,
+    "pattern_bits": "010011100101",
+    "center_site": 1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "1": {
+    "state_id": 1,
+    "pattern_bits": "011011001101",
+    "center_site": 1,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "2": {
+    "state_id": 2,
+    "pattern_bits": "111011000100",
+    "center_site": 9,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "3": {
+    "state_id": 3,
+    "pattern_bits": "011101010100",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "4": {
+    "state_id": 4,
+    "pattern_bits": "011101000100",
+    "center_site": 1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "5": {
+    "state_id": 5,
+    "pattern_bits": "111001100110",
+    "center_site": 2,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "6": {
+    "state_id": 6,
+    "pattern_bits": "101010001110",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "7": {
+    "state_id": 7,
+    "pattern_bits": "110011100100",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "8": {
+    "state_id": 8,
+    "pattern_bits": "110000110101",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "9": {
+    "state_id": 9,
+    "pattern_bits": "110000100001",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "10": {
+    "state_id": 10,
+    "pattern_bits": "110000011110",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "11": {
+    "state_id": 11,
+    "pattern_bits": "001001111111",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "12": {
+    "state_id": 12,
+    "pattern_bits": "000001110101",
+    "center_site": 6,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "13": {
+    "state_id": 13,
+    "pattern_bits": "000001111111",
+    "center_site": 11,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "14": {
+    "state_id": 14,
+    "pattern_bits": "100001111011",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "15": {
+    "state_id": 15,
+    "pattern_bits": "100000011011",
+    "center_site": 11,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "16": {
+    "state_id": 16,
+    "pattern_bits": "110010110111",
+    "center_site": 2,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "17": {
+    "state_id": 17,
+    "pattern_bits": "100110110100",
+    "center_site": 7,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "18": {
+    "state_id": 18,
+    "pattern_bits": "100110010101",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "19": {
+    "state_id": 19,
+    "pattern_bits": "011110010101",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "20": {
+    "state_id": 20,
+    "pattern_bits": "011100110100",
+    "center_site": 1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "21": {
+    "state_id": 21,
+    "pattern_bits": "010101010100",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "22": {
+    "state_id": 22,
+    "pattern_bits": "000111010101",
+    "center_site": 7,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "23": {
+    "state_id": 23,
+    "pattern_bits": "011010010001",
+    "center_site": 5,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "24": {
+    "state_id": 24,
+    "pattern_bits": "010110110011",
+    "center_site": 9,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "25": {
+    "state_id": 25,
+    "pattern_bits": "010101100010",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "26": {
+    "state_id": 26,
+    "pattern_bits": "110100110010",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "27": {
+    "state_id": 27,
+    "pattern_bits": "101000110011",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "28": {
+    "state_id": 28,
+    "pattern_bits": "101000110011",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "29": {
+    "state_id": 29,
+    "pattern_bits": "001100001001",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "30": {
+    "state_id": 30,
+    "pattern_bits": "110100101101",
+    "center_site": 7,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "31": {
+    "state_id": 31,
+    "pattern_bits": "110000100101",
+    "center_site": 1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "32": {
+    "state_id": 32,
+    "pattern_bits": "111111100000",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "33": {
+    "state_id": 33,
+    "pattern_bits": "100111100000",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "34": {
+    "state_id": 34,
+    "pattern_bits": "110111100100",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "35": {
+    "state_id": 35,
+    "pattern_bits": "110011000110",
+    "center_site": 11,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "36": {
+    "state_id": 36,
+    "pattern_bits": "010010001010",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "37": {
+    "state_id": 37,
+    "pattern_bits": "010010100011",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "38": {
+    "state_id": 38,
+    "pattern_bits": "011011100010",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "39": {
+    "state_id": 39,
+    "pattern_bits": "011011100010",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "40": {
+    "state_id": 40,
+    "pattern_bits": "010011100000",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "41": {
+    "state_id": 41,
+    "pattern_bits": "010110110000",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "42": {
+    "state_id": 42,
+    "pattern_bits": "100110110100",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "43": {
+    "state_id": 43,
+    "pattern_bits": "100110110110",
+    "center_site": 11,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "44": {
+    "state_id": 44,
+    "pattern_bits": "110110001011",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "45": {
+    "state_id": 45,
+    "pattern_bits": "111100001011",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "46": {
+    "state_id": 46,
+    "pattern_bits": "110100000111",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "47": {
+    "state_id": 47,
+    "pattern_bits": "011010000110",
+    "center_site": 8,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "48": {
+    "state_id": 48,
+    "pattern_bits": "001110110010",
+    "center_site": 10,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "49": {
+    "state_id": 49,
+    "pattern_bits": "101010100011",
+    "center_site": 10,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "50": {
+    "state_id": 50,
+    "pattern_bits": "101010000011",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "51": {
+    "state_id": 51,
+    "pattern_bits": "100110111011",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "52": {
+    "state_id": 52,
+    "pattern_bits": "110100110011",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "53": {
+    "state_id": 53,
+    "pattern_bits": "100001100111",
+    "center_site": 6,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "54": {
+    "state_id": 54,
+    "pattern_bits": "100110100101",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "55": {
+    "state_id": 55,
+    "pattern_bits": "011010100101",
+    "center_site": 6,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "56": {
+    "state_id": 56,
+    "pattern_bits": "100101111101",
+    "center_site": 1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "57": {
+    "state_id": 57,
+    "pattern_bits": "000001011111",
+    "center_site": 7,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "58": {
+    "state_id": 58,
+    "pattern_bits": "000110111001",
+    "center_site": 8,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "59": {
+    "state_id": 59,
+    "pattern_bits": "000011111101",
+    "center_site": 10,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "60": {
+    "state_id": 60,
+    "pattern_bits": "001000011111",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "61": {
+    "state_id": 61,
+    "pattern_bits": "100100101111",
+    "center_site": 2,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "62": {
+    "state_id": 62,
+    "pattern_bits": "100010101101",
+    "center_site": 7,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "63": {
+    "state_id": 63,
+    "pattern_bits": "011011110101",
+    "center_site": 10,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "64": {
+    "state_id": 64,
+    "pattern_bits": "011110110111",
+    "center_site": 8,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "65": {
+    "state_id": 65,
+    "pattern_bits": "011100110010",
+    "center_site": 8,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "66": {
+    "state_id": 66,
+    "pattern_bits": "110100111010",
+    "center_site": 10,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "67": {
+    "state_id": 67,
+    "pattern_bits": "111110011010",
+    "center_site": 5,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "68": {
+    "state_id": 68,
+    "pattern_bits": "110101101101",
+    "center_site": 2,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "69": {
+    "state_id": 69,
+    "pattern_bits": "110110100001",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "70": {
+    "state_id": 70,
+    "pattern_bits": "111110011000",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "71": {
+    "state_id": 71,
+    "pattern_bits": "100100111000",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "72": {
+    "state_id": 72,
+    "pattern_bits": "110110111010",
+    "center_site": 7,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "73": {
+    "state_id": 73,
+    "pattern_bits": "110110000011",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "74": {
+    "state_id": 74,
+    "pattern_bits": "011101001011",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "75": {
+    "state_id": 75,
+    "pattern_bits": "011010101101",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "76": {
+    "state_id": 76,
+    "pattern_bits": "011011111010",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "77": {
+    "state_id": 77,
+    "pattern_bits": "100011010110",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "78": {
+    "state_id": 78,
+    "pattern_bits": "100011010111",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "79": {
+    "state_id": 79,
+    "pattern_bits": "100011010111",
+    "center_site": 2,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "80": {
+    "state_id": 80,
+    "pattern_bits": "010111010110",
+    "center_site": -1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "81": {
+    "state_id": 81,
+    "pattern_bits": "000100110110",
+    "center_site": 7,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "82": {
+    "state_id": 82,
+    "pattern_bits": "110100111010",
+    "center_site": 2,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "83": {
+    "state_id": 83,
+    "pattern_bits": "110100111111",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "84": {
+    "state_id": 84,
+    "pattern_bits": "101101011111",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "85": {
+    "state_id": 85,
+    "pattern_bits": "100101110011",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "86": {
+    "state_id": 86,
+    "pattern_bits": "101010110011",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "87": {
+    "state_id": 87,
+    "pattern_bits": "101011100010",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "88": {
+    "state_id": 88,
+    "pattern_bits": "011010100001",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "89": {
+    "state_id": 89,
+    "pattern_bits": "011100101011",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "90": {
+    "state_id": 90,
+    "pattern_bits": "010100101011",
+    "center_site": 4,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "91": {
+    "state_id": 91,
+    "pattern_bits": "110000111001",
+    "center_site": 1,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "92": {
+    "state_id": 92,
+    "pattern_bits": "011000111100",
+    "center_site": 1,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "93": {
+    "state_id": 93,
+    "pattern_bits": "110001001110",
+    "center_site": 5,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "94": {
+    "state_id": 94,
+    "pattern_bits": "101011000011",
+    "center_site": 0,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "95": {
+    "state_id": 95,
+    "pattern_bits": "001111000011",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "96": {
+    "state_id": 96,
+    "pattern_bits": "000111010110",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 1
+  },
+  "97": {
+    "state_id": 97,
+    "pattern_bits": "010110010100",
+    "center_site": 7,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "98": {
+    "state_id": 98,
+    "pattern_bits": "101111111001",
+    "center_site": 10,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "99": {
+    "state_id": 99,
+    "pattern_bits": "101011101000",
+    "center_site": 2,
+    "count": 1,
+    "internal_change_count": 0
+  },
+  "100": {
+    "state_id": 100,
+    "pattern_bits": "100010110100",
+    "center_site": 3,
+    "count": 1,
+    "internal_change_count": 0
+  }
+}

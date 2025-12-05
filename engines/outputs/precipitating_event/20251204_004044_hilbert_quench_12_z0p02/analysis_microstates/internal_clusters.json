@@ -1,0 +1,2806 @@
+{
+  "center_sites": {
+    "-1": {
+      "center_site": -1,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "001100001001",
+              "state_id": 29
+            }
+          ],
+          "representative_pattern": "001100001001",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "111111100000",
+              "state_id": 32
+            }
+          ],
+          "representative_pattern": "111111100000",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "010010001010",
+              "state_id": 36
+            }
+          ],
+          "representative_pattern": "010010001010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110110001011",
+              "state_id": 44
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110110000011",
+              "state_id": 73
+            }
+          ],
+          "representative_pattern": "110110001011",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110100000111",
+              "state_id": 46
+            }
+          ],
+          "representative_pattern": "110100000111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110100110011",
+              "state_id": 52
+            }
+          ],
+          "representative_pattern": "110100110011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100110100101",
+              "state_id": 54
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110110100001",
+              "state_id": 69
+            }
+          ],
+          "representative_pattern": "100110100101",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 7,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "001000011111",
+              "state_id": 60
+            }
+          ],
+          "representative_pattern": "001000011111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 8,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "111110011000",
+              "state_id": 70
+            }
+          ],
+          "representative_pattern": "111110011000",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 9,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011101001011",
+              "state_id": 74
+            }
+          ],
+          "representative_pattern": "011101001011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 10,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "010111010110",
+              "state_id": 80
+            }
+          ],
+          "representative_pattern": "010111010110",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 13
+    },
+    "0": {
+      "center_site": 0,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "101010001110",
+              "state_id": 6
+            }
+          ],
+          "representative_pattern": "101010001110",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.11764705882352941,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "110011100100",
+              "state_id": 7
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "010011100000",
+              "state_id": 40
+            }
+          ],
+          "representative_pattern": "110011100100",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.11764705882352941,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "110000110101",
+              "state_id": 8
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "110000100001",
+              "state_id": 9
+            }
+          ],
+          "representative_pattern": "110000110101",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "110000011110",
+              "state_id": 10
+            }
+          ],
+          "representative_pattern": "110000011110",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011110010101",
+              "state_id": 19
+            }
+          ],
+          "representative_pattern": "011110010101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110100110010",
+              "state_id": 26
+            }
+          ],
+          "representative_pattern": "110100110010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.11764705882352941,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "101000110011",
+              "state_id": 27
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "101010110011",
+              "state_id": 86
+            }
+          ],
+          "representative_pattern": "101000110011",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 7,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100111100000",
+              "state_id": 33
+            }
+          ],
+          "representative_pattern": "100111100000",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 8,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011011100010",
+              "state_id": 39
+            }
+          ],
+          "representative_pattern": "011011100010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 9,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100110110100",
+              "state_id": 42
+            }
+          ],
+          "representative_pattern": "100110110100",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 10,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "111100001011",
+              "state_id": 45
+            }
+          ],
+          "representative_pattern": "111100001011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 11,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100110111011",
+              "state_id": 51
+            }
+          ],
+          "representative_pattern": "100110111011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 12,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100101110011",
+              "state_id": 85
+            }
+          ],
+          "representative_pattern": "100101110011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 13,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.058823529411764705,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "101011000011",
+              "state_id": 94
+            }
+          ],
+          "representative_pattern": "101011000011",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 17
+    },
+    "1": {
+      "center_site": 1,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "010011100101",
+              "state_id": 0
+            }
+          ],
+          "representative_pattern": "010011100101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "011011001101",
+              "state_id": 1
+            }
+          ],
+          "representative_pattern": "011011001101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011101000100",
+              "state_id": 4
+            }
+          ],
+          "representative_pattern": "011101000100",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.5,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011100110100",
+              "state_id": 20
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "011000111100",
+              "state_id": 92
+            }
+          ],
+          "representative_pattern": "011100110100",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110000100101",
+              "state_id": 31
+            }
+          ],
+          "representative_pattern": "110000100101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100101111101",
+              "state_id": 56
+            }
+          ],
+          "representative_pattern": "100101111101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110000111001",
+              "state_id": 91
+            }
+          ],
+          "representative_pattern": "110000111001",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 8
+    },
+    "10": {
+      "center_site": 10,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.16666666666666666,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "001110110010",
+              "state_id": 48
+            }
+          ],
+          "representative_pattern": "001110110010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.16666666666666666,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "101010100011",
+              "state_id": 49
+            }
+          ],
+          "representative_pattern": "101010100011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.16666666666666666,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "000011111101",
+              "state_id": 59
+            }
+          ],
+          "representative_pattern": "000011111101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.16666666666666666,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011011110101",
+              "state_id": 63
+            }
+          ],
+          "representative_pattern": "011011110101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.16666666666666666,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110100111010",
+              "state_id": 66
+            }
+          ],
+          "representative_pattern": "110100111010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.16666666666666666,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "101111111001",
+              "state_id": 98
+            }
+          ],
+          "representative_pattern": "101111111001",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 6
+    },
+    "11": {
+      "center_site": 11,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "000001111111",
+              "state_id": 13
+            }
+          ],
+          "representative_pattern": "000001111111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100000011011",
+              "state_id": 15
+            }
+          ],
+          "representative_pattern": "100000011011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110011000110",
+              "state_id": 35
+            }
+          ],
+          "representative_pattern": "110011000110",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100110110110",
+              "state_id": 43
+            }
+          ],
+          "representative_pattern": "100110110110",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 4
+    },
+    "2": {
+      "center_site": 2,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "111001100110",
+              "state_id": 5
+            }
+          ],
+          "representative_pattern": "111001100110",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110010110111",
+              "state_id": 16
+            }
+          ],
+          "representative_pattern": "110010110111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100100101111",
+              "state_id": 61
+            }
+          ],
+          "representative_pattern": "100100101111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110101101101",
+              "state_id": 68
+            }
+          ],
+          "representative_pattern": "110101101101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100011010111",
+              "state_id": 79
+            }
+          ],
+          "representative_pattern": "100011010111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110100111010",
+              "state_id": 82
+            }
+          ],
+          "representative_pattern": "110100111010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.14285714285714285,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "101011101000",
+              "state_id": 99
+            }
+          ],
+          "representative_pattern": "101011101000",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 7
+    },
+    "3": {
+      "center_site": 3,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011101010100",
+              "state_id": 3
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "010101010100",
+              "state_id": 21
+            }
+          ],
+          "representative_pattern": "011101010100",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100110010101",
+              "state_id": 18
+            }
+          ],
+          "representative_pattern": "100110010101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "010101100010",
+              "state_id": 25
+            }
+          ],
+          "representative_pattern": "010101100010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "101010000011",
+              "state_id": 50
+            }
+          ],
+          "representative_pattern": "101010000011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100100111000",
+              "state_id": 71
+            }
+          ],
+          "representative_pattern": "100100111000",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011010101101",
+              "state_id": 75
+            }
+          ],
+          "representative_pattern": "011010101101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "011011111010",
+              "state_id": 76
+            }
+          ],
+          "representative_pattern": "011011111010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 7,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110100111111",
+              "state_id": 83
+            }
+          ],
+          "representative_pattern": "110100111111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 8,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "101101011111",
+              "state_id": 84
+            }
+          ],
+          "representative_pattern": "101101011111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 9,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "001111000011",
+              "state_id": 95
+            }
+          ],
+          "representative_pattern": "001111000011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 10,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "000111010110",
+              "state_id": 96
+            }
+          ],
+          "representative_pattern": "000111010110",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 11,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100010110100",
+              "state_id": 100
+            }
+          ],
+          "representative_pattern": "100010110100",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 13
+    },
+    "4": {
+      "center_site": 4,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "001001111111",
+              "state_id": 11
+            }
+          ],
+          "representative_pattern": "001001111111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100001111011",
+              "state_id": 14
+            }
+          ],
+          "representative_pattern": "100001111011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "101000110011",
+              "state_id": 28
+            }
+          ],
+          "representative_pattern": "101000110011",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110111100100",
+              "state_id": 34
+            }
+          ],
+          "representative_pattern": "110111100100",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.5,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "010010100011",
+              "state_id": 37
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "011010100001",
+              "state_id": 88
+            }
+          ],
+          "representative_pattern": "010010100011",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.5,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "011011100010",
+              "state_id": 38
+            },
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "101011100010",
+              "state_id": 87
+            }
+          ],
+          "representative_pattern": "011011100010",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.07692307692307693,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "010110110000",
+              "state_id": 41
+            }
+          ],
+          "representative_pattern": "010110110000",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 7,
+          "fraction_internal_change": 0.5,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100011010110",
+              "state_id": 77
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "100011010111",
+              "state_id": 78
+            }
+          ],
+          "representative_pattern": "100011010110",
+          "total_count": 2
+        },
+        {
+          "cluster_id": 8,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.019801980198019802,
+          "fraction_of_center_site": 0.15384615384615385,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "011100101011",
+              "state_id": 89
+            },
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "010100101011",
+              "state_id": 90
+            }
+          ],
+          "representative_pattern": "011100101011",
+          "total_count": 2
+        }
+      ],
+      "total_occurrences": 13
+    },
+    "5": {
+      "center_site": 5,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.3333333333333333,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011010010001",
+              "state_id": 23
+            }
+          ],
+          "representative_pattern": "011010010001",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.3333333333333333,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "111110011010",
+              "state_id": 67
+            }
+          ],
+          "representative_pattern": "111110011010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.3333333333333333,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110001001110",
+              "state_id": 93
+            }
+          ],
+          "representative_pattern": "110001001110",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 3
+    },
+    "6": {
+      "center_site": 6,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.3333333333333333,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "000001110101",
+              "state_id": 12
+            }
+          ],
+          "representative_pattern": "000001110101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.3333333333333333,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100001100111",
+              "state_id": 53
+            }
+          ],
+          "representative_pattern": "100001100111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.3333333333333333,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011010100101",
+              "state_id": 55
+            }
+          ],
+          "representative_pattern": "011010100101",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 3
+    },
+    "7": {
+      "center_site": 7,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100110110100",
+              "state_id": 17
+            }
+          ],
+          "representative_pattern": "100110110100",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "000111010101",
+              "state_id": 22
+            }
+          ],
+          "representative_pattern": "000111010101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110100101101",
+              "state_id": 30
+            }
+          ],
+          "representative_pattern": "110100101101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "000001011111",
+              "state_id": 57
+            }
+          ],
+          "representative_pattern": "000001011111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 4,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "100010101101",
+              "state_id": 62
+            }
+          ],
+          "representative_pattern": "100010101101",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 5,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "110110111010",
+              "state_id": 72
+            }
+          ],
+          "representative_pattern": "110110111010",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 6,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "000100110110",
+              "state_id": 81
+            }
+          ],
+          "representative_pattern": "000100110110",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 7,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.125,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "010110010100",
+              "state_id": 97
+            }
+          ],
+          "representative_pattern": "010110010100",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 8
+    },
+    "8": {
+      "center_site": 8,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011010000110",
+              "state_id": 47
+            }
+          ],
+          "representative_pattern": "011010000110",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "000110111001",
+              "state_id": 58
+            }
+          ],
+          "representative_pattern": "000110111001",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 2,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "011110110111",
+              "state_id": 64
+            }
+          ],
+          "representative_pattern": "011110110111",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 3,
+          "fraction_internal_change": 1.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.25,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 1,
+              "pattern_bits": "011100110010",
+              "state_id": 65
+            }
+          ],
+          "representative_pattern": "011100110010",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 4
+    },
+    "9": {
+      "center_site": 9,
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.5,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "111011000100",
+              "state_id": 2
+            }
+          ],
+          "representative_pattern": "111011000100",
+          "total_count": 1
+        },
+        {
+          "cluster_id": 1,
+          "fraction_internal_change": 0.0,
+          "fraction_of_all_times": 0.009900990099009901,
+          "fraction_of_center_site": 0.5,
+          "members": [
+            {
+              "count": 1,
+              "internal_change_count": 0,
+              "pattern_bits": "010110110011",
+              "state_id": 24
+            }
+          ],
+          "representative_pattern": "010110110011",
+          "total_count": 1
+        }
+      ],
+      "total_occurrences": 2
+    }
+  },
+  "cluster_radius": 2,
+  "n_sites": 12,
+  "n_states": 101,
+  "n_times": 101,
+  "run_root": "c:\\GitHub\\resonance-laboratory\\engines\\outputs\\precipitating_event\\20251204_004044_hilbert_quench_12_z0p02",
+  "transitions": {
+    "edges": [
+      {
+        "count": 1,
+        "from_state": 0,
+        "to_state": 1
+      },
+      {
+        "count": 1,
+        "from_state": 1,
+        "to_state": 2
+      },
+      {
+        "count": 1,
+        "from_state": 2,
+        "to_state": 3
+      },
+      {
+        "count": 1,
+        "from_state": 3,
+        "to_state": 4
+      },
+      {
+        "count": 1,
+        "from_state": 4,
+        "to_state": 5
+      },
+      {
+        "count": 1,
+        "from_state": 5,
+        "to_state": 6
+      },
+      {
+        "count": 1,
+        "from_state": 6,
+        "to_state": 7
+      },
+      {
+        "count": 1,
+        "from_state": 7,
+        "to_state": 8
+      },
+      {
+        "count": 1,
+        "from_state": 8,
+        "to_state": 9
+      },
+      {
+        "count": 1,
+        "from_state": 9,
+        "to_state": 10
+      },
+      {
+        "count": 1,
+        "from_state": 10,
+        "to_state": 11
+      },
+      {
+        "count": 1,
+        "from_state": 11,
+        "to_state": 12
+      },
+      {
+        "count": 1,
+        "from_state": 12,
+        "to_state": 13
+      },
+      {
+        "count": 1,
+        "from_state": 13,
+        "to_state": 14
+      },
+      {
+        "count": 1,
+        "from_state": 14,
+        "to_state": 15
+      },
+      {
+        "count": 1,
+        "from_state": 15,
+        "to_state": 16
+      },
+      {
+        "count": 1,
+        "from_state": 16,
+        "to_state": 17
+      },
+      {
+        "count": 1,
+        "from_state": 17,
+        "to_state": 18
+      },
+      {
+        "count": 1,
+        "from_state": 18,
+        "to_state": 19
+      },
+      {
+        "count": 1,
+        "from_state": 19,
+        "to_state": 20
+      },
+      {
+        "count": 1,
+        "from_state": 20,
+        "to_state": 21
+      },
+      {
+        "count": 1,
+        "from_state": 21,
+        "to_state": 22
+      },
+      {
+        "count": 1,
+        "from_state": 22,
+        "to_state": 23
+      },
+      {
+        "count": 1,
+        "from_state": 23,
+        "to_state": 24
+      },
+      {
+        "count": 1,
+        "from_state": 24,
+        "to_state": 25
+      },
+      {
+        "count": 1,
+        "from_state": 25,
+        "to_state": 26
+      },
+      {
+        "count": 1,
+        "from_state": 26,
+        "to_state": 27
+      },
+      {
+        "count": 1,
+        "from_state": 27,
+        "to_state": 28
+      },
+      {
+        "count": 1,
+        "from_state": 28,
+        "to_state": 29
+      },
+      {
+        "count": 1,
+        "from_state": 29,
+        "to_state": 30
+      },
+      {
+        "count": 1,
+        "from_state": 30,
+        "to_state": 31
+      },
+      {
+        "count": 1,
+        "from_state": 31,
+        "to_state": 32
+      },
+      {
+        "count": 1,
+        "from_state": 32,
+        "to_state": 33
+      },
+      {
+        "count": 1,
+        "from_state": 33,
+        "to_state": 34
+      },
+      {
+        "count": 1,
+        "from_state": 34,
+        "to_state": 35
+      },
+      {
+        "count": 1,
+        "from_state": 35,
+        "to_state": 36
+      },
+      {
+        "count": 1,
+        "from_state": 36,
+        "to_state": 37
+      },
+      {
+        "count": 1,
+        "from_state": 37,
+        "to_state": 38
+      },
+      {
+        "count": 1,
+        "from_state": 38,
+        "to_state": 39
+      },
+      {
+        "count": 1,
+        "from_state": 39,
+        "to_state": 40
+      },
+      {
+        "count": 1,
+        "from_state": 40,
+        "to_state": 41
+      },
+      {
+        "count": 1,
+        "from_state": 41,
+        "to_state": 42
+      },
+      {
+        "count": 1,
+        "from_state": 42,
+        "to_state": 43
+      },
+      {
+        "count": 1,
+        "from_state": 43,
+        "to_state": 44
+      },
+      {
+        "count": 1,
+        "from_state": 44,
+        "to_state": 45
+      },
+      {
+        "count": 1,
+        "from_state": 45,
+        "to_state": 46
+      },
+      {
+        "count": 1,
+        "from_state": 46,
+        "to_state": 47
+      },
+      {
+        "count": 1,
+        "from_state": 47,
+        "to_state": 48
+      },
+      {
+        "count": 1,
+        "from_state": 48,
+        "to_state": 49
+      },
+      {
+        "count": 1,
+        "from_state": 49,
+        "to_state": 50
+      },
+      {
+        "count": 1,
+        "from_state": 50,
+        "to_state": 51
+      },
+      {
+        "count": 1,
+        "from_state": 51,
+        "to_state": 52
+      },
+      {
+        "count": 1,
+        "from_state": 52,
+        "to_state": 53
+      },
+      {
+        "count": 1,
+        "from_state": 53,
+        "to_state": 54
+      },
+      {
+        "count": 1,
+        "from_state": 54,
+        "to_state": 55
+      },
+      {
+        "count": 1,
+        "from_state": 55,
+        "to_state": 56
+      },
+      {
+        "count": 1,
+        "from_state": 56,
+        "to_state": 57
+      },
+      {
+        "count": 1,
+        "from_state": 57,
+        "to_state": 58
+      },
+      {
+        "count": 1,
+        "from_state": 58,
+        "to_state": 59
+      },
+      {
+        "count": 1,
+        "from_state": 59,
+        "to_state": 60
+      },
+      {
+        "count": 1,
+        "from_state": 60,
+        "to_state": 61
+      },
+      {
+        "count": 1,
+        "from_state": 61,
+        "to_state": 62
+      },
+      {
+        "count": 1,
+        "from_state": 62,
+        "to_state": 63
+      },
+      {
+        "count": 1,
+        "from_state": 63,
+        "to_state": 64
+      },
+      {
+        "count": 1,
+        "from_state": 64,
+        "to_state": 65
+      },
+      {
+        "count": 1,
+        "from_state": 65,
+        "to_state": 66
+      },
+      {
+        "count": 1,
+        "from_state": 66,
+        "to_state": 67
+      },
+      {
+        "count": 1,
+        "from_state": 67,
+        "to_state": 68
+      },
+      {
+        "count": 1,
+        "from_state": 68,
+        "to_state": 69
+      },
+      {
+        "count": 1,
+        "from_state": 69,
+        "to_state": 70
+      },
+      {
+        "count": 1,
+        "from_state": 70,
+        "to_state": 71
+      },
+      {
+        "count": 1,
+        "from_state": 71,
+        "to_state": 72
+      },
+      {
+        "count": 1,
+        "from_state": 72,
+        "to_state": 73
+      },
+      {
+        "count": 1,
+        "from_state": 73,
+        "to_state": 74
+      },
+      {
+        "count": 1,
+        "from_state": 74,
+        "to_state": 75
+      },
+      {
+        "count": 1,
+        "from_state": 75,
+        "to_state": 76
+      },
+      {
+        "count": 1,
+        "from_state": 76,
+        "to_state": 77
+      },
+      {
+        "count": 1,
+        "from_state": 77,
+        "to_state": 78
+      },
+      {
+        "count": 1,
+        "from_state": 78,
+        "to_state": 79
+      },
+      {
+        "count": 1,
+        "from_state": 79,
+        "to_state": 80
+      },
+      {
+        "count": 1,
+        "from_state": 80,
+        "to_state": 81
+      },
+      {
+        "count": 1,
+        "from_state": 81,
+        "to_state": 82
+      },
+      {
+        "count": 1,
+        "from_state": 82,
+        "to_state": 83
+      },
+      {
+        "count": 1,
+        "from_state": 83,
+        "to_state": 84
+      },
+      {
+        "count": 1,
+        "from_state": 84,
+        "to_state": 85
+      },
+      {
+        "count": 1,
+        "from_state": 85,
+        "to_state": 86
+      },
+      {
+        "count": 1,
+        "from_state": 86,
+        "to_state": 87
+      },
+      {
+        "count": 1,
+        "from_state": 87,
+        "to_state": 88
+      },
+      {
+        "count": 1,
+        "from_state": 88,
+        "to_state": 89
+      },
+      {
+        "count": 1,
+        "from_state": 89,
+        "to_state": 90
+      },
+      {
+        "count": 1,
+        "from_state": 90,
+        "to_state": 91
+      },
+      {
+        "count": 1,
+        "from_state": 91,
+        "to_state": 92
+      },
+      {
+        "count": 1,
+        "from_state": 92,
+        "to_state": 93
+      },
+      {
+        "count": 1,
+        "from_state": 93,
+        "to_state": 94
+      },
+      {
+        "count": 1,
+        "from_state": 94,
+        "to_state": 95
+      },
+      {
+        "count": 1,
+        "from_state": 95,
+        "to_state": 96
+      },
+      {
+        "count": 1,
+        "from_state": 96,
+        "to_state": 97
+      },
+      {
+        "count": 1,
+        "from_state": 97,
+        "to_state": 98
+      },
+      {
+        "count": 1,
+        "from_state": 98,
+        "to_state": 99
+      },
+      {
+        "count": 1,
+        "from_state": 99,
+        "to_state": 100
+      }
+    ],
+    "states": [
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "010011100101",
+        "state_id": 0
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "011011001101",
+        "state_id": 1
+      },
+      {
+        "center_site": 9,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "111011000100",
+        "state_id": 2
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011101010100",
+        "state_id": 3
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011101000100",
+        "state_id": 4
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "111001100110",
+        "state_id": 5
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "101010001110",
+        "state_id": 6
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "110011100100",
+        "state_id": 7
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "110000110101",
+        "state_id": 8
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "110000100001",
+        "state_id": 9
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "110000011110",
+        "state_id": 10
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "001001111111",
+        "state_id": 11
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "000001110101",
+        "state_id": 12
+      },
+      {
+        "center_site": 11,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "000001111111",
+        "state_id": 13
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100001111011",
+        "state_id": 14
+      },
+      {
+        "center_site": 11,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100000011011",
+        "state_id": 15
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110010110111",
+        "state_id": 16
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100110110100",
+        "state_id": 17
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100110010101",
+        "state_id": 18
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011110010101",
+        "state_id": 19
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011100110100",
+        "state_id": 20
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "010101010100",
+        "state_id": 21
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "000111010101",
+        "state_id": 22
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011010010001",
+        "state_id": 23
+      },
+      {
+        "center_site": 9,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "010110110011",
+        "state_id": 24
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "010101100010",
+        "state_id": 25
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110100110010",
+        "state_id": 26
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "101000110011",
+        "state_id": 27
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "101000110011",
+        "state_id": 28
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "001100001001",
+        "state_id": 29
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110100101101",
+        "state_id": 30
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110000100101",
+        "state_id": 31
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "111111100000",
+        "state_id": 32
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100111100000",
+        "state_id": 33
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110111100100",
+        "state_id": 34
+      },
+      {
+        "center_site": 11,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110011000110",
+        "state_id": 35
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "010010001010",
+        "state_id": 36
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "010010100011",
+        "state_id": 37
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "011011100010",
+        "state_id": 38
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011011100010",
+        "state_id": 39
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "010011100000",
+        "state_id": 40
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "010110110000",
+        "state_id": 41
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100110110100",
+        "state_id": 42
+      },
+      {
+        "center_site": 11,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100110110110",
+        "state_id": 43
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110110001011",
+        "state_id": 44
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "111100001011",
+        "state_id": 45
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110100000111",
+        "state_id": 46
+      },
+      {
+        "center_site": 8,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011010000110",
+        "state_id": 47
+      },
+      {
+        "center_site": 10,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "001110110010",
+        "state_id": 48
+      },
+      {
+        "center_site": 10,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "101010100011",
+        "state_id": 49
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "101010000011",
+        "state_id": 50
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100110111011",
+        "state_id": 51
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110100110011",
+        "state_id": 52
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100001100111",
+        "state_id": 53
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100110100101",
+        "state_id": 54
+      },
+      {
+        "center_site": 6,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011010100101",
+        "state_id": 55
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100101111101",
+        "state_id": 56
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "000001011111",
+        "state_id": 57
+      },
+      {
+        "center_site": 8,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "000110111001",
+        "state_id": 58
+      },
+      {
+        "center_site": 10,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "000011111101",
+        "state_id": 59
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "001000011111",
+        "state_id": 60
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100100101111",
+        "state_id": 61
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100010101101",
+        "state_id": 62
+      },
+      {
+        "center_site": 10,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011011110101",
+        "state_id": 63
+      },
+      {
+        "center_site": 8,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011110110111",
+        "state_id": 64
+      },
+      {
+        "center_site": 8,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "011100110010",
+        "state_id": 65
+      },
+      {
+        "center_site": 10,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110100111010",
+        "state_id": 66
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "111110011010",
+        "state_id": 67
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110101101101",
+        "state_id": 68
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110110100001",
+        "state_id": 69
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "111110011000",
+        "state_id": 70
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100100111000",
+        "state_id": 71
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110110111010",
+        "state_id": 72
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110110000011",
+        "state_id": 73
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011101001011",
+        "state_id": 74
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "011010101101",
+        "state_id": 75
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "011011111010",
+        "state_id": 76
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100011010110",
+        "state_id": 77
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "100011010111",
+        "state_id": 78
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100011010111",
+        "state_id": 79
+      },
+      {
+        "center_site": -1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "010111010110",
+        "state_id": 80
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "000100110110",
+        "state_id": 81
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110100111010",
+        "state_id": 82
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110100111111",
+        "state_id": 83
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "101101011111",
+        "state_id": 84
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100101110011",
+        "state_id": 85
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "101010110011",
+        "state_id": 86
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "101011100010",
+        "state_id": 87
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "011010100001",
+        "state_id": 88
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "011100101011",
+        "state_id": 89
+      },
+      {
+        "center_site": 4,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "010100101011",
+        "state_id": 90
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110000111001",
+        "state_id": 91
+      },
+      {
+        "center_site": 1,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "011000111100",
+        "state_id": 92
+      },
+      {
+        "center_site": 5,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "110001001110",
+        "state_id": 93
+      },
+      {
+        "center_site": 0,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "101011000011",
+        "state_id": 94
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "001111000011",
+        "state_id": 95
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 1,
+        "pattern_bits": "000111010110",
+        "state_id": 96
+      },
+      {
+        "center_site": 7,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "010110010100",
+        "state_id": 97
+      },
+      {
+        "center_site": 10,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "101111111001",
+        "state_id": 98
+      },
+      {
+        "center_site": 2,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "101011101000",
+        "state_id": 99
+      },
+      {
+        "center_site": 3,
+        "count": 1,
+        "internal_change_count": 0,
+        "pattern_bits": "100010110100",
+        "state_id": 100
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "args": {
+    "J_coupling": 2.0,
+    "bias_strength": 1.0,
+    "defrag_zz": 2.0,
+    "gauge_run_root": "outputs\\precipitating_event\\20251203_213453_flux_event_J2_intpaths",
+    "geometry": "lr_embedding_3d.npz",
+    "h_field": 0.2,
+    "init_pin_strength": 4.0,
+    "n_steps": 200,
+    "output_root": "outputs",
+    "path_A": "0,1,3,2",
+    "path_B": "4,5,7,6",
+    "tag": "exchange_J2_flux",
+    "total_time": 20.0
+  },
+  "extras_in_geometry": [
+    "X",
+    "D_lr",
+    "D_prop"
+  ],
+  "gauge_run_root": "c:\\GitHub\\resonance-laboratory\\engines\\outputs\\precipitating_event\\20251203_213453_flux_event_J2_intpaths",
+  "geometry_file": "c:\\GitHub\\resonance-laboratory\\engines\\lr_embedding_3d.npz",
+  "run_root": "c:\\GitHub\\resonance-laboratory\\engines\\outputs\\two_particle_exchange\\20251203_230608_exchange_J2_flux",
+  "script": "two_particle_exchange.py"
+}

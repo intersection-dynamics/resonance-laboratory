@@ -1,0 +1,40 @@
+{
+  "gauge_summary": null,
+  "metrics": {
+    "N_mean": 6.009999567177405,
+    "N_std": 2.952375734470729e-15,
+    "final_lump_sizes": [],
+    "final_n_lumps": 0,
+    "first_lump_t_index": -1,
+    "first_lump_time": null,
+    "fraction_time_with_any_lump": 0.0,
+    "has_internal_dynamics": false,
+    "has_particle_candidates": false,
+    "internal_change_count": 0,
+    "internal_change_fraction": 0.0,
+    "last_lump_t_index": -1,
+    "last_lump_time": null,
+    "max_dominant_lump_size": 0,
+    "mean_dominant_lump_size": 0.0,
+    "mean_lump_count": 0.0,
+    "parity_mean": -0.011959553939862108,
+    "parity_std": 3.4647548731416383e-16,
+    "t_quench_effective": 4.0,
+    "t_quench_index": 40,
+    "timesteps_with_any_lump": 0,
+    "uses_gauge_phases": false
+  },
+  "precipitation_config": {
+    "J_coupling": 2.0,
+    "defrag_cold": 1.0,
+    "defrag_hot": 0.3,
+    "h_field": 0.2,
+    "local_dim": 2,
+    "n_sites": 12,
+    "n_steps": 101,
+    "t_quench": 4.0,
+    "t_total": 10.0,
+    "z_threshold": 0.5
+  },
+  "timestamp": "2025-12-04T00:23:55.232806"
+}

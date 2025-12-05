@@ -1,0 +1,15 @@
+{
+  "gauge_config": {
+    "J_coupling": 1.0,
+    "alpha_local_reward": 0.5,
+    "defrag_zz": 0.0,
+    "fd_epsilon": 0.01,
+    "h_field": 0.2,
+    "n_gauge_steps": 30,
+    "n_sites": 8,
+    "phase_step": 0.1,
+    "random_seed": 117,
+    "w_long_base": 1.0
+  },
+  "timestamp": "2025-12-03T15:01:20.230022"
+}

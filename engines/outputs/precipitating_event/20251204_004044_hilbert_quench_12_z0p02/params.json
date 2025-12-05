@@ -1,0 +1,16 @@
+{
+  "gauge_config": null,
+  "precipitation_config": {
+    "J_coupling": 2.0,
+    "defrag_cold": 1.0,
+    "defrag_hot": 0.3,
+    "h_field": 0.2,
+    "local_dim": 2,
+    "n_sites": 12,
+    "n_steps": 101,
+    "t_quench": 4.0,
+    "t_total": 10.0,
+    "z_threshold": 0.02
+  },
+  "timestamp": "2025-12-04T00:40:50.839993"
+}

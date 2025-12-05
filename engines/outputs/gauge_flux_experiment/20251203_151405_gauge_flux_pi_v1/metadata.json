@@ -1,0 +1,25 @@
+{
+  "args": {
+    "J_coupling": 1.0,
+    "alpha_local_reward": 0.5,
+    "defrag_zz": 0.0,
+    "fd_epsilon": 0.01,
+    "flux_weight": 0.5,
+    "geometry": "lr_embedding_3d.npz",
+    "h_field": 0.2,
+    "n_gauge_steps": 40,
+    "output_root": "outputs",
+    "phase_step": 0.08,
+    "seed": 117,
+    "tag": "gauge_flux_pi_v1",
+    "w_long_base": 1.0
+  },
+  "extras_in_geometry": [
+    "X",
+    "D_lr",
+    "D_prop"
+  ],
+  "geometry_file": "c:\\GitHub\\resonance-laboratory\\engines\\lr_embedding_3d.npz",
+  "run_root": "c:\\GitHub\\resonance-laboratory\\engines\\outputs\\gauge_flux_experiment\\20251203_151405_gauge_flux_pi_v1",
+  "script": "gauge_flux_experiment.py"
+}

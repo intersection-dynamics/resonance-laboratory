@@ -1,336 +1,484 @@
 #!/usr/bin/env python3
 """
-hydrogen_transition_probe.py
+Hydrogen Transition Probe
+=========================
 
-Goal:
-  Climb the ladder from simple "coexistence" to actual
-  "transition + photon" structure.
+Goal
+----
+Use the merged Hilbert Substrate engine (CPU, lattice mode) to set up a
+minimal "hydrogen-like" scenario:
 
-We:
-  - Evolve the batched Substrate.
-  - At regular intervals, run pattern detection (proton-like, electron-like, photon-like).
-  - Track:
-      * proton/electron graph distance (dist_pe)
-      * changes in that distance (delta_dist_pe "shell hops")
-      * motion of each pattern (graph distance of ids vs previous snapshot)
-      * photon distance to proton/electron and to the pair (min distance)
-  - Look for correlation between:
-      * electron shell hops (|delta_dist_pe| >= 1)
-      * photon-like patterns being near the proton/electron pair.
+- A designated proton "core" at the center of an L×L lattice.
+- Electron-like bound modes (ground and excited) identified from the
+  substrate's own coupling matrix.
+- A photon-like excitation encoded as local gauge flux / phase structure
+  in a ring around the core.
+- Pure unitary evolution using Substrate.evolve(...).
+- Diagnostics tracking:
+    * electron ground/excited mode occupations,
+    * radial density profiles relative to the core,
+    * "photon energy" proxy from gauge curvature around the core.
 
-Outputs:
-  Writes hydrogen_transition_probe.npz containing:
-    times
-    proton_ids, electron_ids, photon_ids
-    dist_pe, delta_dist_pe
-    p_move, e_move, ph_move
-    dist_p_ph, dist_e_ph, dist_pair_ph_min
-    plus summary stats in meta_json.
+This is deliberately an *experiment* script:
+- It imports the substrate engine from substrate_merged.py.
+- It writes outputs under outputs/hydrogen_transition_probe/<run_id>/.
+- It does not modify the engine.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
-from dataclasses import asdict
-from typing import Dict, List
+import os
+import time
+from dataclasses import asdict, dataclass
+from pathlib import Path
+from typing import Any, Dict, Tuple
 
 import numpy as np
 
-from substrate import Config, Substrate  # type: ignore
-import pattern_detector as pd  # type: ignore
+from substrate import Config as SubConfig, Substrate
 
 
-# ---------------------------------------------------------------------
-# Graph distance helper
-# ---------------------------------------------------------------------
+# =============================================================================
+# Experiment configuration
+# =============================================================================
 
 
-def graph_distance(substrate: Substrate, a_id: int, b_id: int, max_radius: int = 10) -> int:
-    if a_id == b_id:
-        return 0
+@dataclass
+class ExperimentConfig:
+    # Lattice parameters
+    L: int = 8
+    internal_dim: int = 8
 
-    neighbors = substrate._neighbors  # list[list[int]]
-    from collections import deque
+    # Evolution
+    steps: int = 4000
+    record_every: int = 10
 
-    visited = {a_id}
-    q = deque([(a_id, 0)])
+    # Substrate dynamics
+    defrag_rate: float = 0.0
+    gauge_phase_rate: float = 0.05
+    gauge_noise: float = 0.01
+    dt: float = 0.05
 
-    while q:
-        nid, d = q.popleft()
-        if d >= max_radius:
+    # Random seed
+    seed: int = 42
+
+    # Output
+    output_root: str = "outputs"
+    tag: str = "hydrogen_probe"
+
+
+# =============================================================================
+# Helpers: filesystem and JSON
+# =============================================================================
+
+
+def make_run_dir(exp_cfg: ExperimentConfig) -> Tuple[Path, str]:
+    timestamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
+    run_id = f"{timestamp}_{exp_cfg.tag}"
+    root = Path(exp_cfg.output_root).resolve()
+    run_dir = root / "hydrogen_transition_probe" / run_id
+
+    if run_dir.exists():
+        raise RuntimeError(f"Run directory already exists: {run_dir}")
+
+    (run_dir / "data").mkdir(parents=True, exist_ok=False)
+    (run_dir / "figures").mkdir(parents=True, exist_ok=False)
+    (run_dir / "logs").mkdir(parents=True, exist_ok=False)
+    return run_dir, run_id
+
+
+def save_json(path: Path, obj: Dict[str, Any]) -> None:
+    path.write_text(json.dumps(obj, indent=2, sort_keys=True))
+
+
+# =============================================================================
+# Physics helpers
+# =============================================================================
+
+
+def build_substrate(exp: ExperimentConfig) -> Substrate:
+    """
+    Build an L×L lattice substrate suitable for a hydrogen-like toy model.
+    """
+    cfg = SubConfig(
+        geometry="lattice",
+        L=exp.L,
+        internal_dim=exp.internal_dim,
+        defrag_rate=exp.defrag_rate,
+        gauge_phase_rate=exp.gauge_phase_rate,
+        gauge_noise=exp.gauge_noise,
+        dt=exp.dt,
+        seed=exp.seed,
+    )
+    sub = Substrate(cfg)
+    return sub
+
+
+def core_index(sub: Substrate) -> int:
+    """
+    Return the index of the central lattice site, to be treated as the "proton core".
+    """
+    if sub.geometry != "lattice":
+        raise ValueError("core_index only defined for lattice geometry")
+
+    L = sub.L
+    cx = L // 2
+    cy = L // 2
+    return sub._idx(cx, cy)  # using engine's own index helper
+
+
+def lattice_positions(sub: Substrate) -> np.ndarray:
+    """
+    Return an array of shape (n_nodes, 2) with lattice (x, y) positions.
+    """
+    if sub.geometry != "lattice":
+        raise ValueError("lattice_positions only defined for lattice geometry")
+    coords = np.zeros((sub.n_nodes, 2), dtype=int)
+    for i in range(sub.n_nodes):
+        x, y = sub._positions[i]
+        coords[i, 0] = x
+        coords[i, 1] = y
+    return coords
+
+
+def radial_distances(sub: Substrate, center_idx: int) -> np.ndarray:
+    """
+    Euclidean distance on the lattice between each node and the center node.
+    """
+    coords = lattice_positions(sub)
+    cx, cy = coords[center_idx]
+    dx = coords[:, 0] - cx
+    dy = coords[:, 1] - cy
+    return np.sqrt(dx**2 + dy**2)
+
+
+def compute_electron_modes(sub: Substrate, core_idx: int, n_modes: int = 2) -> np.ndarray:
+    """
+    Compute a few "electron-like" bound modes from the substrate's own couplings.
+
+    We use the single-particle hopping matrix H_hop = J_mag * exp(i A), which
+    lives on the lattice sites (not the internal_dim factor). We then:
+
+    - Diagonalize H_hop.
+    - Sort eigenmodes by how strongly they are localized near the core.
+    - Return the n_modes most core-localized eigenvectors as columns of shape
+      (n_nodes, n_modes).
+
+    These define effective "orbitals" living on nodes; we project the Substrate
+    state onto these using the first two internal components as the electron
+    sector.
+    """
+    H_hop = sub._J_mag * np.exp(1j * sub._A)
+    eigvals, eigvecs = np.linalg.eigh(H_hop)
+
+    core_weights = np.abs(eigvecs[core_idx, :]) ** 2
+    idx_sorted = np.argsort(core_weights)[::-1]  # descending
+    chosen = idx_sorted[:n_modes]
+
+    modes = eigvecs[:, chosen]  # shape (n_nodes, n_modes)
+    norms = np.linalg.norm(modes, axis=0, keepdims=True)
+    norms[norms == 0.0] = 1.0
+    modes /= norms
+    return modes
+
+
+def project_electron_modes(sub: Substrate, modes: np.ndarray) -> np.ndarray:
+    """
+    Project the current Substrate state onto the supplied node-modes using
+    internal components 0 and 1 as the electron "spinor sector".
+
+    Returns an array of shape (n_modes,) of mode amplitudes.
+    """
+    psi = sub.states  # (n_nodes, internal_dim)
+    n_nodes, d = psi.shape
+    n_modes = modes.shape[1]
+
+    if d < 2:
+        raise ValueError("internal_dim must be >= 2 for electron pseudo-spin sector")
+
+    # Electron vector per node: simple combination of components 0 and 1
+    electron_vec = psi[:, 0] + psi[:, 1]
+
+    amps = np.zeros(n_modes, dtype=np.complex128)
+    for k in range(n_modes):
+        mode_k = modes[:, k]
+        amps[k] = np.vdot(mode_k, electron_vec)
+    return amps
+
+
+def inject_photon_like_flux(sub: Substrate, core_idx: int, inner_r: float, outer_r: float) -> None:
+    """
+    Modify the gauge field A_ij to create a ring-like flux structure around the core.
+
+    - For edges whose endpoints lie in a radial band [inner_r, outer_r] from the core,
+      we add a phase bias (small circulation).
+    - This acts as a photon-like excitation in the gauge sector, not as a new rule.
+    """
+    if sub.geometry != "lattice":
+        raise ValueError("inject_photon_like_flux only defined for lattice geometry")
+
+    r = radial_distances(sub, core_idx)
+    A = sub._A.copy()
+    J_mag = sub._J_mag
+
+    phase_bump = 0.3  # radians; small compared to π
+
+    for i in range(sub.n_nodes):
+        if not (inner_r <= r[i] <= outer_r):
             continue
-        for nb in neighbors[nid]:  # direct index, not .get()
-            if nb == b_id:
-                return d + 1
-            if nb not in visited:
-                visited.add(nb)
-                q.append((nb, d + 1))
+        for j in sub._neighbors[i]:
+            if not (inner_r <= r[j] <= outer_r):
+                continue
+            if J_mag[i, j] <= 0.0:
+                continue
+            A[i, j] += phase_bump
+            A[j, i] -= phase_bump
 
-    return max_radius + 1
+    A = (A + np.pi) % (2.0 * np.pi) - np.pi
 
-# ---------------------------------------------------------------------
-# Main probe
-# ---------------------------------------------------------------------
+    sub._A = A
+    sub._update_couplings_from_mag_and_phase()
 
 
-def run_hydrogen_transition_probe(
-    config: Config,
-    burn_in_steps: int = 300,
-    total_steps: int = 3000,
-    record_stride: int = 10,
-    max_dist_radius: int = 10,
-    photon_near_threshold: int = 2,
-) -> None:
-    print("------------------------------------------------------------")
-    print("Hydrogen transition + photon correlation probe")
-    print(
-        f"burn_in_steps={burn_in_steps}, total_steps={total_steps}, "
-        f"record_stride={record_stride}"
-    )
-    print("------------------------------------------------------------")
+def photon_energy_proxy(sub: Substrate, core_idx: int, inner_r: float, outer_r: float) -> float:
+    """
+    Crude "photon energy" proxy: sum of squared plaquette flux magnitudes
+    in an annulus around the core.
 
-    substrate = Substrate(config)
+    - Uses Substrate.all_plaquette_fluxes() which returns an array of shape
+      (L-1, L-1) of flux values (real phases).
+    - We map each plaquette to the node at its lower-left corner (x, y)
+      to estimate its radial position.
+    """
+    if sub.geometry != "lattice":
+        raise ValueError("photon_energy_proxy only defined for lattice geometry")
 
-    # Burn-in
-    print("Burn-in evolution...")
-    substrate.evolve(n_steps=burn_in_steps)
+    r = radial_distances(sub, core_idx)
+    fluxes = sub.all_plaquette_fluxes()  # shape (L-1, L-1)
+    L = sub.L
 
-    dt = getattr(config, "dt", 0.1)
+    total = 0.0
+    for x in range(L - 1):
+        for y in range(L - 1):
+            # Representative node for this plaquette: lower-left corner (x, y)
+            idx = sub._idx(x, y)
+            rr = r[idx]
+            if inner_r <= rr <= outer_r:
+                phi = fluxes[x, y]
+                total += float(phi**2)
+    return total
 
-    # Time series containers
-    times: List[float] = []
 
-    p_ids: List[int] = []
-    e_ids: List[int] = []
-    ph_ids: List[int] = []
+def radial_density_profile(sub: Substrate, core_idx: int, n_bins: int = 6) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    Compute binned radial electron density profile:
 
-    p_scores: List[float] = []
-    e_scores: List[float] = []
-    ph_scores: List[float] = []
+    - Electron density per node = |psi_0|^2 + |psi_1|^2.
+    - Bin by distance from core into n_bins between 0 and r_max.
+    """
+    psi = sub.states
+    r = radial_distances(sub, core_idx)
 
-    dist_pe: List[int] = []
+    electron_density = np.abs(psi[:, 0])**2 + np.abs(psi[:, 1])**2
 
-    p_move: List[int] = []
-    e_move: List[int] = []
-    ph_move: List[int] = []
+    r_max = float(r.max())
+    if r_max == 0.0:
+        r_max = 1.0
+    edges = np.linspace(0.0, r_max, n_bins + 1)
+    centers = 0.5 * (edges[:-1] + edges[1:])
+    profile = np.zeros(n_bins, dtype=float)
 
-    dist_p_ph: List[int] = []
-    dist_e_ph: List[int] = []
-    dist_pair_ph_min: List[int] = []
-
-    t = 0.0
-
-    # To compute "movement" and delta_dist_pe we need previous snapshot
-    prev_p_id: int | None = None
-    prev_e_id: int | None = None
-    prev_ph_id: int | None = None
-    prev_dist_pe: int | None = None
-
-    def record(step_idx: int, t: float):
-        nonlocal prev_p_id, prev_e_id, prev_ph_id, prev_dist_pe
-
-        feats, scores, cands = pd.analyze_substrate(substrate)
-
-        times.append(t)
-
-        p_id = cands.proton_id
-        e_id = cands.electron_id
-        ph_id = cands.photon_id
-
-        p_ids.append(p_id)
-        e_ids.append(e_id)
-        ph_ids.append(ph_id)
-
-        p_scores.append(cands.proton_score)
-        e_scores.append(cands.electron_score)
-        ph_scores.append(cands.photon_score)
-
-        # Distances
-        d_pe = graph_distance(substrate, p_id, e_id, max_radius=max_dist_radius)
-        d_p_ph = graph_distance(substrate, p_id, ph_id, max_radius=max_dist_radius)
-        d_e_ph = graph_distance(substrate, e_id, ph_id, max_radius=max_dist_radius)
-
-        dist_pe.append(d_pe)
-        dist_p_ph.append(d_p_ph)
-        dist_e_ph.append(d_e_ph)
-        dist_pair_ph_min.append(min(d_p_ph, d_e_ph))
-
-        # Movement (distance between current and previous ids)
-        if prev_p_id is None:
-            p_move.append(0)
-            e_move.append(0)
-            ph_move.append(0)
-            delta_d_pe = 0
+    for b in range(n_bins):
+        mask = (r >= edges[b]) & (r < edges[b + 1])
+        if np.any(mask):
+            profile[b] = float(np.sum(electron_density[mask]))
         else:
-            p_move.append(graph_distance(substrate, prev_p_id, p_id, max_radius=max_dist_radius))
-            e_move.append(graph_distance(substrate, prev_e_id, e_id, max_radius=max_dist_radius))
-            ph_move.append(graph_distance(substrate, prev_ph_id, ph_id, max_radius=max_dist_radius))
-            delta_d_pe = d_pe - int(prev_dist_pe)
+            profile[b] = 0.0
 
-        # Log a compact summary
-        print(
-            f"[t={t:.2f}] "
-            f"p_id={p_id} (score={cands.proton_score:.2f}), "
-            f"e_id={e_id} (score={cands.electron_score:.2f}), "
-            f"ph_id={ph_id} (score={cands.photon_score:.2f}), "
-            f"dist_p-e={d_pe}, Δdist_p-e={delta_d_pe}, "
-            f"dist_pair-ph_min={dist_pair_ph_min[-1]}"
-        )
+    return centers, profile
 
-        # Update prev
-        prev_p_id = p_id
-        prev_e_id = e_id
-        prev_ph_id = ph_id
-        prev_dist_pe = d_pe
 
-    # Initial snapshot
-    record(step_idx=0, t=t)
+# =============================================================================
+# Main experiment
+# =============================================================================
 
-    # Main evolution loop
-    for step in range(1, total_steps + 1):
-        substrate.evolve(n_steps=1)
-        t += dt
 
-        if (step % record_stride == 0) or (step == total_steps):
-            record(step_idx=step, t=t)
+def run_experiment(exp: ExperimentConfig) -> Dict[str, Any]:
+    # Build run directory
+    run_dir, run_id = make_run_dir(exp)
+    log_path = run_dir / "logs" / "run.log"
 
-    # Convert lists to arrays
-    times_arr = np.asarray(times, dtype=float)
-    p_ids_arr = np.asarray(p_ids, dtype=int)
-    e_ids_arr = np.asarray(e_ids, dtype=int)
-    ph_ids_arr = np.asarray(ph_ids, dtype=int)
+    header = [
+        "=" * 70,
+        "HYDROGEN TRANSITION PROBE",
+        "=" * 70,
+        f"Run ID: {run_id}",
+        f"Lattice size L: {exp.L}",
+        f"internal_dim: {exp.internal_dim}",
+        f"steps: {exp.steps}, record_every: {exp.record_every}",
+        f"dt: {exp.dt}",
+        f"defrag_rate: {exp.defrag_rate}",
+        f"gauge_phase_rate: {exp.gauge_phase_rate}",
+        f"gauge_noise: {exp.gauge_noise}",
+        f"seed: {exp.seed}",
+        "",
+    ]
+    log_text = "\n".join(header)
+    print(log_text)
+    log_path.write_text(log_text + "\n")
 
-    p_scores_arr = np.asarray(p_scores, dtype=float)
-    e_scores_arr = np.asarray(e_scores, dtype=float)
-    ph_scores_arr = np.asarray(ph_scores, dtype=float)
+    # Build substrate
+    sub = build_substrate(exp)
+    core_idx = core_index(sub)
+    coords = lattice_positions(sub)
+    cx, cy = coords[core_idx]
+    print(f"Core (proton) at lattice site ({cx}, {cy}), node index {core_idx}")
 
-    dist_pe_arr = np.asarray(dist_pe, dtype=int)
-    dist_p_ph_arr = np.asarray(dist_p_ph, dtype=int)
-    dist_e_ph_arr = np.asarray(dist_e_ph, dtype=int)
-    dist_pair_ph_min_arr = np.asarray(dist_pair_ph_min, dtype=int)
+    # Compute electron modes (ground and excited)
+    modes = compute_electron_modes(sub, core_idx, n_modes=2)
+    mode_labels = ["ground", "excited"]
 
-    p_move_arr = np.asarray(p_move, dtype=int)
-    e_move_arr = np.asarray(e_move, dtype=int)
-    ph_move_arr = np.asarray(ph_move, dtype=int)
+    # Align initial state so electron lives mostly in the ground mode
+    ground_mode = modes[:, 0]
+    psi0 = sub.states.copy()
+    psi0[:, 0] = ground_mode
+    psi0[:, 1] = 0.0
+    norms = np.linalg.norm(psi0, axis=1, keepdims=True)
+    norms[norms == 0.0] = 1.0
+    psi0 /= norms
+    sub.states = psi0
 
-    # Derived: delta distance proton-electron between snapshots
-    delta_dist_pe_arr = np.zeros_like(dist_pe_arr, dtype=int)
-    delta_dist_pe_arr[1:] = dist_pe_arr[1:] - dist_pe_arr[:-1]
+    # Inject photon-like flux ring around the core
+    r = radial_distances(sub, core_idx)
+    r_nonzero = r[r > 0.0]
+    r_med = float(np.median(r_nonzero)) if r_nonzero.size > 0 else 1.0
+    inner_r = 0.75 * r_med
+    outer_r = 1.25 * r_med
+    print(f"Injecting photon-like flux in annulus [{inner_r:.2f}, {outer_r:.2f}]")
+    inject_photon_like_flux(sub, core_idx, inner_r=inner_r, outer_r=outer_r)
 
-    # -----------------------------------------------------------------
-    # Event statistics
-    # -----------------------------------------------------------------
+    # Time evolution and diagnostics
+    n_records = exp.steps // exp.record_every + 1
+    times = np.zeros(n_records, dtype=float)
+    mode_occupancies = np.zeros((n_records, 2), dtype=float)  # ground, excited
+    photon_energy = np.zeros(n_records, dtype=float)
+    radial_bins = None
+    radial_profiles = []
 
-    # Electron "shell hops": frames where |Δdist_p-e| >= 1
-    hop_mask = np.abs(delta_dist_pe_arr) >= 1
-    n_frames = len(times_arr)
-    n_hops = int(np.sum(hop_mask))
+    record_idx = 0
+    for step in range(exp.steps + 1):
+        if step % exp.record_every == 0:
+            t = step * exp.dt
+            times[record_idx] = t
 
-    # Photon "near pair": min distance <= photon_near_threshold
-    photon_near_mask = dist_pair_ph_min_arr <= photon_near_threshold
+            # Project onto electron modes
+            amps = project_electron_modes(sub, modes)
+            occ = np.abs(amps) ** 2
+            mode_occupancies[record_idx, :] = occ
 
-    # Hops with photon near
-    hop_and_photon_near_mask = hop_mask & photon_near_mask
-    n_hops_with_photon_near = int(np.sum(hop_and_photon_near_mask))
+            # Photon energy proxy
+            photon_energy[record_idx] = photon_energy_proxy(sub, core_idx, inner_r, outer_r)
 
-    frac_hops = float(n_hops) / max(n_frames, 1)
-    frac_hops_with_photon_near = float(n_hops_with_photon_near) / max(n_hops, 1) if n_hops > 0 else 0.0
+            # Radial profile
+            rbins, rprof = radial_density_profile(sub, core_idx, n_bins=6)
+            if radial_bins is None:
+                radial_bins = rbins
+            radial_profiles.append(rprof)
 
-    mean_dist_pe = float(np.mean(dist_pe_arr))
-    frac_dist1 = float(np.mean(dist_pe_arr <= 1))
-    frac_dist2 = float(np.mean(dist_pe_arr <= 2))
+            record_idx += 1
 
-    print("------------------------------------------------------------")
-    print(f"Total frames recorded:                {n_frames}")
-    print(f"Mean proton-like / electron-like dist:{mean_dist_pe:.3f}")
-    print(f"Fraction time dist<=1 (neighbors):    {frac_dist1:.3f}")
-    print(f"Fraction time dist<=2:                {frac_dist2:.3f}")
-    print(f"Total 'shell hop' events (|Δdist|>=1): {n_hops}")
-    print(f"Fraction of frames with a hop:        {frac_hops:.3f}")
-    print(
-        f"Fraction of hops with photon-near (≤{photon_near_threshold}): "
-        f"{frac_hops_with_photon_near:.3f}"
-    )
-    print("------------------------------------------------------------")
+        if step < exp.steps:
+            sub.evolve(n_steps=1, defrag_rate=exp.defrag_rate)
 
-    # Metadata for easier reading later
-    meta: Dict[str, object] = {
-        "config": asdict(config),
-        "burn_in_steps": int(burn_in_steps),
-        "total_steps": int(total_steps),
-        "record_stride": int(record_stride),
-        "max_dist_radius": int(max_dist_radius),
-        "photon_near_threshold": int(photon_near_threshold),
-        "mean_pe_distance": mean_dist_pe,
-        "fraction_bind1": frac_dist1,
-        "fraction_bind2": frac_dist2,
-        "n_frames": n_frames,
-        "n_hops": n_hops,
-        "fraction_frames_with_hop": frac_hops,
-        "n_hops_with_photon_near": n_hops_with_photon_near,
-        "fraction_hops_with_photon_near": frac_hops_with_photon_near,
+    radial_profiles = np.asarray(radial_profiles, dtype=float)  # (n_records, n_bins)
+
+    # Build summary + save data
+    summary: Dict[str, Any] = {
+        "framework_version": "0.1.0",
+        "script": "hydrogen_transition_probe.py",
+        "run_id": run_id,
+        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "params": asdict(exp),
+        "metrics": {
+            "final_ground_occupancy": float(mode_occupancies[-1, 0]),
+            "final_excited_occupancy": float(mode_occupancies[-1, 1]),
+            "max_excited_occupancy": float(mode_occupancies[:, 1].max()),
+            "max_photon_energy_proxy": float(photon_energy.max()),
+        },
+        "diagnostics": {
+            "n_records": int(n_records),
+            "core_index": int(core_idx),
+            "core_position": [int(cx), int(cy)],
+            "mode_labels": mode_labels,
+        },
+        "verdicts": {
+            "has_nontrivial_photon_activity": bool(photon_energy.max() > 1e-4),
+            "has_excited_mode_activity": bool(mode_occupancies[:, 1].max() > 1e-3),
+        },
     }
 
-    fname = "hydrogen_transition_probe.npz"
-    np.savez(
-        fname,
-        times=times_arr,
-        proton_ids=p_ids_arr,
-        electron_ids=e_ids_arr,
-        photon_ids=ph_ids_arr,
-        proton_scores=p_scores_arr,
-        electron_scores=e_scores_arr,
-        photon_scores=ph_scores_arr,
-        dist_pe=dist_pe_arr,
-        delta_dist_pe=delta_dist_pe_arr,
-        proton_move=p_move_arr,
-        electron_move=e_move_arr,
-        photon_move=ph_move_arr,
-        dist_p_ph=dist_p_ph_arr,
-        dist_e_ph=dist_e_ph_arr,
-        dist_pair_ph_min=dist_pair_ph_min_arr,
-        meta_json=json.dumps(meta, indent=2),
+    data_dir = run_dir / "data"
+    np.save(data_dir / "times.npy", times)
+    np.save(data_dir / "mode_occupancies.npy", mode_occupancies)
+    np.save(data_dir / "photon_energy_proxy.npy", photon_energy)
+    np.save(data_dir / "radial_bins.npy", radial_bins)
+    np.save(data_dir / "radial_profiles.npy", radial_profiles)
+
+    save_json(run_dir / "summary.json", summary)
+    save_json(run_dir / "params.json", asdict(exp))
+
+    print("=" * 70)
+    print("Run complete.")
+    print(f"Run directory: {run_dir}")
+    print("Key metrics:")
+    print(f"  max excited occupancy: {summary['metrics']['max_excited_occupancy']:.4f}")
+    print(f"  max photon energy proxy: {summary['metrics']['max_photon_energy_proxy']:.4f}")
+    print("=" * 70)
+
+    return summary
+
+
+# =============================================================================
+# CLI
+# =============================================================================
+
+
+def parse_args() -> ExperimentConfig:
+    p = argparse.ArgumentParser(description="Hydrogen transition probe on Substrate lattice.")
+    p.add_argument("--L", type=int, default=8)
+    p.add_argument("--internal-dim", type=int, default=8)
+    p.add_argument("--steps", type=int, default=4000)
+    p.add_argument("--record-every", type=int, default=10)
+    p.add_argument("--defrag-rate", type=float, default=0.0)
+    p.add_argument("--gauge-phase-rate", type=float, default=0.05)
+    p.add_argument("--gauge-noise", type=float, default=0.01)
+    p.add_argument("--dt", type=float, default=0.05)
+    p.add_argument("--seed", type=int, default=42)
+    p.add_argument("--output-root", type=str, default="outputs")
+    p.add_argument("--tag", type=str, default="hydrogen_probe")
+
+    args = p.parse_args()
+
+    return ExperimentConfig(
+        L=args.L,
+        internal_dim=args.internal_dim,
+        steps=args.steps,
+        record_every=args.record_every,
+        defrag_rate=args.defrag_rate,
+        gauge_phase_rate=args.gauge_phase_rate,
+        gauge_noise=args.gauge_noise,
+        dt=args.dt,
+        seed=args.seed,
+        output_root=args.output_root,
+        tag=args.tag,
     )
 
-    print(f"Saved {fname} (T={len(times_arr)})")
 
-
-# ---------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------
-
-
-def main():
-    config = Config(
-        n_nodes=64,
-        internal_dim=3,
-        monogamy_budget=1.0,
-        defrag_rate=0.1,
-        seed=654,
-    )
-    if not hasattr(config, "dt"):
-        config.dt = 0.1  # type: ignore[attr-defined]
-
-    print("============================================================")
-    print("  Hydrogen transition + photon correlation probe")
-    print("============================================================")
-    print(
-        f"Config: n_nodes={config.n_nodes}, d={config.internal_dim}, "
-        f"monogamy={config.monogamy_budget}, defrag={config.defrag_rate}, "
-        f"dt={getattr(config, 'dt', 'N/A')}"
-    )
-    print("============================================================\n")
-
-    run_hydrogen_transition_probe(
-        config=config,
-        burn_in_steps=300,
-        total_steps=3000,
-        record_stride=10,
-        max_dist_radius=10,
-        photon_near_threshold=2,
-    )
-
-    print("\nHydrogen transition probe complete.")
+def main() -> None:
+    exp_cfg = parse_args()
+    run_experiment(exp_cfg)
 
 
 if __name__ == "__main__":

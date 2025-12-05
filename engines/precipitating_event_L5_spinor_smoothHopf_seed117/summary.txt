@@ -1,0 +1,61 @@
+Precipitating Event (Spinor, L^3 cubic lattice)
+==============================================
+
+Config:
+{'L': 5, 'spin_dim': 2, 'hot_strength': 1.0, 'J_hop': 1.0, 't_max': 10.0, 'n_steps': 2500, 'quench_fraction': 0.4, 'init_random_spinor': True, 'seed': 117, 'smoothing_steps': 3, 'smoothing_alpha': 0.25, 'output_dir': 'precipitating_event_L5_spinor_smoothHopf_seed117', 'make_plots': True}
+
+Lattice: L=5, N=125, spin_dim=2, D=250
+
+Time grid:
+  t_max          = 10.0
+  n_steps        = 2500
+  t_end          = 10.0
+  quench_fraction= 0.4
+  t_quench       = 4.0
+
+Hamiltonian:
+  hot_strength = 1.0
+  J_hop        = 1.0
+
+Smoothing:
+  smoothing_steps = 3
+  smoothing_alpha = 0.25
+
+Global spin history (sampled):
+  t=  0.000  Sx= +0.092  Sy= +0.013  Sz= -0.006
+  t=  0.908  Sx= -0.014  Sy= +0.044  Sz= -0.033
+  t=  1.816  Sx= -0.035  Sy= +0.064  Sz= -0.035
+  t=  2.724  Sx= -0.037  Sy= +0.075  Sz= +0.010
+  t=  3.636  Sx= -0.050  Sy= +0.075  Sz= +0.014
+  t=  4.544  Sx= -0.050  Sy= +0.074  Sz= +0.014
+  t=  5.452  Sx= -0.050  Sy= +0.074  Sz= +0.014
+  t=  6.360  Sx= -0.050  Sy= +0.074  Sz= +0.014
+  t=  7.272  Sx= -0.050  Sy= +0.074  Sz= +0.014
+  t=  8.180  Sx= -0.050  Sy= +0.074  Sz= +0.014
+  t=  9.088  Sx= -0.050  Sy= +0.074  Sz= +0.014
+  t= 10.000  Sx= -0.050  Sy= +0.074  Sz= +0.014
+
+Final local spin statistics (raw):
+  mean |s_i| = 1.000000
+  min  |s_i| = 1.000000
+  max  |s_i| = 1.000000
+
+Raw skyrmion-like topological charges (xy slices):
+  z=0: Q_z_raw = +0.347889
+  z=1: Q_z_raw = -0.867098
+  z=2: Q_z_raw = -0.192274
+  z=3: Q_z_raw = -0.492568
+  z=4: Q_z_raw = +1.796254
+
+Raw total Q_xy = +0.592203
+
+Smoothed skyrmion-like topological charges (xy slices):
+  z=0: Q_z_smooth = +0.294669
+  z=1: Q_z_smooth = -0.064797
+  z=2: Q_z_smooth = +0.516389
+  z=3: Q_z_smooth = -0.347572
+  z=4: Q_z_smooth = +0.483373
+
+Smoothed total Q_xy = +0.882060
+
+Hopf index (approx, smoothed) Q_H ≈ -0.095773

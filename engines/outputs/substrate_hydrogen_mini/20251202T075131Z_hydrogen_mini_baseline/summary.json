@@ -1,0 +1,73 @@
+{
+  "diagnostics": {
+    "cluster_centers": [
+      [
+        1.748803217063621,
+        -0.19192099040099792,
+        0.0
+      ],
+      [
+        -0.13541393048193082,
+        1.359369275306933,
+        0.0
+      ],
+      [
+        -0.39632880034377854,
+        -0.47362382629730276,
+        0.0
+      ]
+    ],
+    "cluster_counts": {
+      "electron": 10,
+      "photon": 39,
+      "proton": 15
+    },
+    "cluster_roles": {
+      "0": "electron",
+      "1": "proton",
+      "2": "photon"
+    },
+    "representative_nodes": {
+      "electron_center": 53,
+      "photon_center": 1,
+      "proton_center": 38
+    }
+  },
+  "metrics": {
+    "electron_inner_max": 0.31431255393846247,
+    "electron_outer_max": 0.0,
+    "electron_weight_final": 0.25972621754673825,
+    "electron_weight_max": 0.31431255393846247,
+    "global_norm_final": 1.0000000000000724,
+    "photon_far_max": 0.0,
+    "photon_near_max": 0.7774140169564471,
+    "photon_weight_final": 0.539347591538166,
+    "photon_weight_max": 0.7774140169564471,
+    "proton_weight_final": 0.20092619091524053,
+    "proton_weight_max": 0.36819431624565485
+  },
+  "params": {
+    "burn_in_steps": 500,
+    "connectivity": 0.35,
+    "defrag_rate": 0.05,
+    "dt": 0.1,
+    "electron_bound_radius": 2,
+    "electron_target_norm": 0.3,
+    "internal_dim": 16,
+    "kmeans_iters": 50,
+    "monogamy_budget": 1.0,
+    "n_clusters": 3,
+    "n_nodes": 64,
+    "output_root": "outputs",
+    "photon_near_radius": 2,
+    "photon_target_norm": 0.4,
+    "proton_target_norm": 0.3,
+    "record_stride": 10,
+    "seed": 42,
+    "tag": "hydrogen_mini_baseline",
+    "total_steps": 4000
+  },
+  "run_id": "20251202T075131Z_hydrogen_mini_baseline",
+  "script": "substrate_hydrogen_mini.py",
+  "timestamp": "2025-12-02T07:52:13Z"
+}

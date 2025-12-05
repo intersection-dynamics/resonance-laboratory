@@ -1,0 +1,37 @@
+{
+  "config": {
+    "J_coupling": 1.0,
+    "defrag_cold": 1.5,
+    "defrag_hot": 0.0,
+    "h_field": 0.2,
+    "local_dim": 2,
+    "n_sites": 8,
+    "n_steps": 201,
+    "t_quench": 4.0,
+    "t_total": 20.0,
+    "z_threshold": 0.1
+  },
+  "metrics": {
+    "N_mean": 3.97946133181218,
+    "N_std": 8.269677655432337e-16,
+    "final_lump_sizes": [
+      3
+    ],
+    "final_n_lumps": 1,
+    "first_lump_t_index": 0,
+    "first_lump_time": 0.0,
+    "fraction_time_with_any_lump": 0.582089552238806,
+    "has_particle_candidates": true,
+    "last_lump_t_index": 200,
+    "last_lump_time": 20.0,
+    "max_dominant_lump_size": 4,
+    "mean_dominant_lump_size": 0.6517412935323383,
+    "mean_lump_count": 0.6915422885572139,
+    "parity_mean": 0.026056735293434306,
+    "parity_std": 6.22518580687165e-16,
+    "t_quench_effective": 4.0,
+    "t_quench_index": 40,
+    "timesteps_with_any_lump": 117
+  },
+  "timestamp": "2025-12-03T14:47:22.558851"
+}

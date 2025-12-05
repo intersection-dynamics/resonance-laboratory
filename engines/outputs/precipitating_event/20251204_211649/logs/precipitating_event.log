@@ -1,0 +1,35 @@
+============================================================
+  Hilbert-Substrate Precipitating Event (single-file, gauge-ready, CUDA-aware)
+============================================================
+Run root:      outputs\precipitating_event\20251204_211649
+Geometry file: lr_embedding_3d_12.npz
+Seed:          117
+Use gauge:     False
+CuPy/CUDA:     ENABLED
+------------------------------------------------------------
+Geometry n_sites: 12
+Edges:            [(0, 1), (0, 2), (0, 4), (1, 3), (1, 5), (2, 3), (2, 6), (3, 7), (4, 5), (4, 6), (4, 8), (5, 7), (5, 9), (6, 7), (6, 10), (7, 11), (8, 9), (8, 10), (9, 11), (10, 11)]
+------------------------------------------------------------
+[Gauge] Skipping gauge optimization; using plain Heisenberg-like coupling.
+[Event] Running precipitating event...
+[Event] Done.
+==== Precipitating Event Summary ====
+t_quench_effective:      4.000000
+final_n_lumps:           0
+final_lump_sizes:        []
+mean_lump_count:         0.000
+has_candidates:          False
+timesteps_with_any_lump: 0
+fraction_time_with_any:  0.000
+max_dominant_size:       0
+mean_dominant_size:      0.000
+first_lump_time:         None
+last_lump_time:          None
+parity_mean:             -0.011960
+parity_std:              0.000000
+N_mean:                  6.010000
+N_std:                   0.000000
+internal_change_count:   0
+internal_change_frac:    0.000000
+has_internal_dynamics:   False
+======================================

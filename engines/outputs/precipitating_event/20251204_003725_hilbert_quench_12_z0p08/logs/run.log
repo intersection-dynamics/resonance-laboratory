@@ -1,0 +1,28 @@
+============================================================
+  Hilbert-Substrate Precipitating Event (single-file, gauge-ready, CUDA-aware)
+============================================================
+Run root:      outputs\precipitating_event\20251204_003725_hilbert_quench_12_z0p08
+Geometry file: lr_embedding_3d_12.npz
+Seed:          117
+Use gauge:     False
+CuPy/CUDA:     ENABLED
+------------------------------------------------------------
+Geometry n_sites: 12
+Edges:            [(0, 1), (0, 2), (0, 4), (1, 3), (1, 5), (2, 3), (2, 6), (3, 7), (4, 5), (4, 6), (4, 8), (5, 7), (5, 9), (6, 7), (6, 10), (7, 11), (8, 9), (8, 10), (9, 11), (10, 11)]
+------------------------------------------------------------
+[GAUGE] Skipped (use plain Heisenberg/defrag).
+------------------------------------------------------------
+Configuration (Precipitating Event):
+  n_sites          = 12
+  local_dim        = 2
+  J_coupling       = 2.0
+  h_field          = 0.2
+  defrag_hot       = 0.3
+  defrag_cold      = 1.0
+  t_total          = 10.0
+  t_quench         = 4.0
+  n_steps          = 101
+  z_threshold      = 0.08
+------------------------------------------------------------
+Starting Precipitating Event evolution...
+------------------------------------------------------------
