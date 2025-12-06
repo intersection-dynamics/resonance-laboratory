@@ -1,0 +1,13 @@
+{
+  "geometry": "c:\\GitHub\\resonance-laboratory\\engines\\lr_embedding_3d_12.npz",
+  "N_sites": 12,
+  "n_edges": 20,
+  "nsteps": 200,
+  "tmax": 10.0,
+  "tquench": 4.0,
+  "Jhot": 1.0,
+  "Jcold": 1.0,
+  "hhot": 0.1,
+  "hcold": 1.0,
+  "seed": 117
+}
